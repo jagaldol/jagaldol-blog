@@ -1,29 +1,30 @@
 ---
 layout: single
-title:  "Welcome to Jekyll!"
+title:  "첫 블로그 글 포스트!"
 date:   2023-03-07 11:11:19 +0900
-categories: posts
+last_modified_at: 2023-03-12 00:00:00
+categories: post
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+요즘 개발자들과 개발 지망생들에게 블로그가 유행이라고 합니다. 요즘 웹이 무척 재밌어서 저도 블로그를 만들어 보았네요😊
 
-Jekyll requires blog post files to be named according to the following format:
+제 블로그에 대한 꿈은 작년 12월 교수님의 블로그 운영에 대한 이야기에서부터 시작됐는데요. 하지만 무려 3개월이 지난! 이제서야 만들게 되었네요. 그도 그럴게 방학동안 너무 바빴어요...
 
-`YEAR-MONTH-DAY-title.MARKUP`
+이번 3학년 겨울방학에 친구따라 무작정 시작한 웹 프로그램 외주(피아노 학원 레슨 및 수강생 관리 웹 프로그램)를 종강 하자마자 시작해서 개강하기 직전에 겨우 끝냈거든요.
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+그래도 덕분에 `Node.js(Express)`, `React`를 능숙하게 다룰 수 있게 되었고, 웹 개발에 대한 Full Cycle을 겪어봐서 엄청 성장할 수 있었습니다.(불행 중 다행)
 
-Jekyll also offers powerful support for code snippets:
+Blog 플랫폼 선택에서 후보로 velog도 있었는데요. 웹에 자신이 생기니 직접 만들어 커스텀하고 싶어 jekyll을 사용하여 github page로 만들었습니다.
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+### 목표
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+ - 학교에서 배운 전공 지식 정리
+ - 프로젝트 진행 사항 및 결과
+ - 개발 관련 세미나 및 체험
+ - 기타 개발 관련 잡담
+ - 취미...?
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+ 등을 올릴 예정입니다.
+
+ 조만간 방학동안의 프로젝트부터 빨리 정리해서 올릴게요!
+
+ 잘 부탁드려요~😉

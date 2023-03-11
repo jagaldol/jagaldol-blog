@@ -5,7 +5,7 @@
 /*
    Typography
    ========================================================================== */
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 $doc-font-size: 16 !default;
 
 /* paragraph indention */
@@ -14,7 +14,7 @@ $indent-var: 1.3em !default;
 
 /* system typefaces */
 $serif: Georgia, Times, serif !default;
-$sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+$sans-serif: "Nanum Gothic", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
   "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
 $monospace: Monaco, Consolas, "Lucida Console", monospace !default;
 
@@ -148,7 +148,7 @@ $small: 600px !default;
 $medium: 768px !default;
 $medium-wide: 900px !default;
 $large: 1024px !default;
-$x-large: 1280px !default;
+$x-large: 1380px !default;
 $max-width: $x-large !default;
 
 /*
@@ -156,7 +156,7 @@ $max-width: $x-large !default;
    ========================================================================== */
 
 $right-sidebar-width-narrow: 200px !default;
-$right-sidebar-width: 300px !default;
+$right-sidebar-width: 250px !default;
 $right-sidebar-width-wide: 400px !default;
 
 /*
