@@ -58,6 +58,16 @@
     right: 0;
     bottom: 0;
   }
+  a {
+    display:flex;
+    margin-bottom: 2px;
+  }
+  a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-skip-ink: none;
+  }
+
 
   a + a {
     opacity: 0.5;
