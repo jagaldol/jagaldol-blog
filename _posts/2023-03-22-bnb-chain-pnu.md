@@ -2,7 +2,7 @@
 layout: single
 title: "2023 BNB CHAIN Innovation University Tour Korea in 부산대 후기"
 date: 2023-03-22 18:00:00 +0900
-last_modified_at: 2023-03-22 18:00:00 +0900
+last_modified_at: 2023-03-23 00:32:00 +0900
 categories: post
 ---
 
@@ -131,8 +131,11 @@ Greet을 눌러보면 페이지도 Hello, hyejun으로 잘 바뀌었네요~
 거래 내역을 보시면 From, To가 다 기록이 되며 잘 거래가 된것을 볼 수 있습니다.
 
 이상으로 dApp으로 smart contract 실습입니다! 세션에서 시키는 대로만 했는데 뭔가 뚝딱 만들어졌네요😅 그래도 나중에 블록체인 활용할때 이번 경험을 참고하면 좋을 것 같네요. 재밌었어요!
+
 <br/>
+
 <br/>
+
 아래는 강연이라 내용들만 간략히 적었어요!
 
 ---
@@ -148,13 +151,28 @@ Greet을 눌러보면 페이지도 Hello, hyejun으로 잘 바뀌었네요~
 * Systemic Risk 산업 자체의 붕괴(ex 코인이 해킹되었다)
 
 ### Trading 기법
-|기법           | 설명                                                   |
-|---------------|--------------------------------------------------------|
-| Day           | 일일 매매                                              |
-| Swing         | 일정 기간(2주 ~ 한달)을 잡고 목표가 도달 시 매매          |
-| Scalping      | 짧게 들어갔다가 바로 빠지는것(몇 분, 몇 초 사이의 매매)   |
-| Buy & Hold    | 그저 '존버'                                            |
-
+<table>
+    <tr>
+        <th>기법</th>
+        <th>설명</th>
+    </tr>
+    <tr>
+        <td>Day</td>
+        <td>일일 매매</td>
+    </tr>
+    <tr>
+        <td>Swing</td>
+        <td>일정 기간(2주 ~ 한달)을 잡고 목표가 도달 시 매매</td>
+    </tr>
+    <tr>
+        <td>Scalping</td>
+        <td>짧게 들어갔다가 바로 빠지는것(몇 분, 몇 초 사이의 매매)</td>
+    </tr>
+    <tr>
+        <td>Buy & Hold</td>
+        <td>그저 '존버'</td>
+    </tr>
+</table>
 
 ### 보조 지표
 #### RSI(Relative Strength Index)
