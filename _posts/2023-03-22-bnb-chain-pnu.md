@@ -6,28 +6,19 @@ last_modified_at: 2023-03-23 00:32:00 +0900
 categories: post
 ---
 
-<img src="/assets/images/2023-03-22/semina-view.jpg" width="400px"/>
+<img src="/assets/images/2023-03-22/semina-view.jpg" width="500px"/>
 
 안녕하세요! 이번에 저희 학교에서 바이낸스의 BNB Chain에서 블록체인 세미나를 진행한다더라고요.
 
-<img src="/assets/images/2023-03-22/information.png" width="400px" />
+<img src="/assets/images/2023-03-22/information.png" width="500px" />
 
 단순히 강연 뿐만 아니라 기술 세션으로 직접 어플리케이션을 만들어 본다니 참을 수 없어서 바로 다녀왔어요.😎
 
-세미나 내용들 정리한거 올려볼께요!
-
----
-
-## 🗒️목차
-1. BNB Chain Tech Workshop
-2. Bianace Academy 발표 세션
-3. Pomerium web3 game studio 소개
-
----
+세미나 내용들 정리한거 올려볼게요!
 
 ## ⛓️BNB Chain Tech Workshop
 ### 🦊MetaMask 지갑 생성
-<img src="/assets/images/2023-03-22/meta-mask.png" width="400px">
+<img src="/assets/images/2023-03-22/meta-mask.png" width="500px">
 
 크롬에 [MetaMask](https://metamask.io/download/)를 추가하여 지갑을 생성합니다!
 
@@ -50,7 +41,7 @@ https://testnet.bscscan.com
 
 이제 https://testnet.bnbchain.org/faucet-smart 여기로 이동해서 자신의 지갑 account를 넣고 Give me BNB를 누릅니다!
 
-<img src="/assets/images/2023-03-22/get-tbnb.png" width="400px">
+<img src="/assets/images/2023-03-22/get-tbnb.png" width="500px">
 
 돈이 들어와서 0TBNB에서 0.1TBNB가 될거에요!(이후 과정에서 조금 써서 저는 0.1이 아닙니다.)
 
@@ -82,7 +73,7 @@ npm install
 echo word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12 > .secret
 ```
 
-이제 컴파일을 하고 smart contract를 migrate할께요.
+이제 컴파일을 하고 smart contract를 migrate할게요.
 ```terminal
 truffle compile
 
@@ -108,25 +99,25 @@ npm run dev
 ```
 [localhost:3000](http://localhost:3000/)에 접속해 보면\...!!
 
-<img src="/assets/images/2023-03-22/smart-contract-test.png" width="400px">
+<img src="/assets/images/2023-03-22/smart-contract-test.png" width="500px">
 
 페이지가 하나 뜹니다!
 
 확장 프로그램의 MetaMask에서 연결된 사이트를 누르고 현재 페이지 추가(localhost:3000 추가)를 합니다!
 
-<img src="/assets/images/2023-03-22/meta-mask-setting.png" width="400px">
+<img src="/assets/images/2023-03-22/meta-mask-setting.png" width="500px">
 
 그러고 사이트에서 이름을 Save Name하면!
 
-<img src="/assets/images/2023-03-22/smart-contract.png" width="400px">
+<img src="/assets/images/2023-03-22/smart-contract.png" width="500px">
 
 Meta-mask에서 자동으로 contract가 열리고 확인을 누르면 거래가 됩니다!
 
-<img src="/assets/images/2023-03-22/hello-success.png" width="400px">
+<img src="/assets/images/2023-03-22/hello-success.png" width="500px">
 
 Greet을 눌러보면 페이지도 Hello, hyejun으로 잘 바뀌었네요~
 
-<img src="/assets/images/2023-03-22/contract-view.png" width="400px">
+<img src="/assets/images/2023-03-22/contract-view.png" width="500px">
 
 거래 내역을 보시면 From, To가 다 기록이 되며 잘 거래가 된것을 볼 수 있습니다.
 
@@ -210,6 +201,12 @@ Greet을 눌러보면 페이지도 Hello, hyejun으로 잘 바뀌었네요~
 
 ---
 
+## 후기
+
 2시간동안 진행이 빠르게 되서 받아적느라 힘들었네요...
 
-WEB3와 블록체인 기술이 뜨고 있는데 제가 관련 기술을 잘 알지 못해 아쉬웠단 말이죠? 이번 세미나를 참가하고 WEB3와 관련된 기술에 좀 친숙해진 느낌이라 뿌듯하네요👍
+WEB3와 블록체인 기술이 뜨고 있는데 제가 관련 기술을 잘 알지 못해 아쉬웠단 말이죠? 이번 세미나를 참가하고 WEB3와 관련된 기술에 좀 친숙해진 느낌이라 뿌듯하네요.
+
+<img src="/assets/images/2023-03-22/binance-hoodie.jpg" width="500px">
+
+기념품으로 후드도 하나 받았어요!! 쵝오!!👍
