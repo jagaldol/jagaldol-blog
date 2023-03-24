@@ -11,7 +11,7 @@ categories: post
 
 원인은 구글 웹 크롤러가 제 블로그를 크롤링 하지 못하는 것인데요. 블로그가 일기장이 되기 전에 빠르게 구글에 등록해 보겠습니다.
 
-&nbsp;
+<br/>
 
 ## Google Search Console 등록
 먼저 [Google Search Console](https://search.google.com/search-console)에 접속해 줍니다. 
@@ -28,7 +28,7 @@ repo의 action에서 배포가 성공적으로 된걸 확인 후 확인 버튼�
 
 ![google-search-console-3](/assets/images/2023-03-12/google-search-console-3.png)
 
-소유권이 확인되었다고 합니다~ 그럼 속성으로 이동해 볼께요.
+소유권이 확인되었다고 합니다~ 그럼 속성으로 이동해 볼게요.
 
 > 인증 후에도 repo에서 인증 html파일을 삭제하시면 안됩니다!!
 혹시라도 삭제하거나 잃어버렸다면 [구글 웹마스터](https://www.google.com/webmasters/verification) 로 가서 자기 블로그 클릭 후 HTML 파일 상세정보 누르면 재 다운로드 가능하니 참고하세요!
@@ -37,7 +37,7 @@ repo의 action에서 배포가 성공적으로 된걸 확인 후 확인 버튼�
 
 이제 `Search Console`에서 색인생성 -> Sitemaps로 들어가 새 사이트맵 추가를 해야합니다.
 
-&nbsp;
+<br/>
 
 ## 사이트맵(sitemap.xml) 생성
 사이트맵은 `sitemap.xml`로 google 인증 html 파일처럼 레포의 root 폴더에 바로 추가하시면 됩니다!
@@ -102,7 +102,7 @@ sitemap :
 ```
 이 포스팅의 `Yaml front matter`입니다! `jekyll` 같은 정적 사이트 생성기에서 사용하는 메타데이터 형식으로 페이지 정보를 저장할 수 있습니다. 여기에 정의 된 값들로  sitemap.xml이 만들어집니다.
 
-&nbsp;
+<br/>
 
 ## robots.txt 생성
 sitemap.xml을 만들었다고 다가 아닙니다. `robots.txt`를 만들어서 웹 크롤러에게 무엇을 크롤링하게 할지 정해 줘야합니다.
@@ -119,7 +119,7 @@ Sitemap: {{ '/sitemap.xml' | relative_url | prepend: site.url }}
 
 이제 robot.txt를 github repo의 root 위치에 추가해주세요!
 
-&nbsp;
+<br/>
 
 ## 마지막 Google Search Console에 sitemap.xml 제출
 마지막 단계입니다! `Search Console`에서 색인생성 -> Sitemaps을 다시 켜줍니다.
@@ -131,12 +131,12 @@ sitemap.xml을 입력하고 제출해줍니다. 상태가 성공이 되면 성�
 > 처음 등록시 가져올 수 없음이라고 나왔는데 사이트맵을 누르니 성공이라 나오더라고요. 다시 제출하니 바로 성공이라 뜨는게 단순 오류인거 같습니다.
 혹시 가져올 수 없음이라 뜨시면 다시 제출 눌러보시길 바랍니다!
 
-&nbsp;
+<br/>
 
 ## 진짜 성공\...?
 검색 되는데 시간이 조금 걸린다고 합니다.
 
-~~나중에 성공하게 되면 결과 사진 추가할께요!~~
+~~나중에 성공하게 되면 결과 사진 추가할게요!~~
 
 ![seo-success](/assets/images/2023-03-12/seo-success.png)
 
@@ -146,7 +146,7 @@ sitemap.xml을 입력하고 제출해줍니다. 상태가 성공이 되면 성�
 
 구글 검색 등록 되는게 보통 1주일, 길면 2주까지도 간다고 합니다.
 
-&nbsp;
+<br/>
 
 ## 빨리 검색 되는 팁(믿지 마세요😁)
 제 친구가 2주나 걸렸다고 해서 걱정했지만 저는 무려 하루만에 등록 됐답니다! (2023.03.12 15시 등록 -> 2023.03.13 09시 검색 성공)
