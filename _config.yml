@@ -110,6 +110,7 @@ author:
   bio              : "Pusan National Univ. major in Computer Science"
   location         : "Busan, Korea"
   email            : "yoy06056@pusan.ac.kr"
+  github           : "jagaldol"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
