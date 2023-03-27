@@ -3,7 +3,7 @@ layout: single
 title: "2023 BNB CHAIN Innovation University Tour Korea in 부산대 후기"
 date: 2023-03-22 18:00:00 +0900
 last_modified_at: 2023-03-23 00:32:00 +0900
-categories: post
+categories: experience
 ---
 
 <img src="/assets/images/2023-03-22/semina-view.jpg" width="500px"/>
