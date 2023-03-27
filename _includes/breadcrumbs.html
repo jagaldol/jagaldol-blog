@@ -1,6 +1,6 @@
 {% case site.category_archive.type %}
   {% when "liquid" %}
-    {% assign path_type = "#" %}
+    {% assign path_type = nil %} {% comment %} original : {% assign path_type = '#' %} {% endcomment %}
   {% when "jekyll-archives" %}
     {% assign path_type = nil %}
 {% endcase %}
@@ -15,6 +15,7 @@
 <nav class="breadcrumbs">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
     {% assign crumbs = page.url | split: '/' %}
+
     {% assign i = 1 %}
     {% for crumb in crumbs offset: 1 %}
       {% if forloop.first %}
