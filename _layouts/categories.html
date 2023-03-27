@@ -12,11 +12,16 @@ layout: archive
 {% endfor %}
 
 <ul class="taxonomy__index">
+  <li>
+    <a href="{% link _pages/category_archive.md %}">
+      <strong>전체</strong> <span class="taxonomy__count">{{ site.posts.size }}</span>
+    </a>
+  </li>
   {% for i in (1..categories_max) reversed %}
     {% for category in site.categories %}
       {% if category[1].size == i %}
         <li>
-          <a href="#{{ category[0] | slugify }}">
+          <a href="{{  category[0] }}">
             <strong>{{ category[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
           </a>
         </li>
@@ -24,7 +29,6 @@ layout: archive
     {% endfor %}
   {% endfor %}
 </ul>
-
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 {% for i in (1..categories_max) reversed %}
   {% for category in site.categories %}
@@ -36,7 +40,7 @@ layout: archive
             {% include archive-single.html type=entries_layout %}
           {% endfor %}
         </div>
-        <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+        <a href="#" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
       </section>
     {% endif %}
   {% endfor %}

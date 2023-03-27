@@ -4,7 +4,36 @@ layout: archive
 
 {{ content }}
 
+
+{% for category in site.categories %}
+  {% if category[0] == page.title %}
+    {% assign this_category = category %}
+  {% endif %}
+{% endfor %}
+
+<ul class="taxonomy__index">
+  <li>
+    <a href="{% link _pages/category_archive.md %}">
+      <strong>전체</strong> <span class="taxonomy__count">{{ site.posts.size }}</span>
+    </a>
+  </li>
+  {% for category in site.categories %}
+    <li>
+      <a href="{{  category[0] }}">
+        <strong>{{ category[0] }}</strong> <span class="taxonomy__count">{{ category[1].size }}</span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+
+
 {% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% include posts-category.html taxonomy=page.taxonomy type=entries_layout %}
-</div>
+<section id="{{ this_category[0] | slugify | downcase }}" class="taxonomy__section">
+  <div class="entries-{{ entries_layout }}">
+    {% for post in this_category.last %}
+      {% include archive-single.html type=entries_layout %}
+    {% endfor %}
+  </div>
+  <a href="#" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+</section>
