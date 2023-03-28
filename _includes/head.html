@@ -1,6 +1,14 @@
 <meta charset="utf-8">
 
-<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
 {% include seo.html %}
 
 {% unless site.atom_feed.hide %}
@@ -15,8 +23,6 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" href="/favicon.ico">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
