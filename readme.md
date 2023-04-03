@@ -9,3 +9,6 @@ I customized it based on the theme, so if you want a theme, please refer to the 
 ## REF
 * [theme(minimal-mistakes)](https://github.com/mmistakes/minimal-mistakes)
 * [theme demo](https://mmistakes.github.io/minimal-mistakes/)
+
+## License
+[The MIT License (MIT)](https://opensource.org/license/mit/)
