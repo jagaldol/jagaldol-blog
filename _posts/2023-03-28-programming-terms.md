@@ -2,7 +2,7 @@
 layout: single
 title: "[프로그래밍 언어론]프로그래밍 관련 용어 정리"
 date: 2023-03-28 07:17:00 +0900
-last_modified_at: 2023-03-28 13:16:00 +0900
+last_modified_at: 2023-04-04 13:33:00 +0900
 categories:
     - computer science
 ---
@@ -144,3 +144,47 @@ R에서 데이터 프레임은 표 형태로 데이터를 저장한다. 각 열�
 
 ## Duck typing
 객체가 사용되는 적절한 메서드나 속성의 존재에 따라 객체의 타입을 판단하는 방식이다. 객체의 타입을 미리 선언하거나 검사하지않고, 객체가 필요한 메서드나 속성을 가지고 있는지만 검사하기 때문에 유연한 코드가 작성가능하다. 예를 들면 `Python`에서는 리스트, 튜플, 딕셔너리 모두 `iterable`하여 for문에서 동일하게 다룰 수 있다.
+
+## Type system
+새로 만든 `name`에 대해 어떤 `type`인지 어떤 역할을 하는지 속성을 부여하는 것을 의미한다.
+
+> `name`과 관련된 설정
+> * Name의 최대 길이
+> * case sensitvity
+> * special word
+>   * keyword
+>   * reserved word
+
+## keyword vs reserved word
+`keyword`는 특정 문맥에서만 의미를 가지는 `if`, `else`, `int`, `float` 같은 단어를 의미한다. `reserved word`는 예약어로 시스템에서 사전에 `name`으로 사용할 수 없도록 막은, 시스템이 예약한 단어이다. 키워드가 예약어가 아니라면 가독성이 떨어지는 일이 발생한다.
+> IF THEN THEN THEN = ELSE ELSE ELSE = ELSE;   
+> if 변수 THEN 변수 = 변수 ELSE 변수 = 변수;   
+> THEN과 ELSE가 예약어로 되어 있지 않아 변수로 사용가능하고 결과적으로 가독성이 매우 나빠졌다.
+
+## binding
+program element에 속성 또는 수행에 필요한 요소(형(type), 기억장소(memory) 등)를  연결하는 것.
+
+* static binding
+    * run-time 전에 처음 발생
+    * 프로그램 실행 중 binding 된 속성이 변하지 않는다.
+    * 저장되는 value는 binding과 상관이 없어 바꿀 수 있다.(constant와 다름)
+    * heap에 저장
+* dynamic binding
+    * run-time 중에 처음 발생
+    * 실행 도중 binding된 속성이 변할 수 있다.
+    * stack에 저장
+
+## Type compatibility
+두 변수가 동일한 구조를 갖는 경우 두 변수는 호환되는 유형을 가진다.
+
+`typedef`를 통해 같은 구조의 이름이 다른 타입을 생성하였을 때, 자동 호환이 된다.
+
+> C언어의 경우   
+> type compatibility가 record(struct) 외에 지켜진다. record는 저장되는 구조를 분석하여 호환시키기 어려워 지키지 않는다.
+
+## Scope
+변수가 살아있는 구간.
+* static scope  
+하위 레벨로 갔을 때 상위 레벨의 변수를 전부 유지
+* dynamic scope  
+하위 레벨로 갔을 때 그 구간에서 새로운 `scope`가 생겼다가 돌아왔을 때 원래 `scope`로 복구(e.g. 함수 call sub routine)
