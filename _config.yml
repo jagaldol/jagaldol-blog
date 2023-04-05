@@ -108,7 +108,7 @@ author:
   name             : "Hyejun An(23)"
   avatar           : /assets/images/profile.png # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Pusan National Univ. major in Computer Science"
-  location         : "Busan, Korea"
+  location         : 
   email            : "yoy06056@pusan.ac.kr"
   github           : "jagaldol"
   links:
