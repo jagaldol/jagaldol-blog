@@ -320,6 +320,17 @@ body {
   a {
     color: inherit;
   }
+  .page_meta-date-label {
+    display:inline-block;
+    width: 3.5em;
+    text-align: left;
+  }
+}
+.page__meta-post {
+  text-align: right;
+}
+.page__meta-date {
+  margin-right: 15px;
 }
 
 .page__meta-title {
