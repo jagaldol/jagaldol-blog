@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[파이썬] 파이썬 가상환경 활성화했는데 시스템 파이썬 사용 중인 문제"
+title: "파이썬 가상환경 활성화했는데 시스템 파이썬 사용 중인 문제"
 date: 2023-04-09 21:47:00 +0900
 categories:
     - development
