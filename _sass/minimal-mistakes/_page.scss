@@ -463,6 +463,11 @@ body {
   text-transform: uppercase;
 }
 
+.utterances {
+  margin: 0;
+  max-width: 100%;
+}
+
 .page__comments-form {
   -webkit-transition: $global-transition;
   transition: $global-transition;

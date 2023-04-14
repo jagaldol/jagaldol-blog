@@ -62,8 +62,8 @@ layout: default
 
       {% include post_pagination.html %}
     </div>
-
-    {% if jekyll.environment == 'production' and site.comments.provider and page.comments %} <!-- local 환경에서도 테스트를 위해 jekyll.environment == 'production' and  뺌 -->
+    {% comment %}<!-- local 환경에서도 테스트를 위해 jekyll.environment == 'production' and  뺌 -->{% endcomment %}
+    {% if site.comments.provider and page.comments %}
       {% include comments.html %}
     {% endif %}
   </article>
