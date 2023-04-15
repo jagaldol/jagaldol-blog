@@ -4,8 +4,10 @@ layout: archive
 
 {{ content }}
 
+{% assign sorted_cats = site.categories | sort %}
+
 {% assign categories_max = 0 %}
-{% for category in site.categories %}
+{% for category in sorted_cats %}
   {% if category[1].size > categories_max %}
     {% assign categories_max = category[1].size %}
   {% endif %}
@@ -18,7 +20,7 @@ layout: archive
     </a>
   </li>
   {% for i in (1..categories_max) reversed %}
-    {% for category in site.categories %}
+    {% for category in sorted_cats %}
       {% if category[1].size == i %}
         <li>
           <a href="{{  category[0] }}">
@@ -31,7 +33,7 @@ layout: archive
 </ul>
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 {% for i in (1..categories_max) reversed %}
-  {% for category in site.categories %}
+  {% for category in sorted_cats %}
     {% if category[1].size == i %}
       <section id="{{ category[0] | slugify | downcase }}" class="taxonomy__section">
         <h2 class="archive__subtitle">{{ category[0] }}</h2>

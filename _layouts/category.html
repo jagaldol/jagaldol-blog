@@ -4,7 +4,9 @@ layout: archive
 
 {{ content }}
 
-{% for category in site.categories %}
+{% assign sorted_cats = site.categories | sort %}
+
+{% for category in sorted_cats %}
   {% if category[0] == page.category %}
     {% assign this_category = category %}
   {% endif %}
@@ -16,7 +18,7 @@ layout: archive
       <strong>전체</strong> <span class="taxonomy__count">{{ site.posts.size }}</span>
     </a>
   </li>
-  {% for category in site.categories %}
+  {% for category in sorted_cats %}
     <li>
       <a href="{{  category[0] }}">
         <strong>{{ category[0] }}</strong> <span class="taxonomy__count">{{ category[1].size }}</span>
