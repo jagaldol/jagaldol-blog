@@ -4,9 +4,8 @@ layout: archive
 
 {{ content }}
 
-
 {% for category in site.categories %}
-  {% if category[0] == page.title %}
+  {% if category[0] == page.category %}
     {% assign this_category = category %}
   {% endif %}
 {% endfor %}
@@ -25,7 +24,6 @@ layout: archive
     </li>
   {% endfor %}
 </ul>
-
 
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
