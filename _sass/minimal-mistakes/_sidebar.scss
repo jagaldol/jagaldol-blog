@@ -82,8 +82,7 @@
     top: 0;
     right: 0;
     width: $right-sidebar-width-narrow;
-    margin-right: -1 * $right-sidebar-width-narrow;
-    padding-left: 1em;
+    margin-right: -1 * $right-sidebar-width-narrow - 100px;
     z-index: 10;
 
     &.sticky {
@@ -104,7 +103,7 @@
 
   @include breakpoint($x-large) {
     width: $right-sidebar-width;
-    margin-right: -1 * $right-sidebar-width;
+    margin-right: -1 * $right-sidebar-width - 100px;
   }
 }
 
