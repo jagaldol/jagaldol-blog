@@ -1,12 +1,15 @@
 ---
 layout: single
-title: "[카테캠 BE] Git/Github 소개 및 활용법(1) - git, github action(CI/CD)"
+title: "[카테캠 BE] Git/Github 소개 및 활용법(1) - git, github action(CI/CD), branch 전략"
 date: 2023-04-25 00:43:00 +0900
+last_modified_at: 2023-05-02 12:38:00 +0900
 categories:
     - kakao tech campus
 ---
 
-4월 24일에 진행한 실시간 세션 - Git/Github 소개 및 활용법입니다. 첫 시간이라 git 개념과 git 명령어들을 배웠어요.
+4월 24일에 진행한 실시간 세션 - Git/Github 소개 및 활용법입니다. 첫 시간이라 git 개념과 git 명령어들을 배웠습니다.
+
+(5월 2일 추가) - 이론 파트 추가하였습니다! `git flow`, `github flow`, `gitlab flow`의 브랜치 전략을 다룹니다.
 
 ## git
 * VCS (Version Control System)
@@ -207,6 +210,34 @@ main 브랜치에 push가 일어날때마다 echo 명령어들이 일어남 -> H
     * branch에서 작업 완료(commit 여러개)
     * 상위 branch로 이동 `git switch main`
     * `git merge fb` 후 `git branch -d fb`로 작업 끝난 branch 삭제
+
+##  branching models
+- **git flow**
+    - (hotfix) - `main` - (release) - `develop` - feature
+        - main : 실제 사용자들에게 보여지는 브랜치
+        - develop : 다음 버전을 위한 개발
+        - feature : 기능 개발을 위한 브랜치
+        - release : develop에서 main으로 넘어가기 위한 브랜치(선택)
+        - hotfix : 오류 긴급 수정을 위한 브랜치(선택)
+    - pros: 가장 많이 적용, 각 단계가 명확히 구분
+    - cons: 너무 복잡하다
+    ![git-flow](/assets/images/2023-04-25/git-flow.png)
+- **github flow**
+    - `main` - feature
+        - 기능 개발 후 `main`에 합치는 순간 모든 커밋은 deploy
+    - pros: 브랜치 모델 단순화
+    - cons: CI 의존성이 높기 때문에, 실수 발생 시 위험(pull request로 방지)
+    ![github-flow](/assets/images/2023-04-25/github-flow.png)
+    - github UI를 사용하여 Pull Request를 통해 검토 후 배포된다.
+- **gitlab flow**
+    - `production` - `pre-production` - `main` - feature
+    - deploy, issue에 대한 대응이 가능하도록 보완
+    ![gitlab-flow](/assets/images/2023-04-25/gitlab-flow.png)
+    
+## Sane GitHub Labels
+[Sane GitHub Labels](https://medium.com/@dave_lunny/sane-github-labels-c5d2e6004b63)
+
+> github issues label 명칭에 관한 레퍼런스
 
 ---
 ## ✏️여담
