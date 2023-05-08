@@ -39,6 +39,17 @@ STS 4에서는 Spring Boot만 지원이 되서 STS 3버전으로 설치해야해
     
 4. **shutdown 명령어**로 ****톰캣을 종료한다.
 
+## Tomcat과 Apache의 차이점
+Apache는 웹서버(Web Server)이고 Tomcat은 웹 어플리케이션 서버(WAS; Web Application Server)입니다.
+
+웹서버는 지정된 포트에 접속 시 `html`, `css`, `javascript` 파일을 클라이언트에게 보내주는 역할을 수행합니다.
+
+Tomcat은 Apache의 역할에 더해, JSP와 Servlet을 구동하는 역할도 수행합니다.
+
+![tomcat-struct](/assets/images/2023-05-08/tomcat-struct.png)
+
+tomcat WAS의 구조는 Apache(Web server)를 포함하며 그 위에서 동적인 자료도 효율적으로 처리할 수 있다고 합니다. 자세한건 자세히 공부해봐야 알겠네요 ㅎ
+
 ## STS 3(Spring Tool Suite 3) 시작하기
 
 압축해제 후 sts-bundle의 RELEASE 폴더로 가주세요. **STS.exe** 를 실행하시면 IDE가 열립니다!
@@ -71,7 +82,7 @@ STS 4에서는 Spring Boot만 지원이 되서 STS 3버전으로 설치해야해
 
 설치한 tomcat9를 검색합니다.
 
-![new-server](/assets/images/2023-05-08/tomcat-setting.png)
+![tomcat-setting](/assets/images/2023-05-08/tomcat-setting.png)
 
 - tomcat9 설치된 폴더를 연결해줍니다!
 
@@ -79,8 +90,6 @@ STS 4에서는 Spring Boot만 지원이 되서 STS 3버전으로 설치해야해
 프로젝트 명 우클릭 - Run As - Run on Server 실행
 
 tomcat으로 자동으로 실행되어 STS 상에서 http://localhost:8080를 열게 됩니다.
-
-
 
 <div class="notice--info" markdown="1">
 **STS 상이 아닌 크롬에서 열고 싶을 때**
@@ -98,3 +107,8 @@ tomcat으로 자동으로 실행되어 STS 상에서 http://localhost:8080를 �
 기본 입력되어 있는 hello world가 출력되었습니다. 컴퓨터 언어가 한글이라 한글이 깨지네요💧
 
 그래도 잘 되는 것까지 확인했으니까 좋았어요!
+
+## 👀참고
+[아파치, 톰캣의 차이 \| 유혁의 개발 스토리](https://yoo-hyeok.tistory.com/137)
+
+[Spring 시작하기 \| 남궁성의 Spring framework 강좌](https://github.com/castello/spring_basic)
