@@ -2,6 +2,7 @@
 layout: single
 title: "Spring 개발환경 세팅"
 date: 2023-05-08 16:48:00 +0900
+last_modified_at: 2023-05-12 03:57:00 +0900
 categories:
     - development
 ---
@@ -37,8 +38,12 @@ STS 4에서는 Spring Boot만 지원이 되서 STS 3버전으로 설치해야해
     C:\apache-tomcat-10.1.8\bin> startup
     ```
     
-4. **shutdown 명령어**로 ****톰캣을 종료한다.
-
+4. **shutdown 명령어**로 톰캣을 종료한다.
+    
+    ```bash
+    C:\apache-tomcat-10.1.8\bin> shutdown
+    ```
+    
 ## Tomcat과 Apache의 차이점
 Apache는 웹서버(Web Server)이고 Tomcat은 웹 어플리케이션 서버(WAS; Web Application Server)입니다.
 
