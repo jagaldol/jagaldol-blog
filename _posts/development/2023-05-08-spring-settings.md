@@ -2,7 +2,7 @@
 layout: single
 title: "Spring 개발환경 세팅"
 date: 2023-05-08 16:48:00 +0900
-last_modified_at: 2023-05-12 03:57:00 +0900
+last_modified_at: 2023-05-29 14:36:00 +0900
 categories:
     - development
 ---
@@ -112,6 +112,14 @@ tomcat으로 자동으로 실행되어 STS 상에서 http://localhost:8080를 �
 기본 입력되어 있는 hello world가 출력되었습니다. 컴퓨터 언어가 한글이라 한글이 깨지네요💧
 
 그래도 잘 되는 것까지 확인했으니까 좋았어요!
+
+## 🔗스프링 개념 정리 보러가기
+
+카카오 테크 캠퍼스에서 배운 스프링 개념 정리한 게시글입니다. 스프링에 대해 공부하시는 분들은 한번씩 구경하고 가세요!
+
+- [week5 - 스프링 기초, HTTP 통신](/kakao%20tech%20campus/week5/)
+- [week6 - 스프링 MVC, Servlet 등](/kakao%20tech%20campus/week6/)
+- [week7 - 스프링(세션, 예외 처리, WEBDataBinder 등)](/kakao%20tech%20campus/week7/)
 
 ## 👀참고
 [아파치, 톰캣의 차이 \| 유혁의 개발 스토리](https://yoo-hyeok.tistory.com/137)
