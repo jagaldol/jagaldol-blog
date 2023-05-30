@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "리눅스 서버(AWS 등)의 MySQL을 원격으로 사용하기"
-date: 2023-05-30 00:52:00 +0900
+date: 2023-05-30 10:41:00 +0900
 # last_modified_at: 2023-05-12 03:57:00 +0900
 categories:
     - development
@@ -9,7 +9,7 @@ categories:
 
 이번에는 서버에 MySQL을 설치 및 사용자를 추가하여 다른 컴퓨터에서도 서버의 MySQL에 접근 가능하도록 해봤어요. 제가 AWS 프리티어로 우분투 서버 인스턴스를 대여 중인데 아직 아무 프로그램도 안 올려놔서 데이터베이스라도 서버에서 돌릴려고요.🐎
 
-## 설치
+## 💾설치
 
 먼저 ssh로 서버에 로그인을 합니다.
 
@@ -24,7 +24,7 @@ $ sudo apt-get update
 $ sudo apt-get install mysql-server
 ```
 
-## MySQL 비밀번호 변경
+## 🔒MySQL 비밀번호 변경
 
 설치는 했는데 아무리 `mysql` 명령어를 넣어도 진입이 안되는 거에요. 알고보니까 aws가 기본 유저로 ubuntu가 되어있는데, mysql에 유저를 root로 해야하더라고요.
 
@@ -70,7 +70,7 @@ mysql> FLUSH PRIVILEGES;
 ```
 root는 서버에서만 접속 가능하니 비밀번호를 없애버릴게요. `FLUSH PRIVILEGES;`는 사용자에 대한 정보 변경했을 때 해주셔야 반영이 돼요.
 
-## 새로운 유저 생성
+## 🆔새로운 유저 생성
 
 이제 외부에서 접속할 새로운 유저 데이터를 생성합니다.
 
@@ -86,7 +86,7 @@ mysql> FLUSH PRIVILEGES;
 
 마찬가지로 `FLUSH PRIVILEGES;`로 반영해줍니다.
 
-## 방화벽 해제
+## 🧱방화벽 해제
 
 이제 user를 만들었으니 접속이 될 줄알았으나\... 호락호락하지 않네요.
 
@@ -109,7 +109,7 @@ AWS의 방화벽 열어두셔야하는 건 요정도에요. 저는 현재 이렇
 * 인바운드 - SSH(22포트), HTTP(80포트), HTTPS(443포트), MYSQL(3306포트)
 * 아웃바운드 -  SSH(22포트), HTTP(80포트), HTTPS(443포트)
 
-## 이번엔 10061 Error?
+## 🕷️이번엔 10061 Error?
 
 이젠 될 줄 알았는데 이번엔 10061 에러가 나버리네요. 진짜 멘탈 박살 날뻔했지만 어떻게 다 해결했습니다.
 
@@ -189,14 +189,52 @@ mysqlx-bind-address     = 0.0.0.0
 $ service mysql restart
 ```
 
-## 성공!
+## 🙌성공!
 
+### MySQL workbench
 
+먼저 사용하기 편한 gui, MySQL workbench에서 확인해볼께요.
+
+`+ 버튼`을 눌러 New Connection을 만듭니다.
+
+![mysql work bench setup](/assets/images/2023-05-30/mysql-workbench-setup.png)
+
+서버 아이피 주소랑 설정한 MySQL 유저 이름을 적습니다. `OK`를 누르면 비밀번호를 입력 가능하고 입력하면 연결이 됩니다!
+
+![mysql work bench](/assets/images/2023-05-30/mysql-workbench.png)
+
+### Console cmd
+
+cmd의 console 환경에서도 확인해볼께요.
+
+```bat
+> mysql -h [서버 아이피 주소] -u [만든 유저 아이디] -p
+Enter password: ****
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 127
+Server version: 8.0.33-0ubuntu0.22.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+```
+
+이렇게 외부 연결까지 전부 성공했습니다.👏
+
+만약 mysql이 설치되었는데 명령어가 되지않는다면 환경변수에 `C:\Program Files\MySQL\MySQL Server 8.0\bin`를 추가해주셔야합니다.
+{: .notice--info}
 
 ## 👀참고
 * [[Ubuntu] 우분투에 MySQL 설치하기 \| ㅇㅅㅇ.devlog](https://velog.io/@seungsang00/Ubuntu-%EC%9A%B0%EB%B6%84%ED%88%AC%EC%97%90-MySQL-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0)
 * [Linux : MySQL 사용자 비밀번호 변경 방법, 예제, 명령어 \| 쵸코쿠키의 연습장](https://jjeongil.tistory.com/1484)
-* [Mysql 계정 비밀번호 변경 | yebali.log](https://velog.io/@yebali/Mysql-Mysql-%EA%B3%84%EC%A0%95-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-%EB%B3%80%EA%B2%BD)
+* [Mysql 계정 비밀번호 변경 \| yebali.log](https://velog.io/@yebali/Mysql-Mysql-%EA%B3%84%EC%A0%95-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-%EB%B3%80%EA%B2%BD)
 * [MySQL 8 인증 플러그인 암호화 방식 변경 \| AllThatLinux](https://atl.kr/dokuwiki/doku.php/mysql_8_%EC%9D%B8%EC%A6%9D_%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8_%EC%95%94%ED%98%B8%EB%B0%A9%EC%8B%9D_%EB%B3%80%EA%B2%BD)
 * [MySQL 원격 접속 허용 \| ZETAWIKI](https://zetawiki.com/wiki/MySQL_%EC%9B%90%EA%B2%A9_%EC%A0%91%EC%86%8D_%ED%97%88%EC%9A%A9)
 * [[MySQL 8.0] MySQL 유저 원격접속 허용하기 \| i-mini](https://1mini2.tistory.com/87)
