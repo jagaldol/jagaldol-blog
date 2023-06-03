@@ -2,7 +2,7 @@
 layout: single
 title: "리눅스 서버(AWS 등)의 MySQL을 원격으로 사용하기"
 date: 2023-05-30 10:41:00 +0900
-# last_modified_at: 2023-05-12 03:57:00 +0900
+last_modified_at: 2023-06-04 04:17:00 +0900
 categories:
     - development
 ---
@@ -57,8 +57,7 @@ mysql> select host, user, plugin, authentication_string from user;
 | localhost | mysql.infoschema | caching_sha2_password |                          |
 | localhost | mysql.session    | caching_sha2_password |                          |
 | localhost | mysql.sys        | caching_sha2_password |                          |
-| localhost | root             | caching_sha2_password |
-        |
+| localhost | root             | caching_sha2_password |                          |
 +-----------+------------------+-----------------------+--------------------------+
 ```
 
@@ -69,6 +68,47 @@ mysql> alter user 'root'@'localhost' identified by '';
 mysql> FLUSH PRIVILEGES;
 ```
 root는 서버에서만 접속 가능하니 비밀번호를 없애버릴게요. `FLUSH PRIVILEGES;`는 사용자에 대한 정보 변경했을 때 해주셔야 반영이 돼요.
+
+---
+
+***(23.06.04 추가)***
+
+다시 해보니까 caching_sha2_password로 설정되어 있지 않고 auth_socket 으로 기본 plugin이 설정된 거 였어요.
+
+```sql
+mysql> show databases;
+
+mysql> use mysql;
+mysql> select host, user, plugin, authentication_string from user;
++-----------+------------------+-----------------------+--------------------------+
+| host      | user             | plugin                | authentication_string
+        |
++-----------+------------------+-----------------------+--------------------------+
+| %         | hyejun           | caching_sha2_password |                          |
+| localhost | debian-sys-maint | caching_sha2_password |                          |
+| localhost | mysql.infoschema | caching_sha2_password |                          |
+| localhost | mysql.session    | caching_sha2_password |                          |
+| localhost | mysql.sys        | caching_sha2_password |                          |
+| localhost | root             | auth_socket           |                          |
++-----------+------------------+-----------------------+--------------------------+
+```
+
+비밀번호는 설정되있지 않지만 auto_socket으로 되어 있어요.
+
+```sql
+mysql> update user set plugin='caching_sha2_password' where user='root';
+mysql> FLUSH PRIVILEGES;
+mysql> exit;
+Bye
+```
+
+이제 접속하면 잘 됩니다.
+
+```sh
+$ mysql -u root
+
+mysql>
+```
 
 ## 🆔새로운 유저 생성
 
