@@ -15,9 +15,9 @@
 {%- endif -%}
 
 {% if page.canonical_url %}
-  {%- assign canonical_url = page.canonical_url | replace: 'http://', 'https://' %}
+  {%- assign canonical_url = page.canonical_url %}
 {% else %}
-  {%- assign canonical_url = page.url | replace: 'http://', 'https://' | replace: 'index.html', '' | absolute_url %}
+  {%- assign canonical_url = page.url | replace: "index.html", "" | absolute_url %}
 {% endif %}
 
 {%- assign seo_description = page.description | default: page.excerpt | default: site.description -%}
