@@ -2,12 +2,12 @@
 layout: single
 title: "Spring boot 개발환경 세팅"
 date: 2023-05-29 17:52:00 +0900
-# last_modified_at: 2023-05-12 03:57:00 +0900
+last_modified_at: 2024-01-18 12:14:00 +0900
 categories:
-    - development
+  - development
 ---
 
-[이전 게시물](/development/spring-settings)에서 스프링을 다뤘는데 이제 스프링 부트를 세팅해볼게요.
+[이전 게시물](/development/spring-settings/)에서 스프링을 다뤘는데 이제 스프링 부트를 세팅해볼게요.
 
 스프링 부트는 스프링보다 더 자동화되어 있고 편리한 프레임워크입니다. 스프링에서는 별도의 톰캣을 설치해 프로그램을 톰캣에 올려야했지만, 스프링 부트에서는 내장 톰캣이 존재해 바로 실행이 가능해요.
 
@@ -30,37 +30,38 @@ Ultimate는 한달 무료인데 학생 인증 받으면 1년치 라이센스를 
 - Name: Project 이름을 작성합니다.
 - Language: 프로그램은 Java로 작성할 거에요.
 - Type: Gradle이 Maven 보다 빠르고 코드 가독성도 좋아서 많이 쓰인답니다.
-    - Groovy는 java 거의 비슷한 스크립트 언어로 java 프로젝트니까 Groovy로 선택합니다.
-    - kotlin으로 하시고 싶으신 분은 취향껏 하시면 돼요.
-    - Maven은 pom.xml로 dependency를 관리합니다.
+  - Groovy는 java 거의 비슷한 스크립트 언어로 java 프로젝트니까 Groovy로 선택합니다.
+  - kotlin으로 하시고 싶으신 분은 취향껏 하시면 돼요.
+  - Maven은 pom.xml로 dependency를 관리합니다.
 - Group: 만드는 프로그램의 도메인을 거꾸로 적어주세요.
-    - naver의 서버라면 com.naver
-    - 부산대 서버라면 kr.ac.pusan
-    - 프로젝트 폴더 안에 src/main/java 내부로 com/naver로 패키지가 생성됩니다.
-    - 나중에 이 패키지 안에서 프로그램을 작성하게 됩니다.
-- JDK는  
+  - naver의 서버라면 com.naver
+  - 부산대 서버라면 kr.ac.pusan
+  - 프로젝트 폴더 안에 src/main/java 내부로 com/naver로 패키지가 생성됩니다.
+  - 나중에 이 패키지 안에서 프로그램을 작성하게 됩니다.
+- JDK는
 
 > [start.spring.io](https://start.spring.io/)에서 프로젝트 생성하는 것과 동일하게 되어 있습니다.  
 > Community 버전은 여기서 GENERATE하여 압축풀어서 시작하시면 됩니다.
 
 ### 프로젝트 실행
 
-- Application.java  
-    ```java
-    @RestController
-    @SpringBootApplication
-    public class Ch1Application {
+- Application.java
 
-        public static void main(String[] args) {
-            SpringApplication.run(Ch1Application.class, args);
-        }
+  ```java
+  @RestController
+  @SpringBootApplication
+  public class Ch1Application {
 
-        @GetMapping("/")
-        public String hello() {
-            return "Hello, Spring Boot";
-        }
-    }
-    ```
+      public static void main(String[] args) {
+          SpringApplication.run(Ch1Application.class, args);
+      }
+
+      @GetMapping("/")
+      public String hello() {
+          return "Hello, Spring Boot";
+      }
+  }
+  ```
 
 RestController를 붙이고 루트 url에 Get으로 Hello, Spring Boot를 전달합니다.
 
@@ -69,8 +70,6 @@ spring boot는 톰캣이 내장되어 있기 때문에 실행만 하시면 돼�
 실행 후 localhost:8080에 접속하면 출력이 될거에요.
 
 ![hello, spring boot](/assets/images/2023-05-29/hello.png)
-
-
 
 ### jar 파일로 배포
 
