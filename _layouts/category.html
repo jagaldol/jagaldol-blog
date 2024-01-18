@@ -20,7 +20,7 @@ layout: archive
   </li>
   {% for category in sorted_cats %}
     <li>
-      <a href="{{  category[0] }}">
+      <a href="{% link _pages/category_archive.md %}{{  category[0] }}/">
         <strong>{{ category[0] }}</strong> <span class="taxonomy__count">{{ category[1].size }}</span>
       </a>
     </li>

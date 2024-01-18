@@ -2,6 +2,6 @@
 title: "experience"
 category: experience
 layout: category
-permalink: /categories/experience
+permalink: /categories/experience/
 author_profile: true
 ---
