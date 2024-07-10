@@ -2,6 +2,7 @@
 layout: single
 title: "[DLS]Neural Networks and Deep Learning(1)"
 date: 2024-07-09 14:18:00 +0900
+last_modified_at: 2024-07-11 04:12:00 +0900
 categories: google-ml-bootcamp
 ---
 
@@ -107,3 +108,15 @@ $$ b := b - \alpha\frac{\partial J(w, b)}{\partial b } $$
 
 - Logistic 회귀에서 손실함수를 $\hat{y}$로 미분한 값은 $a - y$ 이다.
   - `cross entropy`를 미분한 값에 `sigmoid`를 미분 한 값을 곱하면 해당 값이 나온다
+
+### Vectorization
+
+각 `w`(weight), `z`(선형 함수 결과), `a`(활성 함수 결과)에 하나씩 미분을 적용하는 것은 오래 걸린다. 그렇기에 for문으로 하나씩 계산하는 것이 아닌, `numpy`를 사용하여 한번에 행렬연산으로 수행한다.
+
+이렇게 벡터, 행렬 연산을 하고 for 문을 없애는 걸 `Vectorization`이라고 한다.
+
+이렇게 Vectorization된 역전파 과정에서 $dZ$는 그대로 $A^{[L]} - Y$이지만 $dW$나 $db$의 경우 $\frac{1}{m}$이 붙는 모습을 볼 수 있는데, 갑자기 왜 붙는지 헷갈릴 수 있다.
+
+이건 행렬의 `shape`를 고민해보면 이해하기 쉽다. $dZ$들의 경우 $Z$와 같은 크기일 테니 $n^{[L]} \times m$ 이다. 이를 사용해 $dW$를 만들어야하며, `chain rule`에 따라 $dZ$ 값에 이전 층의 $A$ 값을 곱하게 된다. 이때 $m$이 사라지고 $n^{[L]} \times n^{[L - 1]}$ 이 된다.
+
+즉, 행렬 연산에 따라 input size $m$ 개 만큼이 동시에 계산되어 더한것이므로 $\frac{1}{m}$이 생겨있는 것이다. 원리에 따라 하나씩 뜯어보면 당연하지만 수식만 갑자기 봤을 때 누구는 안 나누고, 누구는 나누니 이상함을 느낄 수 있다. 주의하자.
