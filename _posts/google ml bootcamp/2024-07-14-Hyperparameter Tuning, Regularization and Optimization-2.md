@@ -2,6 +2,7 @@
 layout: single
 title: "[DLS]Hyperparameter Tuning, Regularization and Optimization(2)"
 date: 2024-07-14 06:53:00 +0900
+last_modified_at: 2024-07-15 16:42:00 +0900
 categories: google-ml-bootcamp
 ---
 
@@ -61,6 +62,8 @@ for theta in values:
 v가 0으로 초기화되어서 초반에 0에 근접한 값이 나오게 된다. 이 bias를 수정하기 위해 계산된 v에 correction 절차를 추가한다.
 
 $$V_t = \frac{V_t}{1-\beta^t}$$
+
+> $V_t$를 $\theta_{1..t}$ 들로 모두 풀었을 때 각 항들의 계수를 전부 더하면 $1-\beta^t$가 나온다.
 
 ## Momentum(with Gradient Descent)
 
