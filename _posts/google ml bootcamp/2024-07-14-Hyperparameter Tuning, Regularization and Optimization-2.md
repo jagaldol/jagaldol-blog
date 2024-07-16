@@ -2,7 +2,7 @@
 layout: single
 title: "[DLS]Hyperparameter Tuning, Regularization and Optimization(2)"
 date: 2024-07-14 06:53:00 +0900
-last_modified_at: 2024-07-15 16:42:00 +0900
+last_modified_at: 2024-07-16 14:38:00 +0900
 categories: google-ml-bootcamp
 ---
 
@@ -106,7 +106,7 @@ V_{dW}=\beta_1 V_{dW} + (1 - \beta_1)dW & \quad \text{(momentum)} \\
 S_{dW} = \beta_2 S_{dW} + (1 - \beta_2)dW^2 & \quad \text{(RMSprop)} \\
 V_{dW}^{corrected}=\frac{V_{dW}}{1-\beta_1^t} & \quad \text{(bias correction)} \\
 S_{dW}^{corrected}=\frac{S_{dW}}{1-\beta_2^t} & \quad \text{(bias correction)} \\
-W := W - \alpha \cdot \frac{V_{dW}^{corrected}}{\sqrt{S_{dW}^{corrected} + \epsilon}}
+W := W - \alpha \cdot \frac{V_{dW}^{corrected}}{\sqrt{S_{dW}^{corrected}} + \epsilon}
 \end{array}
 $$
 
@@ -114,6 +114,8 @@ $$
 - $\beta_1$: 주로 0.9
 - $\beta_2$: 주로 0.999
 - $\epsilon$: $10^{-8}$ _튜닝 필요 없음_
+
+> epsilon의 위치가 루트 내부인지 아닌지 다른 블로그들을 보면 헷갈리는데 원 논문 [ADAM: A METHOD FOR STOCHASTIC OPTIMIZATION](https://arxiv.org/pdf/1412.6980)을 보면 밖에 있는게 맞다.
 
 ## Learning rate decay
 
