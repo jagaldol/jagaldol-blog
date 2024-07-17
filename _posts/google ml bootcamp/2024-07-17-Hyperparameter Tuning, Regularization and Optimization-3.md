@@ -2,6 +2,7 @@
 layout: single
 title: "[DLS]Hyperparameter Tuning, Regularization and Optimization(3)"
 date: 2024-07-17 02:12:00 +0900
+last_modified_at: 2024-07-17 11:39:00 +0900
 categories: google-ml-bootcamp
 ---
 
@@ -13,7 +14,7 @@ $$\alpha >> \beta = \#hidden\,units = batch\,size >> \# layers=learning\,rate\,d
 
 - $\alpha$ : 학습률
 - $\beta$: 모멘텀 계수(0.9 권장)
-  - Adam의 경우:
+  - Adam의 hyperparameter는 모멘텀 $\beta$에 비해 우선순위 낮음
   - $\beta_1$: 0.9
   - $\beta_2$: 0.999
   - $\epsilon$: $10^{-8}$ 튜닝 필요 X
@@ -69,6 +70,7 @@ $$
 - 미니배치의 평균과 분산을 이용해 정규화한다.
 - $\epsilon$은 divide by zero를 막기 위해 존재한다.
 - $\gamma, \beta$ 는 W, b 와 같이 학습 가능한 parameter이다.
+- 각 레이어에서 출력 뉴런 수 만큼의 벡터로 각 뉴런에 개별적으로 존재하는 파라미터이다.
 
 input에 대한 normalization과 다르게 단순히 $N(0, 1)$로 표준화 하는 것이 아닌, 각 layer마다 다르게 normalization 가능하도록 $\gamma$와 $\beta$가 존재한다.
 
