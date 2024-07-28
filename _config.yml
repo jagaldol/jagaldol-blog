@@ -144,8 +144,8 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       # url:
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
+    - label: "개인 페이지"
+      icon: "fas fa-id-badge"
       url: "https://jagaldol.com"
     - label: "Bitbucket"
       icon: "fab fa-fw fa-bitbucket"
