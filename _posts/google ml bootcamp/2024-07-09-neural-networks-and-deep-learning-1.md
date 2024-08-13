@@ -2,7 +2,7 @@
 layout: single
 title: "[DLS]Neural Networks and Deep Learning(1)"
 date: 2024-07-09 14:18:00 +0900
-last_modified_at: 2024-07-11 04:12:00 +0900
+last_modified_at: 2024-08-13 11:30:00 +0900
 categories: google-ml-bootcamp
 ---
 
@@ -104,10 +104,10 @@ $$ b := b - \alpha\frac{\partial J(w, b)}{\partial b } $$
 
 `Computation Graph`를 그리고 $J(\hat{y}, y)$을 각 `parameter`로 미분한 값을 `Chain Rule`을 통해 구한다.
 
-- $\frac{\partial J}{\partial w} = \frac{\partial J}{\partial \hat{y}} \frac{\partial \hat{y}}{\partial w} $
+$$\frac{\partial J}{\partial w} = \frac{\partial J}{\partial z} \frac{\partial z}{\partial w} $$
 
-- Logistic 회귀에서 손실함수를 $\hat{y}$로 미분한 값은 $a - y$ 이다.
-  - `cross entropy`를 미분한 값에 `sigmoid`를 미분 한 값을 곱하면 해당 값이 나온다
+- Logistic 회귀에서 손실함수를 $z$로 미분한 값은 $a - y$ 이다.
+  - `cross entropy`를 미분한 값에 `sigmoid`를 미분 한 값을 곱하면 해당 값이 나온다.
 
 ### Vectorization
 
