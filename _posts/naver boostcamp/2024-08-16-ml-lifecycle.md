@@ -153,3 +153,16 @@ $$\text{softmax}(x)_i = \frac{e^{x_i - \max(x)}}{\sum_j e^{x_j - \max(x)}}$$
 
 - PCA: 데이터를 정규화하여 zero-center을 만들고 축을 정렬
 - whitening: `covariance` 행렬을 만듬
+
+## Attention based seq2seq
+
+기존 encoder-decoder 구조의 RNN에서 Attention을 적용하여 모든 입력값의 hidden state를 보고 attention을 적용해 출력 값을 생성할 수 있다.
+
+![seq2seq](/assets/images/2024/08/16/seq2seq.png)
+
+- query: Decoder의 hidden state
+- Key, values: Encoder의 hidden state
+
+> coursera 강의에서 소개한 attention 모델은 query와 key를 concatenate 후 작은 NN을 거쳐 softmax를 거쳤었다.
+>
+> 그 외에도 transformer에서 소개한 것과 같이 위쪽 두번째 LSTM에서 이전 출력을 query로, 아래쪽 첫번째 LSTM의 값들을 key와 value로 표현하여 `dot product Attention`으로 사용이 가능하다.
