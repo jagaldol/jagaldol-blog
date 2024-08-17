@@ -1,7 +1,8 @@
 ---
 layout: single
-title: "[Week 2]머신러닝 기초 이론"
+title: "[Week 2]머신러닝 기초 이론 및 Transformer 기초"
 date: 2024-08-16 19:00:00 +0900
+last_modified_at: 2024-08-18 00:02:00 +0900
 categories: naver-boostcamp
 ---
 
@@ -166,3 +167,58 @@ $$\text{softmax}(x)_i = \frac{e^{x_i - \max(x)}}{\sum_j e^{x_j - \max(x)}}$$
 > coursera 강의에서 소개한 attention 모델은 query와 key를 concatenate 후 작은 NN을 거쳐 softmax를 거쳤었다.
 >
 > 그 외에도 transformer에서 소개한 것과 같이 위쪽 두번째 LSTM에서 이전 출력을 query로, 아래쪽 첫번째 LSTM의 값들을 key와 value로 표현하여 `dot product Attention`으로 사용이 가능하다.
+
+## Transformer를 사용한 분류/회귀 문제
+
+![transformer-layer](/assets/images/2024/08/16/transformer-layer.png)
+
+transformer는 self-attention을 사용하여 입력 시퀀스들을 병렬로 처리해 평행하게 출력을 만들어낸다. 즉, 입력 값의 시퀀스 길이만큼 출력이 나타난다.
+
+이때 분류나 회귀 문제 같은 하나의 출력 값이 필요하다면 어떻게 해야할까?
+
+### Token Aggregation(Average Pooling)
+
+가장 간단한 방법은 출력 토큰 값을 전부 더해 평균을 구하는 것이다. 그리고 linear 층을 통과해 classifier 문제를 해결할 수 있다.
+
+하지만 시퀀스의 길이가 길어질수록 이는 좋은 방법이 아니다.
+
+### Classification Token \[CLS\]
+
+`[CLS]` 라는 아무런 값을 가지지 않는 토큰을 입력 시퀀스의 맨 앞에 집어 넣는다.
+
+`[CLS]`는 어떤 의미도 가지지 않기 때문에 transformer를 거치며 치우지지 않고 전체 문장에서 원하는 값을 추출할 수 있다.
+
+## BERT
+
+BERT, **Bidirectional Encoder Representations from Transformers**는 인코더만을 사용하며 MLM(Masked Language Modeling)으로 양방향의 문맥을 학습하는 transformer 모델이다.
+
+- 자기지도학습(Self-supervised Learning) 방식
+  - MLM 기법이 자기지도학습이다.
+- 인코더만을 사용
+
+### Input Embedding
+
+- Token Embedding: 단어의 의미 정보
+  - 특별한 토큰들이 존재하는데 CLS와 SEP가 있다.
+    - `[CLS]`: 분류 토큰, 항상 맨앞에 존재
+    - `[SEP]`: 한 문장이 끝날 때마다 존재하며 문장을 구분
+- Segment embedding: 단어가 몇 번째 문장에 있는지 정보
+- Position embedding: 단어의 위치 정보
+
+### MLM(Masked Language Modeling)
+
+입력에서 임의로 15%의 토큰을 `masking`하여 없앤다.(특수한 토큰 `[MASK]`로 대체)
+
+그리고 BERT가 이 문장에서 MASK 단어를 예측하도록하여 학습이 일어난다.(자기지도학습)
+
+이 과정을 통해 BERT는 별도의 라벨링 없이 corpus들을 그대로 집어넣어 대용량 데이터를 학습할 수 있었고 시퀀스의 임베딩 표현에 있어서 뛰어난 성능을 발휘하였다.
+
+> 이런 이유로 pretrained 된 BERT는 word embedding에서 기본으로 사용된다.
+
+## ViT(Vision Transformer)
+
+이미지를 16x16 patch로 분할한다. 하나의 패치가 하나의 token으로 사용되어 transformer Encoder에 전달이 되고, 이미지를 분류하기 위해 `[CLS]` 토큰의 최종 출력 위에 MLP를 추가한다.
+
+ViT는 CNN처럼 `inductive bias`(공간적 근접성 및 위치 불변성)를 가정하지 않기 때문에 학습에 있어서 극단적으로 큰 DataSet이 필요하다. 그렇더라도 충분한 데이터가 제공되면 CNN보다 복잡한 모델링이 가능하기 때문에 뛰어난 성능을 발휘할 수 있다.
+
+> ViT는 `SOTA`(State Of The Art;현재 가장 뛰어남)에 도달하였지만 학습 시간과 비용이 너무나 큰 문제가 존재한다.(8개의 TPUv3 로 300일의 학습이 진행되었다고 한다!)
