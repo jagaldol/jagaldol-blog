@@ -110,7 +110,7 @@ author:
   avatar           : /assets/images/profile.png # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Pusan National Univ. major in Computer Science"
   location         : 
-  email            : "yoy06056@pusan.ac.kr"
+  email            : "jagaldol.dev@gmail.com"
   github           : "jagaldol"
   links:
     - label: "Email"
@@ -119,6 +119,9 @@ author:
     - label: "Portfolio"
       icon: "fas fa-fw fa-link"
       url: "https://jagaldol.com"
+    - label: "Linkedin"
+      icon: "fab fa-fw fa-linkedin-in"
+      url: "https://www.linkedin.com/in/hye-jun"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
