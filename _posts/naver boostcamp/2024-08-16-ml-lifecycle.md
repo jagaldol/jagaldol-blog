@@ -2,7 +2,7 @@
 layout: single
 title: "[Week 2]머신러닝 기초 이론 및 Transformer 기초"
 date: 2024-08-16 19:00:00 +0900
-last_modified_at: 2024-08-18 00:02:00 +0900
+last_modified_at: 2024-09-02 11:08:00 +0900
 categories: naver-boostcamp
 ---
 
@@ -163,6 +163,8 @@ $$\text{softmax}(x)_i = \frac{e^{x_i - \max(x)}}{\sum_j e^{x_j - \max(x)}}$$
 
 - query: Decoder의 hidden state
 - Key, values: Encoder의 hidden state
+
+이때, 각 `decoder step`의 `output`(hidden state)와 `Attention` 출력을 `Concatenation` 후 선형 변환을 통해 최종 예측 `y`를 계산할 수 있다.
 
 > coursera 강의에서 소개한 attention 모델은 query와 key를 concatenate 후 작은 NN을 거쳐 softmax를 거쳤었다.
 >
