@@ -4,5 +4,8 @@
   },
   "files.associations": {
     "*.html": "liquid"
+  },
+  "[yaml]": {
+    "editor.formatOnSave": false
   }
 }

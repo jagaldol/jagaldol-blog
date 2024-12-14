@@ -11,6 +11,8 @@ categories: papers
 - 번역 task에서 기존 모델들(앙상블 포함)보다 높은 성능으로 SOTA 달성
 - 영어 구문 분석(English constituency parsing)에서도 우수한 성능 → 일반화 성능 또한 높다
 
+{% linkpreview "https://arxiv.org/abs/1706.03762" %}
+
 ## Background
 
 기존 `LSTM`, `GRU` 등의 **RNN 사용** 시 다음과 같은 한계가 존재한다:
@@ -115,8 +117,6 @@ $$\text{PE}(\text{pos}, 2i + 1) = \cos\left(\frac{\text{pos}}{10000^{\frac{2i}{d
   - big model - 1.0s/step \* 300,000 steps = 3.5days
 - Adam
   $$\beta_1 = 0.9, \, \beta_2 = 0.98, \, \epsilon = 10^{-9}$$
-- lr ( warmup\*steps = 4000)
-  $$\text{lrate} = d_{\text{model}}^{-0.5} \cdot \min(\text{step\_num}^{-0.5}, \, \text{step\_num} \cdot \text{warmup\_steps}^{-1.5})$$
 - Residual Dropout = 0.1
 - Label Smoothing = 0.1
 
