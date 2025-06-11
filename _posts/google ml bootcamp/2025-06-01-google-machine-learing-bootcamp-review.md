@@ -45,9 +45,9 @@ Gemma-2-2b-it 모델을 기반으로, 의료 상담용 RAG+RAFT 시스템을 만
 수료식이 끝나고 저녁이 나왔다. 줄을 서서 밥을 받았고(맛있었다!), 주변의 동료들과 가볍게 인사를 나누며 이런저런 이야기를 했다.  
 긴장도 풀리고 배도 부르니까, '아 진짜 끝났구나' 싶었다. 정말 열심히 했었는데 이렇게 끝나니 시원섭섭했던 것 같다.
 
-![음식1](/assets/images/2025/06/01/dinner1.jpeg){:.width-500px}
+![음식1](/assets/images/2025/06/01/dinner1.jpeg){: .width-500px}
 
-![음식2](/assets/images/2025/06/01/dinner2.jpeg){:.width-500px}
+![음식2](/assets/images/2025/06/01/dinner2.jpeg){: .width-500px}
 
 ## 정리
 
