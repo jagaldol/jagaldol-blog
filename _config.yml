@@ -112,6 +112,7 @@ author:
   location         : 
   email            : "jagaldol.dev@gmail.com"
   github           : "jagaldol"
+  home: "https://blog.jagaldol.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
