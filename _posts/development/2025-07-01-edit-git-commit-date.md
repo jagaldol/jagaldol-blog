@@ -2,7 +2,7 @@
 layout: single
 title: "[Git] commit 날짜 / 시간 변경 방법(feat. github 잔디)"
 date: 2025-07-01 23:05:00 +0900
-last_modified_at: 2025-07-02 08:12:00 +0900
+last_modified_at: 2025-07-03 10:23:00 +0900
 categories: development
 ---
 
@@ -20,18 +20,38 @@ categories: development
 
 일단 먼저 커밋을 한 뒤, 해당 커밋의 시간을 `git commit --amend` 명령을 통해 덮어씌우게 된다.
 
+아래 명령어들을 통해 `committer` 시간 뿐만아니라 `author` 시간까지 변경되어 완벽하게 커밋 시간을 변경 가능하다.
+
+### Windows
+
+아래 명령어를 `Git Bash`를 열어 입력한다.
+
 1시간 전:
 
 ```shell
-GIT_AUTHOR_DATE="$(date -d '1 hours ago')" GIT_COMMITTER_DATE="$(date -d '1 hours ago')" git commit --amend --no-edit --date "$(date -d '1 hours ago')"
+GIT_AUTHOR_DATE="$(date -d '1 hours ago')" \
+GIT_COMMITTER_DATE="$(date -d '1 hours ago')" \
+git commit --amend --no-edit --date "$(date -d '1 hours ago')"
 ```
 
 하루 전:
 
 ```shell
-GIT_AUTHOR_DATE="$(date -d '1 days ago')" GIT_COMMITTER_DATE="$(date -d '1 days ago')" git commit --amend --no-edit --date "$(date -d '1 days ago')"
+GIT_AUTHOR_DATE="$(date -d '1 days ago')" \
+GIT_COMMITTER_DATE="$(date -d '1 days ago')" \
+git commit --amend --no-edit --date "$(date -d '1 days ago')"
 ```
 
-위 명령어를 통해 `committer` 시간 뿐만아니라 `author` 시간까지 변경되어 완벽하게 커밋 시간을 변경가능하다.
+이 명령어는 linux 계열에서만 가능한 명령어로 윈도우의 CMD에서는 동작하지 않는다. 따라서 꼭 **Git Bash를 켜서 명령어를 입력**해야한다!
 
-하지만 해당 명령어는 linux 계열에서만 가능한 명령어로 윈도우의 CMD에서는 동작하지 않는다. 따라서 꼭 **Git Bash를 켜서 명령어를 입력**해야한다!
+### Mac
+
+mac도 linux 기반이니 위 명령어가 적용될것 같지만 시간에 대한 양식이 달라 일부 수정이 필요하다.
+
+아래 명령어를 활용하면 된다.
+
+```shell
+GIT_AUTHOR_DATE="$(date -v-1d '+%Y-%m-%d %H:%M:%S')" \
+GIT_COMMITTER_DATE="$(date -v-1d '+%Y-%m-%d %H:%M:%S')" \
+git commit --amend --no-edit --date "$(date -v-1d '+%Y-%m-%d %H:%M:%S')"
+```
