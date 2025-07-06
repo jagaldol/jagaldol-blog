@@ -2,7 +2,7 @@
 layout: single
 title: "[Python] VScode 개발 환경 설정(1)"
 date: 2025-06-22 18:39:00 +0900
-last_modified_at: 2025-06-29 23:25:00 +0900
+last_modified_at: 2025-07-07 00:01:00 +0900
 categories: development
 ---
 
@@ -230,3 +230,7 @@ VSCode에서는 다양한 언어를 다루다 보면 언어별로 포매팅 도�
 ![flake8](/assets/images/2025/06/22/flake8-3.png)
 
 불필요한 import가 존재하거나, 사용하지 않은 변수가 존재하거나 등등 코드 품질을 위한 경고를 띄워주므로 코드 관리가 한결 편해진다.
+
+## 2편 이어서 보기
+
+{% linkpreview "https://blog.jagaldol.com/development/python-dev-env-setting-2" %}
