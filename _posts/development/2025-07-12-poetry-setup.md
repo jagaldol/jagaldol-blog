@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Python Poetry로 각 project 내에 venv 가상환경 만들기"
+title: "[Python] Poetry로 각 project 내에 venv 가상환경 만들기"
 date: 2025-07-12 15:27:00 +0900
 categories: development
 ---
