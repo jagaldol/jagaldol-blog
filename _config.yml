@@ -108,8 +108,8 @@ analytics:
 author:
   name             : "Hyejun An(25)"
   avatar           : /assets/images/profile.png # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Pusan National Univ. major in Computer Science"
-  location         : 
+  bio              : "AI Engineer who loves building things from scratch. Specializing in LLM agents, automation, and full-stack development."
+  location         : "Seoul, South Korea"
   email            : "jagaldol.dev@gmail.com"
   github           : "jagaldol"
   links:
