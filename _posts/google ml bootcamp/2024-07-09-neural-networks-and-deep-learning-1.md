@@ -18,7 +18,7 @@ Andrew Ng 교수님의 Coursera - Deep Learning Specialization 첫번째 강의�
 
 ## Neural Network
 
-![NN](/assets/images/2024-07-09/NN.png)
+![NN](/assets/images/2024/07/09/NN.png)
 
 기본적인 NN에서 여러 개의 `layer`가 존재할 수 있다. `input layer`와 `output layer` 사이는 `hidden layer`이다. 일반적으로 해당 `layer`가 무슨 역할을 하는지 생각할 필요 없이 `Fully connected`하여 신경망에게 맡기면 된다.
 
@@ -40,11 +40,11 @@ Input값(문제)과 Output 값(정답)을 모델에게 가르쳐줌으로써 sup
 
 ## ReLU 함수의 장점
 
-![Activate Fuction](/assets/images/2024-07-09/af.png)
+![Activate Fuction](/assets/images/2024/07/09/af.png)
 
 기존 `sigmoid` 함수는 지수 계산을 해야하는 것에 비해 `ReLU`는 계산 과정이 매우 단순하다. 이는 계산 효율성을 증가 시키고 학습 과정을 가속 시킨다.
 
-![dl-process](/assets/images/2024-07-09/dl-process.png)
+![dl-process](/assets/images/2024/07/09/dl-process.png)
 
 학습이 빠르면 만든 모델에 대한 `Experiment` 시간이 감소한다는 뜻이고 이는 실험결과를 토대로 새로운 `Idea`를 더욱 빠르게 시도해볼 수 있다는 뜻이다.
 

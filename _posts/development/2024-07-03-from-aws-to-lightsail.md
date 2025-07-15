@@ -7,15 +7,15 @@ categories: development
 
 갑자기 AWS로 부터 잔액부족 메일이 왔다. 무려 25,000원이나 결제를 하라고 한다.
 
-![mail](/assets/images/2024-07-03/aws-mail.png)
+![mail](/assets/images/2024/07/03/aws-mail.png)
 
 프리티어가 끝난건 알고 있었는데 25,629원이나?? 많아야 만원정도 나갈 줄 알았는데 이게 무슨 일인가.
 
 ## 비용 청구서
 
-![청구서1](/assets/images/2024-07-03/bill1.png){: .width-500px}
+![청구서1](/assets/images/2024/07/03/bill1.png){: .width-500px}
 
-![청구서2](/assets/images/2024-07-03/bill2.png){: .width-500px}
+![청구서2](/assets/images/2024/07/03/bill2.png){: .width-500px}
 
 청구서를 확인해보자.
 
@@ -37,13 +37,13 @@ $0.0144 \times 24 \times 30 = 10.368$
 
 ### EC2-other..?
 
-![cost explorer](/assets/images/2024-07-03/cost-explorer.png)
+![cost explorer](/assets/images/2024/07/03/cost-explorer.png)
 
 cost explorer를 보면 `EC2-기타` 라는게 청구되어있다! 이게 대체 뭐길래 돈이 추가로 나갔을까?
 
 필터에 서비스를 EC2-Other 그리고 사용량 유형을 하나씩 선택해가며 정확히 어떤 부분에서 과금됐는지 찾을 수 있다.
 
-![filter](/assets/images/2024-07-03/filter-result.png)
+![filter](/assets/images/2024/07/03/filter-result.png)
 
 EBS Volume 때문에 대부분의 돈이 나갔다. 이걸 보고 생각이 났는데 프리티어 선택 당시 프리티어로 공짜로 쓸 수 있다고 EBS를 프리티어 한도만큼 최대로 추가 선택했었다.
 
@@ -64,8 +64,8 @@ $18.37 \times 1387 \simeq 25,500$
 가난한 취준생인 나로썬 서버로 돈을 아예 소모하고 싶지 않지만 구동중인 서버 프로그램이 존재한다.
 
 <p align="center" style="display:flex">
-    <img src="/assets/images/2024-07-03/fitness.jpg" width="45%" />
-    <img src="/assets/images/2024-07-03/fitness2.jpg" width="45%" />
+    <img src="/assets/images/2024/07/03/fitness.jpg" width="45%" />
+    <img src="/assets/images/2024/07/03/fitness2.jpg" width="45%" />
 </p>
 
 fitness라고 운동 기록 어플이다. `Next.js`로 만든 프론트는 `static build`로 `github pages`를 이용해 무료 배포 중이지만, `spring boot` 서버와 `redis`, `mysql`의 도커 컨테이너들은 서버가 꼭 필요했다.
@@ -87,9 +87,9 @@ fitness라고 운동 기록 어플이다. `Next.js`로 만든 프론트는 `stat
 
 나는 별도의 App 설치가 필요없으므로(실행 할 프로그램이 docker image로 만들어 놔서 필요없다) OS only를 보았다.
 
-![lightsail](/assets/images/2024-07-03/lightsail-select.png)
+![lightsail](/assets/images/2024/07/03/lightsail-select.png)
 
-![plan](/assets/images/2024-07-03/lightsail-plan.png)
+![plan](/assets/images/2024/07/03/lightsail-plan.png)
 
 제일 싼건 `$5` 부터!
 
@@ -120,11 +120,11 @@ Lightsail dashboard에서 `Networking` 탭에 가면 static IP를 부여할 수 
 
 생성된 `Instance`의 옵션에서 `manage`로 들어가 `Networking`을 보면 `Add Rule`이 있다.
 
-![add rule](/assets/images/2024-07-03/lightsail-rule.png)
+![add rule](/assets/images/2024/07/03/lightsail-rule.png)
 
 DNS는 `Cloudflare`를 사용 중이므로 `Cloudflare`의 DNS에서 이전 EC2 주소를 `Lightsail`의 인스턴스로 변경해줬다.
 
-![cloudflare](/assets/images/2024-07-03/cloudflare.png)
+![cloudflare](/assets/images/2024/07/03/cloudflare.png)
 
 `Nginx` 설치 및 `certbot` 설정은 주제를 너무 벗어나므로 언급하지 않겠다.
 
