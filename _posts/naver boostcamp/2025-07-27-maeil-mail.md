@@ -11,8 +11,6 @@ categories: naver-boostcamp
 
 매일메일은 네이버 부스트캠프 7기 최종 기업 연계 프로젝트로, **Upstage**와 함께 진행되었다.
 
-연하게 보여줄 수 있는 LLM Agent 시스템\*\*을 크롬 익스텐션을 통해 제작하였다.
-
 [![Demo](/assets/images/2025/07/29/demo.png)](https://jagaldol.com/projects/maeil-mail)
 
 > [Maeil Mail Github Repo](https://github.com/jagaldol/maeilmail)  
