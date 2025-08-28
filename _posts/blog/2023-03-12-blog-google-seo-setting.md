@@ -6,7 +6,7 @@ last_modified_at: 2023-03-14 22:37:00:00 +0900
 categories: blog
 ---
 
-![search-result1](/assets/images/2023-03-12/search-result1.png)
+![search-result1](/assets/images/2023/03/12/search-result1.png)
 
 현재 제 블로그를 구글에 검색하면 전혀 나오지 않습니다\...
 
@@ -18,24 +18,24 @@ categories: blog
 
 먼저 [Google Search Console](https://search.google.com/search-console)에 접속해 줍니다.
 
-![google-search-console-1](/assets/images/2023-03-12/google-search-console-1.png)
+![google-search-console-1](/assets/images/2023/03/12/google-search-console-1.png)
 
 URL 접두어에 블로그 주소를 적어주세요!
 
-![google-search-console-2](/assets/images/2023-03-12/google-search-console-2.png)
+![google-search-console-2](/assets/images/2023/03/12/google-search-console-2.png)
 
 google ~~ .html 파일을 다운로드 받고 github repository에 업로드 해줍시다.
 
 repo의 action에서 배포가 성공적으로 된걸 확인 후 확인 버튼을 누르면!
 
-![google-search-console-3](/assets/images/2023-03-12/google-search-console-3.png)
+![google-search-console-3](/assets/images/2023/03/12/google-search-console-3.png)
 
 소유권이 확인되었다고 합니다~ 그럼 속성으로 이동해 볼게요.
 
 > 인증 후에도 repo에서 인증 html파일을 삭제하시면 안됩니다!!
 > 혹시라도 삭제하거나 잃어버렸다면 [구글 웹마스터](https://www.google.com/webmasters/verification) 로 가서 자기 블로그 클릭 후 HTML 파일 상세정보 누르면 재 다운로드 가능하니 참고하세요!
 
-![google-search-console-4](/assets/images/2023-03-12/google-search-console-4.png)
+![google-search-console-4](/assets/images/2023/03/12/google-search-console-4.png)
 
 이제 `Search Console`에서 색인생성 -> Sitemaps로 들어가 새 사이트맵 추가를 해야합니다.
 
@@ -130,7 +130,7 @@ Sitemap: {{ '/sitemap.xml' | relative_url | prepend: site.url }}
 
 마지막 단계입니다! `Search Console`에서 색인생성 -> Sitemaps을 다시 켜줍니다.
 
-![success](/assets/images/2023-03-12/success.png)
+![success](/assets/images/2023/03/12/success.png)
 
 sitemap.xml을 입력하고 제출해줍니다. 상태가 성공이 되면 성공입니다!
 
@@ -145,7 +145,7 @@ sitemap.xml을 입력하고 제출해줍니다. 상태가 성공이 되면 성�
 
 ~~나중에 성공하게 되면 결과 사진 추가할게요!~~
 
-![seo-success](/assets/images/2023-03-12/seo-success.png)
+![seo-success](/assets/images/2023/03/12/seo-success.png)
 
 짠! 따로 제 블로그 이름인 jagaldol을 검색어에 넣지 않아도 제목 키워드를 잘 넣으니 상단에 검색 되는 모습을 볼 수 있습니다!
 
