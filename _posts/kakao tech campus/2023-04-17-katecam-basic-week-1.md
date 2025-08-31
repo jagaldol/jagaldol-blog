@@ -1,19 +1,19 @@
 ---
 layout: single
 title: "[카테캠 BE] week1 - 자바 객체지향 프로그래밍"
-date: 2023-04-16 2:47:00 +0900
+date: 2023-04-17 02:47:00 +0900
 categories:
-    - kakao tech campus
+  - kakao tech campus
 ---
 
 4월 10일부터 첫주차 교육이 시작됐어요. 지금은 1단계 웹 개발 기초 교육 과정으로 총 10주간 자바와 `Spring`, `MySQL`을 학습한다고 하더라고요.
 
-* 1주차: Java (객체 지향 입문)
-* 2주차: Java (객체 지향 핵심)
-* 3주차: Java 기능 (함수, 스트림 등)
-* 4~6주차: Spring (개요, 원리 실습 등)
-* 7~8주차: MySQL (개요, 최적화 등)
-* 9주차: 보충학습기간
+- 1주차: Java (객체 지향 입문)
+- 2주차: Java (객체 지향 핵심)
+- 3주차: Java 기능 (함수, 스트림 등)
+- 4~6주차: Spring (개요, 원리 실습 등)
+- 7~8주차: MySQL (개요, 최적화 등)
+- 9주차: 보충학습기간
 
 도중에 중간고사 기간 때문에 한주 쉬어서 총 10주라고 해요.
 
@@ -25,16 +25,15 @@ categories:
 
 ## 객체지향 프로그래밍
 
-![oop.png](/assets/images/2023-04-17/oop.png)
+![oop.png](/assets/images/2023/04/17/oop.png)
 
 - 기존 절차 지향 프로그래밍과는 다른 패러다임.
 - 프로그램을 객체 간의 소통, 협력을 통하여 구현한다.
 
 > **절차 지향 프로그래밍이란?**  
-> 사건의 흐름에 따른 프로그래밍. 일반적인 프로그래밍에서 위에서부터 한 줄 씩 실행되는 프로그램이다.  
->  
+> 사건의 흐름에 따른 프로그래밍. 일반적인 프로그래밍에서 위에서부터 한 줄 씩 실행되는 프로그램이다.
+>
 > 객체 지향은 절차 지향 위에서 객체들을 정의하고 생성하여 객체들을 상호작용 시켜 프로그램을 구성한다.
-
 
 ## 클래스
 
@@ -52,10 +51,10 @@ public class Student {
 
 - 클래스는 대문자로 시작하는 것이 좋다.
 - public 클래스는 .java 파일과 이름이 동일하며 하나만 존재 가능.  
-    public 외에는 여러개 같이 존재 가능
+   public 외에는 여러개 같이 존재 가능
 - 객체를 위한 클래스 설계 시 다음을 고려하여 만든다.
-    - 속성: 멤버변수
-    - 기능: 메서드(method)
+  - 속성: 멤버변수
+  - 기능: 메서드(method)
 
 ## 함수와 메서드
 
@@ -63,7 +62,7 @@ public class Student {
 - 메서드는 static 키워드 없는 멤버 함수들.
 - 함수는 static 키워드를 통해 객체의 생성 유무와 상관없이, 프로그램이 빌드 될때 생성됨
 - 함수가 호출되면 지역 변수들은 스택 메모리에 계속 저장된다.
-    - 따라서 재귀적으로 호출되었을 때, 스택오버플로우 발생 주의
+  - 따라서 재귀적으로 호출되었을 때, 스택오버플로우 발생 주의
 
 ## 객체의 생성(인스턴스)
 
@@ -101,7 +100,7 @@ public class UserInfo {
 	public UserInfo(){
 		System.out.println("생성자입니다!");
 	}
-	
+
 	public UserInfo(String userId) {
 		System.out.println("2번째 생성자입니다!");
 		System.out.println(userId + "가 파라미터로 들어왔습니다!");
@@ -137,7 +136,7 @@ public class UserInfo {
 
 인스턴스 자신의 메모리를 가리킨다.
 
-![this1.png](/assets/images/2023-04-17/this1.png)
+![this1.png](/assets/images/2023/04/17/this1.png)
 
 ```java
 public void setYear(int year)
@@ -153,11 +152,11 @@ public class Person {
 
 	String name;
 	int age;
-	
+
 	public Person() {
 		this("이름없음", 1);
 	}
-	
+
 	public Person(String name, int age) {
 		this.name = name;
 		this.age = age;
@@ -169,7 +168,7 @@ public class Person {
 
 여러 인스턴스가 공유하는(공통으로 사용하는) 변수
 
-![static.png](/assets/images/2023-04-17/static.png)
+![static.png](/assets/images/2023/04/17/static.png)
 
 - 인스턴스가 생성될 때 만들어지는 변수가 아닌, 처음 프로그램이 메모리에 로딩될 때 메모리를 할당
 - 클래스 변수, 정적변수라고도 함(vs. 인스턴스 변수)
@@ -179,7 +178,7 @@ public class Person {
 static int serialNum;
 ```
 
-![mem.png](/assets/images/2023-04-17/mem.png)
+![mem.png](/assets/images/2023/04/17/mem.png)
 
 - static 변수: 데이터 영역
 - 참조 변수: 스택 메모리
@@ -189,7 +188,7 @@ static int serialNum;
 
 - 인스턴스 생성과 상관 없이 사용 가능(클래스 이름으로 직접 참조)
 - static 메서드에서는 인스턴스 변수(일반 멤버 변수)를 사용할 수 없다.  
-    인스턴스 생성 전에도 생성되어있는 static 변수만 사용가능
+   인스턴스 생성 전에도 생성되어있는 static 변수만 사용가능
 
 ```java
 private static int serialNum = 1000;
@@ -200,19 +199,19 @@ public static int getSerialNum() {
 ```
 
 📋**참고**
-![variable.png](/assets/images/2023-04-17/variable.png)
+![variable.png](/assets/images/2023/04/17/variable.png)
 
 ## 싱글톤 패턴
+
 <div style="display:flex;">
     <p>
-        <img src="/assets/images/2023-04-17/singleton.png">
+        <img src="/assets/images/2023/04/17/singleton.png">
     </p>
     <ul>
         <li>인스턴스가 단 한 개만 생성되어야 하는 경우 사용하는 디자인 패턴</li>
         <li>static 변수, 메서드를 활용하여 구현 할 수 있음</li>
     </ul>
 </div>
-
 
 ```java
 public class Singleton {
@@ -231,8 +230,9 @@ public class Singleton {
 ```
 
 ---
+
 ## ✏️여담
+
 다른 언어들에서 객체지향 개념은 끝도 없이 배웠어서 그런지 단순 자바 문법만 익숙해지면 될거 같네요. 알고리즘 문제라도 자바로 좀 풀어봐야겠어요.
 
 일단 다음 주는 중간고사 기간이니까 잠시 **🔥시험🔥**에 집중해야돼요. 할일이 태산..🥲🥲
-
