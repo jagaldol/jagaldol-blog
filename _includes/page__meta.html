@@ -18,7 +18,7 @@
       <br />
     {% endif %}
 
-    {% if include.type == 'post' document.show_date and document.last_modified_at %}
+    {% if include.type == 'post' and document.show_date and document.last_modified_at %}
       
       {% assign last_modified_at = document.last_modified_at %}
       <span class="page__meta-date">
