@@ -38,7 +38,6 @@
   }
 
   @include breakpoint($x-large) {
-    
     padding-right: 0.5em;
     width: calc(#{$right-sidebar-width} - 1em);
   }
@@ -218,7 +217,7 @@
 
     &:before {
       @supports (pointer-events: none) {
-        content: '';
+        content: "";
         position: fixed;
         top: 0;
         left: 0;
@@ -352,4 +351,3 @@
     margin-right: initial;
   }
 }
-
