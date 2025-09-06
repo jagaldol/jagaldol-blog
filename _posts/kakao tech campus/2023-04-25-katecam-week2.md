@@ -3,7 +3,7 @@ layout: single
 title: "[카테캠 BE] week2 - 자바 기초 복습"
 date: 2023-04-25 00:11:00 +0900
 categories:
-    - kakao tech campus
+  - kakao tech campus
 ---
 
 2주차는 시험 기간과 겹쳐 필수 강의가 없었어요. 대신 선택강의를 자유롭게 수강하면 된다고 해서, 저는 기초부터 한번 훑고 넘어 갈려고 기초 강의를 들었어요.
@@ -14,16 +14,14 @@ categories:
 
 자바는 컴파일러를 통해 바이트 코드가 생성되고, 이것이 각 환경의 자바 가상 머신(JVM, Java Virtual Machine)에서 구동된다.
 
-![vm.png](/assets/images/2023-04-25/vm.png)
+![vm.png](/assets/images/2023/04/25/vm.png)
 
 > 자바는 **이식성**(portablilty)가 뛰어나다!
 
 ## 자료형(data type)
 
 - 기본 자료형(primitive data type)
-    
-    ![intdatatype.png](/assets/images/2023-04-25/intdatatype.png)
-    
+  ![intdatatype.png](/assets/images/2023/04/25/intdatatype.png)
 
 ## Numerical notation
 
@@ -44,11 +42,11 @@ int xNum = 0XA;
 
 ### 실수형 - Floating point(부동 소수점 방식)
 
-![realnum.png](/assets/images/2023-04-25/realnum.png)
+![realnum.png](/assets/images/2023/04/25/realnum.png)
 
 sign bit(1bit) + exponent(8bit) + mantissa(23bit)로 이루어져있다.
 
-![float.png](/assets/images/2023-04-25/float.png)
+![float.png](/assets/images/2023/04/25/float.png)
 
 > 자바에서 실수의 기본 타입은 `double`을 사용
 
@@ -63,8 +61,8 @@ float fnum = 3.14F;
 10진법의 소수를 2진법으로 변환한 후 가수부가 제한되기 때문에 오차가 발생할 수 있다.
 
 - 0.1의 2진법 표현  
-    $$ 0.1_{(10)} = 0.0001100110011..._{(2)} $$  
-    무한 소수로 표현 되기 때문에 제한된 가수부에서 값이 완전히 표현되지 않는다
+   $$ 0.1*{(10)} = 0.0001100110011...*{(2)} $$  
+   무한 소수로 표현 되기 때문에 제한된 가수부에서 값이 완전히 표현되지 않는다
 
 > `float`를 사용하여 연산하지 말고 **가능한 정수**로 연산을 하자!
 
@@ -83,7 +81,6 @@ float fnum = 3.14F;
 
 - `true`/`false`
 
-
 ## Local variable type inference(Java 10 이상)
 
 ```java
@@ -95,8 +92,8 @@ var str = "hello";
 - 추론 가능한 변수에 대한 자료형을 선언하지 않음
 - 지역 변수만 사용 가능
 - 한번 선언하여 추론 된 변수는 다른 타입의 값을 대입 할 수 없음
-    - 타 스크립트 언어들은 대입 가능
-    - 단지, `var` 로 코드 작성할 때 타입 적지 않을 뿐, 변수에 타입이 부여되어 고정된다.
+  - 타 스크립트 언어들은 대입 가능
+  - 단지, `var` 로 코드 작성할 때 타입 적지 않을 뿐, 변수에 타입이 부여되어 고정된다.
 
 ## 상수(constant)
 
@@ -118,9 +115,9 @@ MIN_NUM = 0;
 ## Type conversion
 
 - Implicit(묵시적, 자동 형 변환)
-    - wide한 자료형(바이트 크기가 큰, 더 정밀하게 표현되는)으로 변환은 자동으로 이루어짐
+  - wide한 자료형(바이트 크기가 큰, 더 정밀하게 표현되는)으로 변환은 자동으로 이루어짐
 - Explicit(명시적, 강제 형 변환)
-    - narrow한 자료형(바이트 크기가 작은, 값이 온전히 표현되지 않는)으로 변환은 명시적으로 표기 해야함
+  - narrow한 자료형(바이트 크기가 작은, 값이 온전히 표현되지 않는)으로 변환은 명시적으로 표기 해야함
 
 ```java
 double dNum = 3.14;
@@ -181,7 +178,7 @@ int result = switch (day) {
 
 - 쉼표(,)로 조건 구분
 - 기본적으로 값 리턴
-    - 조건 내에서 코드 실행을 하고 싶다면 `yield` 키워드로 값 반환이 필수
+  - 조건 내에서 코드 실행을 하고 싶다면 `yield` 키워드로 값 반환이 필수
 
 ## STD 입출력
 
@@ -217,11 +214,11 @@ int arr2[] = new int[10];
 //개수 생략해야 함
 int[] numbers = new int[] {10, 20, 30};
 
-// new int[]  생략 가능 
+// new int[]  생략 가능
 int[] numbers = {10, 20, 30};
 
 // 선언후 배열을 생성하는 경우는 new int[] 생략할 수 없음
-int[] ids; 
+int[] ids;
 ids = new int[] {10, 20, 30};
 ```
 
@@ -238,20 +235,20 @@ System.out.println(arr.length);
 ### 배열의 복사
 
 - **Shallow copy(얕은 복사)**
-    - 그냥 대입 시 얕은 복사가 이루어짐
+  - 그냥 대입 시 얕은 복사가 이루어짐
 - **Deep copy(깊은 복사)**
-    - 반복문을 통해 객체 하나씩 전부 복사
-    - clonable 인터페이스 구현 등으로 수행
+  - 반복문을 통해 객체 하나씩 전부 복사
+  - clonable 인터페이스 구현 등으로 수행
 
 ## ArrayList (java.util 패키지)
 
 - 배열의 요소 추가/삭제 등이 용이
 
-![float.png](/assets/images/2023-04-25/method.png)
+![float.png](/assets/images/2023/04/25/method.png)
 
 ```java
 ArrayList<Book> library = new ArrayList<Book>();
-		
+
 library.add(new Book("태백산맥1", "조정래"));
 library.add(new Book("태백산맥2", "조정래"));
 library.add(new Book("태백산맥3", "조정래"));
@@ -264,6 +261,7 @@ for(int i =0; i<library.size(); i++) {
 ```
 
 ---
-## ✏️여담
-중간고사 기간이라 쉬운거 공부만 했어요. 다음주 부터 다시 열심히 달려야죠🏃🏻‍♂️
 
+## ✏️여담
+
+중간고사 기간이라 쉬운거 공부만 했어요. 다음주 부터 다시 열심히 달려야죠🏃🏻‍♂️
