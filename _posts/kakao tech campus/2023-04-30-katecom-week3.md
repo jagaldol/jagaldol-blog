@@ -3,14 +3,14 @@ layout: single
 title: "[카테캠 BE] week3 - 자바 객체 지향 핵심(상속, 다형성, 인터페이스)"
 date: 2023-04-30 22:10:00 +0900
 categories:
-    - kakao tech campus
+  - kakao tech campus
 ---
 
 3주차의 내용은 상속, 다형성, 인터페이스 등의 핵심적인 객체 지향 내용과 Object 클래스, Class 클래스, String 클래스 등을 배웠습니다.
 
 ## 상속(Inheritance)
 
-![inheritance.png](/assets/images/2023-04-30/inheritance.png)
+![inheritance.png](/assets/images/2023/04/30/inheritance.png)
 
 - 화살표 방향 유의
 
@@ -39,7 +39,7 @@ class B extends A{
 
 ### 가상 메서드
 
-![virtual.png](/assets/images/2023-04-30/virtual.png)
+![virtual.png](/assets/images/2023/04/30/virtual.png)
 
 - 가상 메서드 테이블 기반으로 메서드 주소를 찾아간다
 
@@ -52,11 +52,11 @@ class B extends A{
 - annotation은 주석이라는 의미
 - 컴파일러에게 특별한 정보를 제공하는 역할
 
-![annotation.png](/assets/images/2023-04-30/annotation.png)
+![annotation.png](/assets/images/2023/04/30/annotation.png)
 
 ## 메서드와 인스턴스의 저장 위치
 
-![mem.png](/assets/images/2023-04-30/mem.png)
+![mem.png](/assets/images/2023/04/30/mem.png)
 
 - 인스턴스는 스택 메모리에 생성
 - 인스턴스의 멤버 변수는 힙 메모리에 생성
@@ -70,13 +70,13 @@ class B extends A{
 
 ```java
 class Animal{
-    
+
     public void move() {
         System.out.println("동물이 움직입니다.");
     }
-    
+
     public void eating() {
-        
+
     }
 }
 
@@ -84,18 +84,18 @@ class Human extends Animal{
     public void move() {
         System.out.println("사람이 두발로 걷습니다.");
     }
-    
+
     public void readBooks() {
         System.out.println("사람이 책을 읽습니다.");
     }
 }
 
 class Tiger extends Animal{
-    
+
     public void move() {
         System.out.println("호랑이가 네 발로 뜁니다.");
     }
-    
+
     public void hunting() {
         System.out.println("호랑이가 사냥을 합니다.");
     }
@@ -105,7 +105,7 @@ class Eagle extends Animal{
     public void move() {
         System.out.println("독수리가 하늘을 날아갑니다.");
     }
-    
+
     public void flying() {
         System.out.println("독수리가 날개를 쭉 펴고 멀리 날아갑니다");
     }
@@ -118,25 +118,25 @@ public class AnimalTest {
         Animal hAnimal = new Human();
         Animal tAnimal = new Tiger();
         Animal eAnimal = new Eagle();
-        
+
         AnimalTest test = new AnimalTest();
         test.moveAnimal(hAnimal);
         test.moveAnimal(tAnimal);
         test.moveAnimal(eAnimal);
-        
+
         ArrayList<Animal> animalList = new ArrayList<Animal>();
         animalList.add(hAnimal);
         animalList.add(tAnimal);
         animalList.add(eAnimal);
-        
+
         for(Animal animal : animalList) {
             animal.move();
         }
-    }	
-    
+    }
+
     public void moveAnimal(Animal animal) {
         animal.move();
-        
+
     }
 }
 ```
@@ -161,7 +161,6 @@ public class AnimalTest {
 클래스가 다른 클래스를 **포함**하는 관계
 
 > 단순히 멤버 변수로 다른 클래스를 포함 시킨다.
-> 
 
 ## 다운 캐스팅(downcasting)
 
@@ -190,9 +189,7 @@ if ( animal instanceof Human) {
 - `abstract` 예약어를 사용
 - 추상 클래스는 `new` 불가(인스턴스화 불가)
 - 추상 클래스의 추상 메서드는 하위 클래스가 상속 하여 구현(필수)
-    
-    ![notebook.png](/assets/images/2023-04-30/notebook.png)
-    
+  ![notebook.png](/assets/images/2023/04/30/notebook.png)
 
 > `abstract` 표현은 `Italic` 체를 사용하여 표현한다.
 
@@ -216,9 +213,9 @@ if ( animal instanceof Human) {
 모든 메서드가 추상 메서드, 모든 변수가 상수로 선언된 클래스
 
 - `public abstract`/`public static`을 메서드/변수에 붙이지 않아도 자동으로 추상 메서드와 상수로 간주된다.  
-    
-![calc.png](/assets/images/2023-04-30/calc.png)
-    
+
+
+![calc.png](/assets/images/2023/04/30/calc.png)
 
 > Interface의 구현은 **점선**으로 표현된다.
 
@@ -229,155 +226,140 @@ if ( animal instanceof Human) {
 - 클라이언트 프로그램은 인터페이스에 선언된 메서드 명세만 보고 이를 구현한 클래스를 사용
 - 어떤 객체가 인터페이스 타입 → 그 인터페이스가 제공하는 모든 메서드를 구현했음을 의미
 - **예) JDBC 인터페이스**
-    - Java와의 커넥션(Interface)이 필요함
-    - ORACLE/MS-SQL/MySQL 등에서 인터페이스를 구현한 JAR 파일 제공
-    - 사용자(클라이언트)는 단순히 인터페이스 명세를 보고 사용
+  - Java와의 커넥션(Interface)이 필요함
+  - ORACLE/MS-SQL/MySQL 등에서 인터페이스를 구현한 JAR 파일 제공
+  - 사용자(클라이언트)는 단순히 인터페이스 명세를 보고 사용
 
 ### 인터페이스와 다형성
 
 - 하나의 인터페이스를 여러 객체가 구현
 - 클라이언트 프로그램은 인터페이스의 메서드를 활용하여 여러 객체의 구현을 사용 가능(다형성)
 - **예) 인터페이스를 활용한 DAO(Data Access Object)**
-    
-    db.properties에 있는 db 정보를 읽어서 interface를 구현한 각 클래스로 생성하여 사용.
-    
-    패키지 구조를 유의해서 보자!
-    
-    - Structure
-    
-    ![hierarchy.png](/assets/images/2023-04-30/hierarchy.png)
-    
-    - UserInfoDao.java (interface)
-        
-        ```java
-        package ch13.domain.userInfo.dao;
-        
-        import ch13.domain.userInfo.UserInfo;
-        
-        public interface UserInfoDao {
-            void insertUserInfo(UserInfo userInfo);
-            void updateUserInfo(UserInfo userInfo);
-            void deleteUserInfo(UserInfo userInfo);
+  db.properties에 있는 db 정보를 읽어서 interface를 구현한 각 클래스로 생성하여 사용.
+  패키지 구조를 유의해서 보자!
+  - Structure
+  ![hierarchy.png](/assets/images/2023/04/30/hierarchy.png)
+  - UserInfoDao.java (interface)
+    ```java
+    package ch13.domain.userInfo.dao;
+
+    import ch13.domain.userInfo.UserInfo;
+
+    public interface UserInfoDao {
+        void insertUserInfo(UserInfo userInfo);
+        void updateUserInfo(UserInfo userInfo);
+        void deleteUserInfo(UserInfo userInfo);
+    }
+    ```
+  - UserInfoMySqlDao.java
+    ```java
+    package ch13.domain.userInfo.dao.mysql;
+
+    import ch13.domain.userInfo.UserInfo;
+    import ch13.domain.userInfo.dao.UserInfoDao;
+
+    public class UserInfoMySqlDao implements UserInfoDao {
+        @Override
+        public void insertUserInfo(UserInfo userInfo) {
+            System.out.println("Insert into MySQL DB userID = " + userInfo.getUserId());
         }
-        ```
-        
-    - UserInfoMySqlDao.java
-        
-        ```java
-        package ch13.domain.userInfo.dao.mysql;
-        
-        import ch13.domain.userInfo.UserInfo;
-        import ch13.domain.userInfo.dao.UserInfoDao;
-        
-        public class UserInfoMySqlDao implements UserInfoDao {
-            @Override
-            public void insertUserInfo(UserInfo userInfo) {
-                System.out.println("Insert into MySQL DB userID = " + userInfo.getUserId());
-            }
-        
-            @Override
-            public void updateUserInfo(UserInfo userInfo) {
-                System.out.println("Update into MySQL DB userID = " + userInfo.getUserId());
-        
-            }
-        
-            @Override
-            public void deleteUserInfo(UserInfo userInfo) {
-                System.out.println("Delete into MySQL DB userID = " + userInfo.getUserId());
-            }
+
+        @Override
+        public void updateUserInfo(UserInfo userInfo) {
+            System.out.println("Update into MySQL DB userID = " + userInfo.getUserId());
+
         }
-        ```
-        
-    - UserInfoOracleDao.java
-        
-        ```java
-        package ch13.domain.userInfo.dao.oracle;
-        
-        import ch13.domain.userInfo.UserInfo;
-        import ch13.domain.userInfo.dao.UserInfoDao;
-        
-        public class UserInfoOracleDao implements UserInfoDao {
-            @Override
-            public void insertUserInfo(UserInfo userInfo) {
-                System.out.println("Insert into Oracle DB userID = " + userInfo.getUserId());
-            }
-        
-            @Override
-            public void updateUserInfo(UserInfo userInfo) {
-                System.out.println("Update into Oracle DB userID = " + userInfo.getUserId());
-            }
-        
-            @Override
-            public void deleteUserInfo(UserInfo userInfo) {
-                System.out.println("Delete into Oracle DB userID = " + userInfo.getUserId());
-            }
+
+        @Override
+        public void deleteUserInfo(UserInfo userInfo) {
+            System.out.println("Delete into MySQL DB userID = " + userInfo.getUserId());
         }
-        ```
-        
-    - UserInfoClient.java
-        
-        ```java
-        package ch13.web.userInfo;
-        
-        import ch13.domain.userInfo.UserInfo;
-        import ch13.domain.userInfo.dao.UserInfoDao;
-        import ch13.domain.userInfo.dao.mysql.UserInfoMySqlDao;
-        import ch13.domain.userInfo.dao.oracle.UserInfoOracleDao;
-        
-        import java.io.FileInputStream;
-        import java.io.IOException;
-        import java.util.Properties;
-        
-        public class UserInfoClient {
-            public static void main(String[] args) throws IOException {
-                FileInputStream fis = new FileInputStream("db.properties");
-        
-                Properties prop = new Properties();
-                prop.load(fis);
-        
-                String dbType = prop.getProperty("DBTYPE");
-        
-                UserInfo userInfo = new UserInfo();
-                userInfo.setUserId("12345");
-                UserInfoDao userInfoDao = null;
-        
-                if (dbType.equals("ORACLE"))
-                    userInfoDao = new UserInfoOracleDao();
-                else if (dbType.equals("MYSQL"))
-                    userInfoDao = new UserInfoMySqlDao();
-                else {
-                    System.out.println("db error");
-                    return;
-                }
-                userInfoDao.insertUserInfo(userInfo);
-                userInfoDao.updateUserInfo(userInfo);
-                userInfoDao.deleteUserInfo(userInfo);
-            }
+    }
+    ```
+  - UserInfoOracleDao.java
+    ```java
+    package ch13.domain.userInfo.dao.oracle;
+
+    import ch13.domain.userInfo.UserInfo;
+    import ch13.domain.userInfo.dao.UserInfoDao;
+
+    public class UserInfoOracleDao implements UserInfoDao {
+        @Override
+        public void insertUserInfo(UserInfo userInfo) {
+            System.out.println("Insert into Oracle DB userID = " + userInfo.getUserId());
         }
-        ```
-        
-    - db.properties
-        
-        ```java
-        DBTYPE=MYSQL
-        ```
-        
+
+        @Override
+        public void updateUserInfo(UserInfo userInfo) {
+            System.out.println("Update into Oracle DB userID = " + userInfo.getUserId());
+        }
+
+        @Override
+        public void deleteUserInfo(UserInfo userInfo) {
+            System.out.println("Delete into Oracle DB userID = " + userInfo.getUserId());
+        }
+    }
+    ```
+  - UserInfoClient.java
+    ```java
+    package ch13.web.userInfo;
+
+    import ch13.domain.userInfo.UserInfo;
+    import ch13.domain.userInfo.dao.UserInfoDao;
+    import ch13.domain.userInfo.dao.mysql.UserInfoMySqlDao;
+    import ch13.domain.userInfo.dao.oracle.UserInfoOracleDao;
+
+    import java.io.FileInputStream;
+    import java.io.IOException;
+    import java.util.Properties;
+
+    public class UserInfoClient {
+        public static void main(String[] args) throws IOException {
+            FileInputStream fis = new FileInputStream("db.properties");
+
+            Properties prop = new Properties();
+            prop.load(fis);
+
+            String dbType = prop.getProperty("DBTYPE");
+
+            UserInfo userInfo = new UserInfo();
+            userInfo.setUserId("12345");
+            UserInfoDao userInfoDao = null;
+
+            if (dbType.equals("ORACLE"))
+                userInfoDao = new UserInfoOracleDao();
+            else if (dbType.equals("MYSQL"))
+                userInfoDao = new UserInfoMySqlDao();
+            else {
+                System.out.println("db error");
+                return;
+            }
+            userInfoDao.insertUserInfo(userInfo);
+            userInfoDao.updateUserInfo(userInfo);
+            userInfoDao.deleteUserInfo(userInfo);
+        }
+    }
+    ```
+  - db.properties
+    ```java
+    DBTYPE=MYSQL
+    ```
 
 ### 인터페이스의 추가적인 메서드
 
 기본적으로 전부 추상 메서드이지만 추가적으로 사용가능한 메서드들이 있다
 
 - **디폴트 메서드(자바 8이후)**
-    - `default` 키워드를 사용하여 생성
-    - 구현을 가지는 메서드
-    - 인터페이스를 구현하는 클래스들에서 공통으로 사용할 수 있는 기본 메서드
+  - `default` 키워드를 사용하여 생성
+  - 구현을 가지는 메서드
+  - 인터페이스를 구현하는 클래스들에서 공통으로 사용할 수 있는 기본 메서드
 - **정적 메서드(자바 8이후)**
-    - `static` 키워드 사용하여 생성
-    - 인스턴스 생성과 상관 없이 인터페이스 타입으로 사용할 수 있는 메서드
+  - `static` 키워드 사용하여 생성
+  - 인스턴스 생성과 상관 없이 인터페이스 타입으로 사용할 수 있는 메서드
 - **private 메서드 (자바 9이후)**
-    - `private` 키워드 사용하여 생성
-    - 인터페이스 내부에서만 사용하기 위해 구현하는 메서드
-    - `default` 메서드나 `static` 메서드에서 사용함
+  - `private` 키워드 사용하여 생성
+  - 인터페이스 내부에서만 사용하기 위해 구현하는 메서드
+  - `default` 메서드나 `static` 메서드에서 사용함
 
 ### 인터페이스의 다중 상속
 
@@ -407,9 +389,9 @@ public class BookShelf extends Shelf implements Queue{
 ## Objcet 클래스 - 모든 클래스의 최상위 클래스
 
 - `java.lang` 패키지 안에 존재
-    - 자동 import 됨
-    - 많이 사용하는 기본 클래스들이 속한 패키지
-    - `String`, `Integer`, `System` 등
+  - 자동 import 됨
+  - 많이 사용하는 기본 클래스들이 속한 패키지
+  - `String`, `Integer`, `System` 등
 
 ### `toString()` 메서드
 
@@ -434,7 +416,7 @@ public boolean equals(Object obj) {
 		else return false;
 	}
 	return false;
-	
+
 }
 
 @Override
@@ -466,16 +448,16 @@ public class Student implements Cloneable{
 ## String
 
 - `String str1 = new String("abc");`
-    - 힙 메모리에 인스턴스로 생성
-    - 생성자로 같은 값으로 생성 시, 생성 될 때마다 다른 주소를 가짐
-        - 인스턴스 비교 시 다르다(false) 나옴
+  - 힙 메모리에 인스턴스로 생성
+  - 생성자로 같은 값으로 생성 시, 생성 될 때마다 다른 주소를 가짐
+    - 인스턴스 비교 시 다르다(false) 나옴
 - `String str2 = "abc";`
-    - “abc”가 constant pool(상수 풀)에 존재
-    - “abc”로 생성한 객체는 같은 주소를 가짐
-        - 인스턴스 비교 시 같다(true) 나옴
+  - “abc”가 constant pool(상수 풀)에 존재
+  - “abc”로 생성한 객체는 같은 주소를 가짐
+    - 인스턴스 비교 시 같다(true) 나옴
 - 한번 생성된 String은 불변(immutable) - final 키워드로 문자열이 보관
-    - String.concat()시 두 문자열이 이어지는 것이 아닌 이어진 새로운 문자열이 생성
-    - 대신 `StringBuilder`, `StringBuffer` 사용하면 메모리 낭비를 줄일 수 있다.
+  - String.concat()시 두 문자열이 이어지는 것이 아닌 이어진 새로운 문자열이 생성
+  - 대신 `StringBuilder`, `StringBuffer` 사용하면 메모리 낭비를 줄일 수 있다.
 
 ### StringBuilder / StringBuffer
 
@@ -488,9 +470,9 @@ System.out.println(buffer.toString());
 ```
 
 - 내부적으로 가변적인 `char[]`를 멤버 변수로 가짐
-    - 새로운 인스턴스를 생성하지 않고 `char[]`를 변경
+  - 새로운 인스턴스를 생성하지 않고 `char[]`를 변경
 - `StringBuffer`는 멀티 쓰레드 프로그래밍에서 동기화(`synchronization`)을 보장
-    - 단일 쓰레드 프로그램에서는 `StringBuilder` 사용을 권장
+  - 단일 쓰레드 프로그램에서는 `StringBuilder` 사용을 권장
 
 ### text block(java 13이상)
 
@@ -516,46 +498,40 @@ System.out.println(buffer.toString());
 > **(참고)**자바의 모든 클래스와 인터페이스는 컴파일 후 class 파일로 생성된다.
 
 - 동적 로딩
-    - 클래스 명(문자열)으로 가져오기
-    
+  - 클래스 명(문자열)으로 가져오기
+  ```java
+  Class c = Class.forName("java.lang.String");
+  ```
+  - 클래스 이름으로 직접 가져오기
+  ```java
+  Class c = String.class;
+  ```
+  - 생성된 인스턴스에서 Class 클래스 가져오기
+  ```java
+  String s = new String();
+  Class c = s.getClass();  //Object 메서드
+  ```
+- reflection 프로그래밍
+  - Class 클래스를 사용하여 클래스의 정보(생성자, 변수, 메서드) 등을 파악하여 인스턴스를 생성하고, 메서드를 호출하는 방식의 프로그래밍
+  - 로컬 메모리에 객체 없는 경우, 원격 프로그래밍, 객체의 타입을 알 수 없는 경우에 사용
+  - java.lang.reflect 패키지에 있는 클래스를 활용하여 프로그래밍
+  - 일반적으로 자료형을 알고 있는 경우엔 사용하지 않음
+  - `newInstance()`로 인스턴스 생성
     ```java
     Class c = Class.forName("java.lang.String");
+    String str = (String)c.newInstance();
+
+    Class[] parameterTypes = {String.class};
+    Constructor cons = c.getConstructor(parameterTypes);
+
+    Object[] initargs = {"hello world!"};
+    String str2 = (String)cons.newInstance(initargs);
+
+    System.out.println(str2);
     ```
-    
-    - 클래스 이름으로 직접 가져오기
-    
-    ```java
-    Class c = String.class;
-    ```
-    
-    - 생성된 인스턴스에서 Class 클래스 가져오기
-    
-    ```java
-    String s = new String();
-    Class c = s.getClass();  //Object 메서드
-    ```
-    
-- reflection 프로그래밍
-    - Class 클래스를 사용하여 클래스의 정보(생성자, 변수, 메서드) 등을 파악하여 인스턴스를 생성하고, 메서드를 호출하는 방식의 프로그래밍
-    - 로컬 메모리에 객체 없는 경우, 원격 프로그래밍, 객체의 타입을 알 수 없는 경우에 사용
-    - java.lang.reflect 패키지에 있는 클래스를 활용하여 프로그래밍
-    - 일반적으로 자료형을 알고 있는 경우엔 사용하지 않음
-    - `newInstance()`로 인스턴스 생성
-        
-        ```java
-        Class c = Class.forName("java.lang.String");
-        String str = (String)c.newInstance();
-        
-        Class[] parameterTypes = {String.class};
-        Constructor cons = c.getConstructor(parameterTypes);
-        
-        Object[] initargs = {"hello world!"};
-        String str2 = (String)cons.newInstance(initargs);
-        
-        System.out.println(str2);
-        ```
 
 ---
-## ✏️여담
-자바 기억이 새록새록 나면서 문법에 완전 친숙해졌어요. 옛날에 했다고 다 까먹었나 했더니 금방 다 생각나네요. 빨리 스프링도 배우고 싶어요!🚗
 
+## ✏️여담
+
+자바 기억이 새록새록 나면서 문법에 완전 친숙해졌어요. 옛날에 했다고 다 까먹었나 했더니 금방 다 생각나네요. 빨리 스프링도 배우고 싶어요!🚗
