@@ -4,7 +4,7 @@ title: "Spring 개발환경 세팅"
 date: 2023-05-08 16:48:00 +0900
 last_modified_at: 2023-05-29 14:36:00 +0900
 categories:
-    - development
+  - development
 ---
 
 스프링을 시작하기에 앞서 개발에 필요한 환경 세팅을 해보도록 하겠습니다~ 스프링 부트가 아닌 스프링인 점을 유의해주세요.
@@ -26,32 +26,33 @@ STS 4에서는 Spring Boot만 지원이 되서 STS 3버전으로 설치해야해
 
 - **prettier** : 자동 코드 포맷팅
 - **indent-rainbow :** 들여쓰기(indent)에 색이 부여되어 구별이 잘 된다!
-- **Auto Rename Tag html :** 태그 앞에 꺼  바꾸면, 뒤에 꺼도 자동으로 바뀐다
+- **Auto Rename Tag html :** 태그 앞에 꺼 바꾸면, 뒤에 꺼도 자동으로 바뀐다
 
 ### Tomcat 기본 사용법
 
 1. [Tomcat 다운로드 페이지](https://tomcat.apache.org/download-10.cgi)에서 zip 파일을 다운 받고 C 드라이브에 압축을 푼다.
 2. Tomcat 저장위치(C드라이브에 바로 풀었을 때 - C:\apache-tomcat-10.1.8)에서 bin 폴더로 이동하여 cmd 실행
 3. **startup 명령어**로 브라우저에서 localhost:8080에 톰캣의 디폴트 페이지가 나오는지 확인한다.
-    
-    ```bash
-    C:\apache-tomcat-10.1.8\bin> startup
-    ```
-    
+
+   ```bash
+   C:\apache-tomcat-10.1.8\bin> startup
+   ```
+
 4. **shutdown 명령어**로 톰캣을 종료한다.
-    
-    ```bash
-    C:\apache-tomcat-10.1.8\bin> shutdown
-    ```
-    
+
+   ```bash
+   C:\apache-tomcat-10.1.8\bin> shutdown
+   ```
+
 ## Tomcat과 Apache의 차이점
+
 Apache는 웹서버(Web Server)이고 Tomcat은 웹 어플리케이션 서버(WAS; Web Application Server)입니다.
 
 웹서버는 지정된 포트에 접속 시 `html`, `css`, `javascript` 파일을 클라이언트에게 보내주는 역할을 수행합니다.
 
 Tomcat은 Apache의 역할에 더해, JSP와 Servlet을 구동하는 역할도 수행합니다.
 
-![tomcat-struct](/assets/images/2023-05-08/tomcat-struct.png)
+![tomcat-struct](/assets/images/2023/05/08/tomcat-struct.png)
 
 tomcat WAS의 구조는 Apache(Web server)를 포함하며 그 위에서 동적인 자료도 효율적으로 처리할 수 있다고 합니다. 자세한건 자세히 공부해봐야 알겠네요 ㅎ
 
@@ -66,7 +67,7 @@ tomcat WAS의 구조는 Apache(Web server)를 포함하며 그 위에서 동적�
 **Spring Legacy Project**가 아닌 **Spring Starter Project**는 Spring Boot를 위한 항목입니다
 {: .notice--info}
 
-![create-project](/assets/images/2023-05-08/create-project.png)
+![create-project](/assets/images/2023/05/08/create-project.png)
 
 **Project name**을 작성하고 Template으로 Spring MVC Project를 골라서 Next를 누릅니다.
 
@@ -79,19 +80,20 @@ tomcat WAS의 구조는 Apache(Web server)를 포함하며 그 위에서 동적�
 
 ### tomcat 연결
 
-![navigator](/assets/images/2023-05-08/navigator.png)
+![navigator](/assets/images/2023/05/08/navigator.png)
 
 왼쪽 아래를 보면 Server가 있는데 여기서 Tomcat를 연결해줍니다. 저는 이미 연결해서 나오지만 아무 연결 없으면 New server 만들기 버튼이 나올거에요!
 
-![new-server](/assets/images/2023-05-08/new-server.png)
+![new-server](/assets/images/2023/05/08/new-server.png)
 
 설치한 tomcat9를 검색합니다.
 
-![tomcat-setting](/assets/images/2023-05-08/tomcat-setting.png)
+![tomcat-setting](/assets/images/2023/05/08/tomcat-setting.png)
 
 - tomcat9 설치된 폴더를 연결해줍니다!
 
-###  프로젝트 실행
+### 프로젝트 실행
+
 프로젝트 명 우클릭 - Run As - Run on Server 실행
 
 tomcat으로 자동으로 실행되어 STS 상에서 http://localhost:8080를 열게 됩니다.
@@ -100,14 +102,14 @@ tomcat으로 자동으로 실행되어 STS 상에서 http://localhost:8080를 �
 **STS 상이 아닌 크롬에서 열고 싶을 때**
 
 1. 우측 위 돋보기(검색) 버튼 클릭 - web browser 검색 or  
-    Window - Preferences - General - Web Browser 진입
+   Window - Preferences - General - Web Browser 진입
 2. Use external web browser 선택
 3. External web brwosers - Chrome으로 변경(기본 브라우저가 Chrome으로 되있으면 변경 필요 X)
 </div>
 
 ### 결과
 
-![result](/assets/images/2023-05-08/result.png)
+![result](/assets/images/2023/05/08/result.png)
 
 기본 입력되어 있는 hello world가 출력되었습니다. 컴퓨터 언어가 한글이라 한글이 깨지네요💧
 
@@ -122,6 +124,7 @@ tomcat으로 자동으로 실행되어 STS 상에서 http://localhost:8080를 �
 - [week7 - 스프링(세션, 예외 처리, WEBDataBinder 등)](/kakao%20tech%20campus/week7/)
 
 ## 👀참고
+
 [아파치, 톰캣의 차이 \| 유혁의 개발 스토리](https://yoo-hyeok.tistory.com/137)
 
 [Spring 시작하기 \| 남궁성의 Spring framework 강좌](https://github.com/castello/spring_basic)
