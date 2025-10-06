@@ -17,7 +17,7 @@ categories:
 
 [홈페이지](https://www.jetbrains.com/ko-kr/idea/download/#section=windows)에서 Ultimate 버전을 다운 받아주세요. Community 버전은 웹 개발과 관련된 기능이 덜 지원 되기 때문에 왠만하면 Ultimate 버전을 쓰는게 좋아요. Community 버전으로도 방법이 다 있지만 좋은 기능 쓰는게 좋잖아요?
 
-![intellij-version](/assets/images/2023-05-29/intellij-version.png)
+![intellij-version](/assets/images/2023/05/29/intellij-version.png)
 
 Ultimate는 한달 무료인데 학생 인증 받으면 1년치 라이센스를 줍니다! 다시 인증하면 또 1년 더 주니까 학생 메일 있으시면 Ultimate로 다운받으세요.
 
@@ -25,7 +25,7 @@ Ultimate는 한달 무료인데 학생 인증 받으면 1년치 라이센스를 
 
 **FILE - NEW - Project -> Spring Initializr**로 Spring 프로젝트를 생성합니다.
 
-![create-project](/assets/images/2023-05-29/create-project.png)
+![create-project](/assets/images/2023/05/29/create-project.png)
 
 - Name: Project 이름을 작성합니다.
 - Language: 프로그램은 Java로 작성할 거에요.
@@ -69,7 +69,7 @@ spring boot는 톰캣이 내장되어 있기 때문에 실행만 하시면 돼�
 
 실행 후 localhost:8080에 접속하면 출력이 될거에요.
 
-![hello, spring boot](/assets/images/2023-05-29/hello.png)
+![hello, spring boot](/assets/images/2023/05/29/hello.png)
 
 ### jar 파일로 배포
 
