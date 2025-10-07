@@ -4,7 +4,7 @@ title: "리눅스 서버(AWS 등)의 MySQL을 원격으로 사용하기"
 date: 2023-05-30 10:41:00 +0900
 last_modified_at: 2023-06-04 04:17:00 +0900
 categories:
-    - development
+  - development
 ---
 
 이번에는 서버에 MySQL을 설치 및 사용자를 추가하여 다른 컴퓨터에서도 서버의 MySQL에 접근 가능하도록 해봤어요. 제가 AWS 프리티어로 우분투 서버 인스턴스를 대여 중인데 아직 아무 프로그램도 안 올려놔서 데이터베이스라도 서버에서 돌릴려고요.🐎
@@ -67,11 +67,12 @@ mysql> select host, user, plugin, authentication_string from user;
 mysql> alter user 'root'@'localhost' identified by '';
 mysql> FLUSH PRIVILEGES;
 ```
+
 root는 서버에서만 접속 가능하니 비밀번호를 없애버릴게요. `FLUSH PRIVILEGES;`는 사용자에 대한 정보 변경했을 때 해주셔야 반영이 돼요.
 
 ---
 
-***(23.06.04 추가)***
+**_(23.06.04 추가)_**
 
 다시 해보니까 caching_sha2_password로 설정되어 있지 않고 auth_socket 으로 기본 plugin이 설정된 거 였어요.
 
@@ -146,8 +147,8 @@ ERROR 2003 (HY000): Can't connect to MySQL server on '[아이피주소]:3306' (1
 
 AWS의 방화벽 열어두셔야하는 건 요정도에요. 저는 현재 이렇게 열어놨어요.
 
-* 인바운드 - SSH(22포트), HTTP(80포트), HTTPS(443포트), MYSQL(3306포트)
-* 아웃바운드 -  SSH(22포트), HTTP(80포트), HTTPS(443포트)
+- 인바운드 - SSH(22포트), HTTP(80포트), HTTPS(443포트), MYSQL(3306포트)
+- 아웃바운드 - SSH(22포트), HTTP(80포트), HTTPS(443포트)
 
 ## 🕷️이번엔 10061 Error?
 
@@ -237,11 +238,11 @@ $ service mysql restart
 
 `+ 버튼`을 눌러 New Connection을 만듭니다.
 
-![mysql work bench setup](/assets/images/2023-05-30/mysql-workbench-setup.png)
+![mysql work bench setup](/assets/images/2023/05/30/mysql-workbench-setup.png)
 
 서버 아이피 주소랑 설정한 MySQL 유저 이름을 적습니다. `OK`를 누르면 비밀번호를 입력 가능하고 입력하면 연결이 됩니다!
 
-![mysql work bench](/assets/images/2023-05-30/mysql-workbench.png)
+![mysql work bench](/assets/images/2023/05/30/mysql-workbench.png)
 
 ### Console cmd
 
@@ -272,12 +273,13 @@ mysql>
 {: .notice--info}
 
 ## 👀참고
-* [[Ubuntu] 우분투에 MySQL 설치하기 \| ㅇㅅㅇ.devlog](https://velog.io/@seungsang00/Ubuntu-%EC%9A%B0%EB%B6%84%ED%88%AC%EC%97%90-MySQL-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0)
-* [Linux : MySQL 사용자 비밀번호 변경 방법, 예제, 명령어 \| 쵸코쿠키의 연습장](https://jjeongil.tistory.com/1484)
-* [Mysql 계정 비밀번호 변경 \| yebali.log](https://velog.io/@yebali/Mysql-Mysql-%EA%B3%84%EC%A0%95-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-%EB%B3%80%EA%B2%BD)
-* [MySQL 8 인증 플러그인 암호화 방식 변경 \| AllThatLinux](https://atl.kr/dokuwiki/doku.php/mysql_8_%EC%9D%B8%EC%A6%9D_%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8_%EC%95%94%ED%98%B8%EB%B0%A9%EC%8B%9D_%EB%B3%80%EA%B2%BD)
-* [MySQL 원격 접속 허용 \| ZETAWIKI](https://zetawiki.com/wiki/MySQL_%EC%9B%90%EA%B2%A9_%EC%A0%91%EC%86%8D_%ED%97%88%EC%9A%A9)
-* [[MySQL 8.0] MySQL 유저 원격접속 허용하기 \| i-mini](https://1mini2.tistory.com/87)
-* [우여곡절 MySql 원격접속 하기ㅠ.ㅠ \| wpdlzhf159.log](https://velog.io/@wpdlzhf159/MySql-%EC%9B%90%EA%B2%A9%EC%A0%91%EC%86%8D-%ED%95%98%EA%B8%B0)
-* [[AWS] : AWS Ec2 Ubuntu Mysql 외부 접속하기 \| 노력을 쌓는 개발자 오주현](https://ohju.tistory.com/315)
-* [MYSQL(MariaDB)에서 외부접근이 되지않을때(Feat. Can’t Connect To MySQL Server On ‘192.168.X.X'(10061) \| 달소씨의 하루](https://blog.dalso.org/it/4260)
+
+- [[Ubuntu] 우분투에 MySQL 설치하기 \| ㅇㅅㅇ.devlog](https://velog.io/@seungsang00/Ubuntu-%EC%9A%B0%EB%B6%84%ED%88%AC%EC%97%90-MySQL-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0)
+- [Linux : MySQL 사용자 비밀번호 변경 방법, 예제, 명령어 \| 쵸코쿠키의 연습장](https://jjeongil.tistory.com/1484)
+- [Mysql 계정 비밀번호 변경 \| yebali.log](https://velog.io/@yebali/Mysql-Mysql-%EA%B3%84%EC%A0%95-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-%EB%B3%80%EA%B2%BD)
+- [MySQL 8 인증 플러그인 암호화 방식 변경 \| AllThatLinux](https://atl.kr/dokuwiki/doku.php/mysql_8_%EC%9D%B8%EC%A6%9D_%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8_%EC%95%94%ED%98%B8%EB%B0%A9%EC%8B%9D_%EB%B3%80%EA%B2%BD)
+- [MySQL 원격 접속 허용 \| ZETAWIKI](https://zetawiki.com/wiki/MySQL_%EC%9B%90%EA%B2%A9_%EC%A0%91%EC%86%8D_%ED%97%88%EC%9A%A9)
+- [[MySQL 8.0] MySQL 유저 원격접속 허용하기 \| i-mini](https://1mini2.tistory.com/87)
+- [우여곡절 MySql 원격접속 하기ㅠ.ㅠ \| wpdlzhf159.log](https://velog.io/@wpdlzhf159/MySql-%EC%9B%90%EA%B2%A9%EC%A0%91%EC%86%8D-%ED%95%98%EA%B8%B0)
+- [[AWS] : AWS Ec2 Ubuntu Mysql 외부 접속하기 \| 노력을 쌓는 개발자 오주현](https://ohju.tistory.com/315)
+- [MYSQL(MariaDB)에서 외부접근이 되지않을때(Feat. Can’t Connect To MySQL Server On ‘192.168.X.X'(10061) \| 달소씨의 하루](https://blog.dalso.org/it/4260)
