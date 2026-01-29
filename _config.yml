@@ -106,7 +106,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Hyejun An(25)"
+  name             : "Hyejun An(26)"
   avatar           : /assets/images/profile.png # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "AI Engineer who loves building things from scratch. Specializing in LLM agents, automation, and full-stack development."
   location         : "Seoul, South Korea"
