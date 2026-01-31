@@ -2,6 +2,7 @@
 layout: single
 title: "[Review] Don't Do RAG: When Cache-Augmented Generation is All You Need for Knowledge Tasks"
 date: 2026-01-29 20:15:00 +0900
+last_modified_at: 2026-01-31 17:27:00 +0900
 categories: papers
 ---
 
@@ -14,6 +15,8 @@ RAG가 검색된 chunk만 프롬프트에 넣는 반면, CAG는 대상 문서 �
 단, 모든 문서를 프롬프트에 넣기에는 컨텍스트 길이 한계가 있어 RAG를 완전히 대체하긴 어렵다.
 
 {% linkpreview "https://arxiv.org/abs/2412.15605v1" %}
+
+> 논문 리뷰 - Weekly Tech Trend Talk 스터디(25.12.08)
 
 ## 논문 리뷰
 
