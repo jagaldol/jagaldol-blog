@@ -1,0 +1,13 @@
+# Feedback Log
+
+Purpose: Track user feedback that should change how work is done in this repository.
+
+## 2026-03-05
+- Do not include time-style phrasing like `for 9` in commit messages.
+- When changing post publish timing, update all related date surfaces together:
+  - front matter `date`
+  - post filename date
+  - referenced image path date
+- If an image is broken, prioritize the user-provided attached image.
+- For Codex multi-agent guidance, use `/experimental` workflow and ignore typo text.
+- Avoid suggesting repeated enable steps when `/experimental` keeps the feature active.
