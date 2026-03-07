@@ -2,14 +2,13 @@
 layout: single
 title: "Gemini 창작 기능 확장 - Lyria 3 음악 생성 & Nano Banana 2 이미지 생성"
 date: 2026-03-06 09:00:00 +0900
+last_modified_at: 2026-03-07 20:37:00 +0900
 categories: ai
 ---
 
 2월에 Google은 Gemini의 창작 기능을 음악과 이미지 양쪽으로 대폭 확장했다.
 Lyria 3로 음악 생성을, Nano Banana 2로 이미지 생성을 한 단계 끌어올렸고,
 관련 내용을 이 글로 통합 정리했다.
-
-> Weekly Tech Trend Talk 스터디(26.02.12 ~ 26.02.28)
 
 ---
 
@@ -38,6 +37,8 @@ YouTube 크리에이터용 Dream Track 기능으로도 확장되었으며,
 
 <a href="https://gemini.google.com/share/10ddcb8061ef" target="_blank" rel="noopener noreferrer"><img src="/assets/images/2026/03/06/lyria-study-song-cover.jpg" alt="스터디에서 만든 곡 커버" class="width-300px"></a>
 
+> Weekly Tech Trend Talk 스터디(26.02.19)
+
 ---
 
 ## Nano Banana 2 - Gemini 이미지 생성
@@ -65,6 +66,8 @@ Google이 [Nano Banana 2](https://blog.google/innovation-and-ai/technology/ai/na
 
 음악(Lyria 3)과 이미지(Nano Banana 2)가 하나의 Gemini 워크플로우로 묶이면서
 아이디어 스케치부터 사운드트랙/비주얼 시안 제작까지 한 번에 이어서 작업할 수 있게 됐다.
+
+> Weekly Tech Trend Talk 스터디(26.02.28)
 
 ---
 

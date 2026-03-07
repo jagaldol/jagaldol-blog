@@ -2,7 +2,7 @@
 layout: single
 title: "[github.io] 블로그 구글 검색 등록하기(SEO 설정)"
 date: 2023-03-12 15:00:00 +0900
-last_modified_at: 2023-03-14 22:37:00:00 +0900
+last_modified_at: 2023-03-14 22:37:00 +0900
 categories: development
 ---
 
