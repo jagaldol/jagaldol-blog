@@ -20,8 +20,16 @@ layout: archive
   </li>
   {% for category in sorted_cats %}
     <li>
+      {% assign cat_display_name = category[0] %}
+      {% for cat_page in site.pages %}
+        {% assign cat_slug = cat_page.category | downcase %}
+        {% if cat_slug == category[0] and cat_page.title %}
+          {% assign cat_display_name = cat_page.title %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
       <a href="{{ category[0] | prepend: site.category_archive.path | append : '/' }}">
-        <strong>{{ category[0] }}</strong> <span class="taxonomy__count">{{ category[1].size }}</span>
+        <strong>{{ cat_display_name }}</strong> <span class="taxonomy__count">{{ category[1].size }}</span>
       </a>
     </li>
   {% endfor %}

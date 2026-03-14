@@ -31,7 +31,15 @@
       {% else %}
         {% assign i = i | plus: 1 %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="{{ crumb | downcase | prepend: path_type | prepend: crumb_path | append: '/' | relative_url }}" itemprop="item"><span itemprop="name">{{ crumb | replace: '-', ' ' | replace: '%20', ' ' | capitalize }}</span></a>
+          {% assign crumb_display = crumb | replace: '-', ' ' | replace: '%20', ' ' | capitalize %}
+          {% for cat_page in site.pages %}
+            {% assign cat_slug = cat_page.category | downcase %}
+            {% if cat_slug == crumb and cat_page.title %}
+              {% assign crumb_display = cat_page.title %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+          <a href="{{ crumb | downcase | prepend: path_type | prepend: crumb_path | append: '/' | relative_url }}" itemprop="item"><span itemprop="name">{{ crumb_display }}</span></a>
           <meta itemprop="position" content="{{ i }}" />
         </li>
         <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
