@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "macOS Codex 앱 창 최소 너비가 안 줄어들 때 해결"
+title: "macOS Codex 앱 창 최소 너비가 안 줄어들 때 해결방법"
 date: 2026-03-28 15:08:25 +0900
 categories: development
 ---
