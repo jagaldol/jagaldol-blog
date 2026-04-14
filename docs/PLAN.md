@@ -37,9 +37,30 @@ Last updated: 2026-04-14
   - `/assets/images/2026/04/14/obsidian-agents-md.png`
 - Keep image filenames descriptive and store only the canonical versions under the post date path.
 
+## Part 2
+- Status: draft created, local build verified
+- Post path: `_posts/obsidian/2026-04-15-obsidian-ai-agent-vault-structure.md`
+- Working title: `AI Agent가 관리하는 Obsidian 구조 만들기 - AGENTS.md, 허브 노트, 00_agent_docs 설계`
+- One-line message: `좋은 Obsidian 개인 비서는 좋은 모델만으로 유지되지 않고, 읽히는 구조와 지침 계층 위에서 유지된다.`
+
+### Narrative spine
+- Part 1 showed the user-facing automation flow; part 2 explains the structure that makes it sustainable.
+- The main point is not aesthetics but operating cost: readable structure prevents the cleanup burden from falling back to the user.
+- The article should show the real vault layout, then explain how `AGENTS.md`, hubs, `00_agent_docs`, and local skills split responsibilities.
+
+### Content guardrails
+- Keep the article partially standalone for readers who did not open part 1.
+- Prefer code-block excerpts over screenshots for text documents such as `AGENTS.md` and hub note bodies.
+- Use screenshots only where structure is visually useful: hub graph, vault graph, folder navigation.
+- Treat `daily-note-followup` as one example of document routing, not the main subject.
+
+### Image plan
+- New hero asset:
+  - `/assets/images/2026/04/15/obsidian-vault-graph-overview.png`
+- Reused structural asset:
+  - `/assets/images/2026/04/15/obsidian-graph-view.png`
+
 ## Later Parts
-- Part 2 candidate: `AI Agent가 관리하는 Obsidian 구조 만들기`
-  - focus on folder hubs, AGENTS or CLAUDE rules, instruction docs, and skills
 - Part 3 candidate: `개인 비서를 오래 쓰기 위한 유지보수`
   - focus on long-term memory, instruction cleanup, and operational safeguards
 
