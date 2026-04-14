@@ -2,7 +2,6 @@ _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
-Gemfile.lock
 
 # Vim
 *~
@@ -15,7 +14,6 @@ Gemfile.lock
 # Ruby Gem
 *.gem
 .bundle
-Gemfile.lock
 **/vendor/bundle
 
 # Node.js and NPM
