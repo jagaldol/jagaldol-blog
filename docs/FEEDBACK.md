@@ -17,6 +17,7 @@ Purpose: Track user feedback that should change how work is done in this reposit
 
 ## 2026-04-14
 - Preserve `jekyll-linkpreview`; do not remove link preview support as a quick CI fix because multiple existing posts depend on it.
+- Keep CI Ruby aligned with the checked-in Bundler lock context, and avoid Dependabot PR floods by grouping non-major lockfile updates.
 - Strengthen blog post problem statements around the maintenance cost of using tools manually, especially for Obsidian.
 - Prefer image-rich blog posts; reuse existing source images when possible and explicitly track any missing capture requests.
 - Rewrite study presentation notes aggressively into blog-native prose instead of preserving slide-like structure.
