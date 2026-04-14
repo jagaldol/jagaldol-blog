@@ -25,6 +25,7 @@ This file defines practical operating rules for AI/code agents working in this r
 - Current active categories include:
   - `ai`
   - `development`
+  - `obsidian`
   - `papers`
   - `daily`
   - `experience`
