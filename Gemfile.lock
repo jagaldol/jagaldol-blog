@@ -316,7 +316,7 @@ GEM
     unicode-display_width (1.8.0)
     uri (1.1.1)
     webrick (1.9.1)
-    zlib (3.2.2)
+    zlib (3.2.3)
 
 PLATFORMS
   arm64-darwin-25
