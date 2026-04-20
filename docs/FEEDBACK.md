@@ -27,3 +27,8 @@ Purpose: Track user feedback that should change how work is done in this reposit
 - Use a benefit-first title, but allow explicit tool names like Claude Code, Codex, and OpenClaw in the hook when they improve click-through.
 - Avoid long flat runs of `##` sections in posts; prefer clearer topic separation with `###` subheadings and trim repeated explanation.
 - For structure posts, prefer code-block excerpts for plain text documents instead of document screenshots.
+
+## 2026-04-20
+- For Obsidian series posts, allow heading depth up to `H4`, but do not go to `H5`; flatten deeper detail into tables, bold lead-ins, or short bullets instead.
+- When a maintenance or operations post is meant to be practical, prioritize real snippet excerpts and decision tables over high-level summary prose.
+- If a document capture would feel too flat for a post hero, prefer a clean generated thumbnail over another screenshot.

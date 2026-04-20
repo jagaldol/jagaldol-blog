@@ -1,6 +1,6 @@
 # Obsidian Series Plan
 
-Last updated: 2026-04-14
+Last updated: 2026-04-20
 
 ## North Star
 - Build an `obsidian` category as a focused series, not as a loose subset of `development`.
@@ -60,9 +60,67 @@ Last updated: 2026-04-14
 - Reused structural asset:
   - `/assets/images/2026/04/15/obsidian-graph-view.png`
 
-## Later Parts
-- Part 3 candidate: `개인 비서를 오래 쓰기 위한 유지보수`
-  - focus on long-term memory, instruction cleanup, and operational safeguards
+## Part 3
+- Status: draft created, generated hero added, local build verified
+- Post path: `_posts/obsidian/2026-04-20-obsidian-ai-agent-maintenance.md`
+- Working title: `AI Agent로 Obsidian 개인 비서를 오래 쓰는 법 - 지침과 장기 메모리 운영 실전편`
+- One-line message: `좋은 구조를 만든 뒤에는, 새 정보와 새 규칙을 어디에 반영할지 계속 분류하고 수선하는 운영 규칙이 필요하다.`
+
+### Narrative spine
+- Part 2 explained the structure split; part 3 should show the operating moves that keep that structure useful over time.
+- The article should stay practical: `문제 -> representative excerpt -> immediately usable rule`.
+- The focus is not abstract maintenance philosophy but the actual routing decisions made when new facts, new rules, and document bloat appear.
+- The strongest value is showing how `12_일일기록`, `13_my`, `AGENTS.md`, playbooks, checklists, and skills interact during routine updates.
+
+### Content guardrails
+- Do not re-explain the full folder structure or redefine `AGENTS.md`, hubs, `00_agent_docs`, and skills from scratch.
+- Prefer generalized code-block excerpts over screenshots for internal documents.
+- Keep excerpts short, safe, and non-identifying: around 5-12 lines per snippet.
+- Use tables for the decision points: information routing, rule placement, and bloat signals.
+- Keep the hierarchy at `H2-H4`; if a topic would need `H5`, flatten it into a table, bold lead-ins, or short bullets.
+
+### Source anchors
+- `/Users/hyejun/Documents/Obsidian/AGENTS.md`
+- `/Users/hyejun/Documents/Obsidian/00_agent_docs/운영/에이전트 문서 운영.md`
+- `/Users/hyejun/Documents/Obsidian/00_agent_docs/장기 메모리/장기 메모리 메모.md`
+- `/Users/hyejun/Documents/Obsidian/00_agent_docs/플레이북/개인 정보 업데이트 플레이북.md`
+- `/Users/hyejun/Documents/Obsidian/00_agent_docs/플레이북/13_my 업데이트 검증 체크리스트.md`
+- `/Users/hyejun/Documents/Obsidian/.agents/skills/daily-note-followup/SKILL.md`
+
+### Image plan
+- Generated hero asset:
+  - `/assets/images/2026/04/20/obsidian-agent-maintenance-hero.png`
+- Keep the body screenshot-light and excerpt-heavy.
+
+## Part 4
+- Status: planned, plugin sources verified
+- Working title: `왜 VS Code 대신 Obsidian인가 - 플러그인 생태계와 내가 쓰는 핵심 구성`
+- One-line message: `Obsidian을 메모 앱이 아니라 작업 공간으로 유지하게 만드는 것은 markdown 파일 기반과 플러그인 조합이다.`
+
+### Narrative spine
+- Part 4 should answer why Obsidian stays open while VS Code does not become the main personal workspace.
+- The comparison should stay secondary; the center of gravity is the plugin combinations that connect recording, execution, visualization, and upkeep.
+- The article should move from `why Obsidian`, to `which plugins survived`, to `what those combinations change in day-to-day use`.
+
+### Content guardrails
+- Avoid a flat plugin catalog. Group by the workflow each plugin supports.
+- Use the real installed plugin set and the actual plugin notes in the vault as the basis.
+- Keep the article grounded in operation, including rough edges and tradeoffs.
+
+### Source anchors
+- Installed plugins under `/Users/hyejun/Documents/Obsidian/.obsidian/plugins/`
+- Plugin notes under `/Users/hyejun/Documents/Obsidian/08_작업도구/Obsidian/Obsidian 플러그인/`
+- Confirmed core plugins:
+  - `obsidian-day-planner`
+  - `periodic-notes`
+  - `calendar`
+  - `dataview`
+  - `base-board`
+  - `templater-obsidian`
+  - `obsidian-image-toolkit`
+  - `obsidian-custom-attachment-location`
+  - `obsidian-wakatime`
+  - `terminal`
 
 ## Repository Tasks
 - Maintain `_pages/categories/obsidian.md`.
