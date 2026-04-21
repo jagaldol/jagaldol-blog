@@ -1,6 +1,6 @@
 # Obsidian Series Plan
 
-Last updated: 2026-04-20
+Last updated: 2026-04-21
 
 ## North Star
 - Build an `obsidian` category as a focused series, not as a loose subset of `development`.
@@ -93,34 +93,66 @@ Last updated: 2026-04-20
 - Keep the body screenshot-light and excerpt-heavy.
 
 ## Part 4
-- Status: planned, plugin sources verified
-- Working title: `왜 VS Code 대신 Obsidian인가 - 플러그인 생태계와 내가 쓰는 핵심 구성`
-- One-line message: `Obsidian을 메모 앱이 아니라 작업 공간으로 유지하게 만드는 것은 markdown 파일 기반과 플러그인 조합이다.`
+- Status: draft created, screenshot and hero gathered, local build verified
+- Post path: `_posts/obsidian/2026-04-21-obsidian-workspace-plugin-stack.md`
+- Working title: `Obsidian을 메모 앱이 아니라 작업 공간으로 만드는 핵심 플러그인 구성`
+- One-line message: `핵심은 플러그인 수가 아니라, 기록·실행·정리 흐름이 에이전트와 함께 덜 틀리게 굴러가도록 만드는 조합이다.`
 
 ### Narrative spine
-- Part 4 should answer why Obsidian stays open while VS Code does not become the main personal workspace.
-- The comparison should stay secondary; the center of gravity is the plugin combinations that connect recording, execution, visualization, and upkeep.
-- The article should move from `why Obsidian`, to `which plugins survived`, to `what those combinations change in day-to-day use`.
+- Part 4 should answer why Obsidian works as a practical workspace without becoming a long VS Code comparison piece.
+- The center of gravity is the plugin combinations that connect recording, execution, visualization, and upkeep.
+- The article should move from `why this workspace works`, to `record/execute/organize flows`, to `why the agent makes fewer mistakes on top of them`.
 
 ### Content guardrails
-- Avoid a flat plugin catalog. Group by the workflow each plugin supports.
-- Use the real installed plugin set and the actual plugin notes in the vault as the basis.
-- Keep the article grounded in operation, including rough edges and tradeoffs.
+- Avoid a flat plugin catalog. Group by workflow: `기록 흐름`, `실행 흐름`, `정리 흐름`.
+- Keep the core plugin list narrow:
+  - `obsidian-day-planner`
+  - `periodic-notes`
+  - `templater-obsidian`
+  - `base-board`
+  - `dataview`
+  - `obsidian-custom-attachment-location`
+- Mention `calendar` only as a helper around `periodic-notes`.
+- Do not let `Image Toolkit`, `terminal`, or `wakatime` become main sections.
+- Keep the article grounded in operation, including rough edges and current workarounds.
+- Frame global Obsidian skills only briefly; save the full global-vs-local skill discussion for part 5.
 
 ### Source anchors
 - Installed plugins under `/Users/hyejun/Documents/Obsidian/.obsidian/plugins/`
 - Plugin notes under `/Users/hyejun/Documents/Obsidian/08_작업도구/Obsidian/Obsidian 플러그인/`
-- Confirmed core plugins:
-  - `obsidian-day-planner`
-  - `periodic-notes`
-  - `calendar`
-  - `dataview`
-  - `base-board`
-  - `templater-obsidian`
-  - `obsidian-image-toolkit`
-  - `obsidian-custom-attachment-location`
-  - `obsidian-wakatime`
-  - `terminal`
+- Real config anchors:
+  - `.obsidian/plugins/templater-obsidian/data.json`
+  - `.obsidian/plugins/periodic-notes/data.json`
+  - `.obsidian/plugins/obsidian-custom-attachment-location/data.json`
+- Real template anchors:
+  - `_Templates/일일기록 일간 노트.md`
+  - `_Templates/TODO 노트.md`
+- Real operating anchors:
+  - `00_agent_docs/플레이북/Base Board 작업 지침.md`
+  - `00_agent_docs/플레이북/이미지 첨부 운영 플레이북.md`
+- Skill anchors:
+  - global: `obsidian-cli`, `obsidian-markdown`, `obsidian-bases`
+  - local: `.agents/skills/daily-note-followup/SKILL.md`
+
+### Image plan
+- Generated hero asset:
+  - `/assets/images/2026/04/21/obsidian-plugin-stack-hero.png`
+- New UI screenshot:
+  - `/assets/images/2026/04/21/obsidian-base-board.png`
+- Reused Day Planner screenshot:
+  - `/assets/images/2026/04/14/obsidian-day-planner-timeline.png`
+
+## Part 5
+- Status: planned
+- Working title candidate: `Obsidian 기본 스킬과 로컬 스킬을 어떻게 겹쳐 쓰는가`
+- One-line message: `전역 스킬은 Obsidian과 상호작용하는 기본 능력을 주고, 로컬 스킬은 내 Vault 규칙에 맞춘 절차를 얹는다.`
+
+### Narrative spine
+- Part 5 should explain the difference between global Obsidian capabilities and vault-local skills.
+- Keep the framing explicit: global Obsidian skills live outside a single repository so other projects can still read or write Obsidian notes when needed.
+- Keep the local side explicit too: vault-local skills exist because the personal-assistant workflow in this vault has its own routing rules, playbooks, and maintenance steps.
+- The main value is showing how common capabilities and repository-specific procedures layer without being duplicated.
+- Reuse part 4's plugin stack as the concrete environment those skills operate within.
 
 ## Repository Tasks
 - Maintain `_pages/categories/obsidian.md`.

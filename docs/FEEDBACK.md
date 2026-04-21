@@ -32,3 +32,8 @@ Purpose: Track user feedback that should change how work is done in this reposit
 - For Obsidian series posts, allow heading depth up to `H4`, but do not go to `H5`; flatten deeper detail into tables, bold lead-ins, or short bullets instead.
 - When a maintenance or operations post is meant to be practical, prioritize real snippet excerpts and decision tables over high-level summary prose.
 - If a document capture would feel too flat for a post hero, prefer a clean generated thumbnail over another screenshot.
+
+## 2026-04-21
+- For plugin-focused Obsidian posts, lead with the basic plugin introduction and concrete usage first, then expand into higher-level workflow implications.
+- Avoid unnecessary caveat paragraphs about excluded convenience plugins when they do not add real explanatory value.
+- When planning the skill-focused follow-up post, make the global-vs-local split explicit: global Obsidian skills are reusable across projects, while vault-local skills exist for the personal-assistant behavior in this vault.
