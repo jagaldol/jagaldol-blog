@@ -145,15 +145,15 @@ Last updated: 2026-04-22
 ## Part 5
 - Status: draft created, local build verified
 - Post path: `_posts/obsidian/2026-04-22-obsidian-ai-assistant-skill-stack.md`
-- Working title: `Obsidian AI 비서에게 어떤 스킬을 주면 좋을까 - 기본 스킬들과 직접 만드는 확장 스킬까지`
-- One-line message: `공식 기본 스킬 5개는 출발점이고, 실제 개인 비서 운영은 내 Vault 규칙을 담은 확장 스킬이 붙어야 시작된다.`
+- Working title: `Obsidian AI 비서에게 어떤 스킬을 주면 좋을까 - 기본 스킬과 직접 만든 비서 운영 스킬까지`
+- One-line message: `공식 기본 스킬 5개는 출발점이고, 실제 개인 비서 운영은 내 Vault 규칙을 담은 비서 운영 스킬이 붙어야 시작된다.`
 
 ### Narrative spine
 - Part 5 should answer a more direct reader question: which skills are worth giving an Obsidian AI assistant?
 - Keep the official Obsidian skill pack brief; it is the baseline, not the center of gravity.
-- Make the center of gravity the local extension skills and why they exist.
+- Make the center of gravity the directly built assistant-operation skills and why they exist.
 - Show that a useful skill is usually a package of `SKILL.md`, `references`, and optional `agents/openai.yaml`, not just one prompt file.
-- End with a light-weight “how to start making your own extension skill” section rather than a full tutorial.
+- End with a light-weight “when to turn a workflow into your own skill” section rather than a full tutorial.
 
 ### Source anchors
 - Official GitHub source of truth:
@@ -164,13 +164,65 @@ Last updated: 2026-04-22
   - `json-canvas`
   - `obsidian-cli`
   - `defuddle`
-- Local extension skills:
+- Local assistant-operation skills:
   - `.agents/skills/daily-note-followup/`
   - `.agents/skills/organize-instructions/`
 
 ### Image plan
 - Generated hero asset:
   - `/assets/images/2026/04/22/obsidian-skill-stack-hero.png`
+
+## Part 6
+- Status: planned
+- Post path: `TBD`
+- Working title: `Obsidian 스킬은 어디에 설치해야 할까 - 전역 기본 스킬과 Vault 전용 스킬을 나누는 기준`
+- One-line message: `스킬을 잘 만드는 것만큼 중요한 건 설치 위치를 잘 나누는 일이다. 공용 능력은 전역에, Vault 규칙은 로컬에 둬야 재사용성과 안정성이 같이 산다.`
+
+### Narrative spine
+- Part 6 should answer the next practical question left after part 5: where should each skill live?
+- Keep the article short and judgment-first: global versus local placement matters more than packaging details here.
+- Show that installation location is an architectural choice because it changes context size, reuse, and failure rate across repositories.
+- Use one realistic future example as the center: a global custom skill that captures work done in any repository and records it into today's Obsidian daily note.
+
+### Content guardrails
+- Keep the article compact rather than turning it into another full skill tutorial.
+- Open with the common mistake: putting every useful skill into one local vault and then losing reuse everywhere else.
+- Use `이 스킬이 특정 vault를 몰라도 되나?` as the main split criterion.
+- Explain global placement with both official Obsidian baseline skills and reusable custom skills.
+- Explain local placement with vault-specific rules, canonical documents, and section ownership.
+- Do not re-explain `SKILL.md`, `references`, and `agents/openai.yaml` in depth; part 5 already covered their internal structure.
+
+### Future global custom skill candidate
+- Tentative name: `obsidian-worklog-capture`
+- Role: capture work done in any repository and append it into today's Obsidian daily note as schedule sub-items and memo bullets.
+- Why global:
+  - it should be callable from arbitrary repositories
+  - it should prevent the agent from rediscovering the vault structure every time
+  - it should reduce context growth and routing mistakes when the main task lives outside the Obsidian repository
+- Required references:
+  - daily note path convention
+  - `## 일정` insertion rules
+  - `## 메모` phrasing rules
+  - safeguards for time ranges and section ownership
+- Future split of responsibility:
+  - the global skill owns the cross-repo capture interface
+  - the local vault documents still own the exact writing rules and note conventions
+
+### Source anchors
+- Official skills source of truth:
+  - `https://github.com/kepano/obsidian-skills`
+- Global skill directory:
+  - `/Users/hyejun/.codex/skills/`
+- Local vault skill directory:
+  - `/Users/hyejun/Documents/Obsidian/.agents/skills/`
+- Daily note and writing-rule anchors:
+  - `/Users/hyejun/Documents/Obsidian/AGENTS.md`
+  - `/Users/hyejun/Documents/Obsidian/00_agent_docs/플레이북/일일기록 일정 작성 플레이북.md`
+  - `/Users/hyejun/Documents/Obsidian/12_일일기록/`
+
+### Image plan
+- Optional only.
+- If needed later, prefer a simple diagram that contrasts `global skill -> arbitrary repos + Obsidian vault` with `local skill -> one specific vault`.
 
 ## Repository Tasks
 - Maintain `_pages/categories/obsidian.md`.
