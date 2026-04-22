@@ -1,6 +1,6 @@
 # Obsidian Series Plan
 
-Last updated: 2026-04-21
+Last updated: 2026-04-22
 
 ## North Star
 - Build an `obsidian` category as a focused series, not as a loose subset of `development`.
@@ -143,16 +143,34 @@ Last updated: 2026-04-21
   - `/assets/images/2026/04/14/obsidian-day-planner-timeline.png`
 
 ## Part 5
-- Status: planned
-- Working title candidate: `Obsidian 기본 스킬과 로컬 스킬을 어떻게 겹쳐 쓰는가`
-- One-line message: `전역 스킬은 Obsidian과 상호작용하는 기본 능력을 주고, 로컬 스킬은 내 Vault 규칙에 맞춘 절차를 얹는다.`
+- Status: draft created, local build verified
+- Post path: `_posts/obsidian/2026-04-22-obsidian-ai-assistant-skill-stack.md`
+- Working title: `Obsidian AI 비서에게 어떤 스킬을 주면 좋을까 - 기본 스킬들과 직접 만드는 확장 스킬까지`
+- One-line message: `공식 기본 스킬 5개는 출발점이고, 실제 개인 비서 운영은 내 Vault 규칙을 담은 확장 스킬이 붙어야 시작된다.`
 
 ### Narrative spine
-- Part 5 should explain the difference between global Obsidian capabilities and vault-local skills.
-- Keep the framing explicit: global Obsidian skills live outside a single repository so other projects can still read or write Obsidian notes when needed.
-- Keep the local side explicit too: vault-local skills exist because the personal-assistant workflow in this vault has its own routing rules, playbooks, and maintenance steps.
-- The main value is showing how common capabilities and repository-specific procedures layer without being duplicated.
-- Reuse part 4's plugin stack as the concrete environment those skills operate within.
+- Part 5 should answer a more direct reader question: which skills are worth giving an Obsidian AI assistant?
+- Keep the official Obsidian skill pack brief; it is the baseline, not the center of gravity.
+- Make the center of gravity the local extension skills and why they exist.
+- Show that a useful skill is usually a package of `SKILL.md`, `references`, and optional `agents/openai.yaml`, not just one prompt file.
+- End with a light-weight “how to start making your own extension skill” section rather than a full tutorial.
+
+### Source anchors
+- Official GitHub source of truth:
+  - `https://github.com/kepano/obsidian-skills`
+- Official baseline skills:
+  - `obsidian-markdown`
+  - `obsidian-bases`
+  - `json-canvas`
+  - `obsidian-cli`
+  - `defuddle`
+- Local extension skills:
+  - `.agents/skills/daily-note-followup/`
+  - `.agents/skills/organize-instructions/`
+
+### Image plan
+- Generated hero asset:
+  - `/assets/images/2026/04/22/obsidian-skill-stack-hero.png`
 
 ## Repository Tasks
 - Maintain `_pages/categories/obsidian.md`.
