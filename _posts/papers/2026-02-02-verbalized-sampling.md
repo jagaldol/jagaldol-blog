@@ -11,7 +11,7 @@ categories: papers
 
 {% linkpreview "https://arxiv.org/abs/2510.01171" %}
 
-> 논문 리뷰 - Weekly Tech Trend Talk 스터디(25.01.15)
+> 논문 리뷰 - Weekly Tech Trend Talk 스터디(26.01.15)
 
 ## 0. 문제 상황: Mode Collapse
 
