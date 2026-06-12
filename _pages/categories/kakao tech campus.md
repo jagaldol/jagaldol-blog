@@ -4,4 +4,5 @@ category: "kakao tech campus"
 layout: category
 permalink: /categories/kakao%20tech%20campus/
 author_profile: true
+entries_layout: grid
 ---

@@ -4,4 +4,5 @@ layout: category
 category: algorithm
 permalink: /categories/algorithm/
 author_profile: true
+entries_layout: grid
 ---

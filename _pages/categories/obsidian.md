@@ -4,4 +4,5 @@ layout: category
 category: obsidian
 permalink: /categories/obsidian/
 author_profile: true
+entries_layout: grid
 ---
