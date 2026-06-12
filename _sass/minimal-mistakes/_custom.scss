@@ -1,0 +1,211 @@
+/* ==========================================================================
+   CUSTOM AESTHETIC OVERRIDES (ansohxxn.github.io 참고)
+   - 마지막에 import 되어 테마 기본 스타일을 덮어쓴다
+   ========================================================================== */
+
+/*
+   1. 타이포 스케일 — 데스크톱에서 20px까지 커지는 기본 스케일을 17px로 캡
+   ========================================================================== */
+
+html {
+  font-size: 14px;
+
+  @include breakpoint($medium) {
+    font-size: 16px;
+  }
+
+  @include breakpoint($large) {
+    font-size: 16px;
+  }
+
+  @include breakpoint($x-large) {
+    font-size: 17px;
+  }
+}
+
+/*
+   2. 그리드 카드 — 민트 배경 위에 떠 있는 흰색 카드 + 썸네일 비율 통일
+   ========================================================================== */
+
+.entries-grid .grid__item {
+  margin-bottom: 1.5em;
+  background-color: #fff;
+  border: 1px solid mix(#fff, $border-color, 40%);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba($text-color, 0.12);
+  }
+
+  .archive__item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .archive__item-teaser {
+    aspect-ratio: 16 / 10;
+    max-height: none;
+    border-radius: 0;
+    background-color: mix(#fff, $background-color, 50%);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .archive__item-title,
+  .archive__item-excerpt,
+  .page__meta {
+    padding: 0 1em;
+  }
+
+  .archive__item-title {
+    margin-top: 0.8em;
+    line-height: 1.45;
+
+    a:hover {
+      color: $link-color;
+    }
+  }
+
+  .archive__item-excerpt {
+    margin-bottom: 1.2em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+}
+
+/* 관련 글 카드도 동일하게 */
+.page__related .grid__item {
+  background-color: #fff;
+  border: 1px solid mix(#fff, $border-color, 40%);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba($text-color, 0.12);
+  }
+
+  .archive__item-teaser {
+    aspect-ratio: 16 / 10;
+    max-height: none;
+    border-radius: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .archive__item-title,
+  .archive__item-excerpt,
+  .page__meta {
+    padding: 0 1em;
+  }
+
+  .archive__item-excerpt {
+    margin-bottom: 1.2em;
+  }
+}
+
+/*
+   3. Masthead — 민트 배경과 구분되는 흰색 헤더 + 옅은 경계
+   ========================================================================== */
+
+.masthead {
+  background-color: #fff;
+  border-bottom: 1px solid mix(#fff, $border-color, 50%);
+
+  .site-title {
+    font-weight: 800;
+  }
+
+  .site-subtitle {
+    color: mix(#fff, $text-color, 35%);
+  }
+}
+
+/*
+   4. 사이드바 — 프로필/카테고리 트리 간격과 크기 정돈
+   ========================================================================== */
+
+.sidebar {
+  .author__name {
+    font-size: 1.1em;
+  }
+
+  .author__bio {
+    font-size: 0.8em;
+    line-height: 1.6;
+  }
+
+  .nav__list {
+    margin-top: 1.5em;
+
+    .nav__items {
+      font-size: 0.85em;
+
+      a {
+        display: block;
+        padding: 0.2em 0.4em;
+        border-radius: 6px;
+
+        &:hover {
+          background-color: mix(#fff, $link-color, 88%);
+          text-decoration: none;
+        }
+
+        &.active {
+          background-color: mix(#fff, $link-color, 82%);
+          font-weight: bold;
+        }
+      }
+    }
+
+    .nav__sub-title {
+      margin-bottom: 0.3em;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+/*
+   5. 본문 페이지 — 제목/소제목 호흡 정돈
+   ========================================================================== */
+
+.page__title {
+  line-height: 1.4;
+}
+
+.page__content {
+  h2 {
+    padding-bottom: 0.4em;
+    border-bottom: 1px solid mix(#fff, $border-color, 50%);
+  }
+
+  img {
+    border-radius: 6px;
+  }
+}
+
+/*
+   6. 홈/아카이브 섹션 제목
+   ========================================================================== */
+
+.archive__subtitle {
+  margin-bottom: 1em;
+  padding-bottom: 0.4em;
+  font-weight: 700;
+  color: $text-color;
+}
