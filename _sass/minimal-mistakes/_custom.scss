@@ -494,6 +494,11 @@ h1.archive__subtitle {
   }
 }
 
+/* 맨 위로 버튼 화살표 — 테마의 .page__footer .fas 색(잉크)이 덮지 않도록 흰색 고정 */
+.page__footer .back-to-top--floating .fas {
+  color: #fff;
+}
+
 /*
    9. 공유하기 — X/LinkedIn/URL 복사
    ========================================================================== */
