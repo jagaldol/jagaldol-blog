@@ -64,6 +64,15 @@ layout: default
 
       {% include post_pagination.html %}
     </div>
+
+    {% comment %}<!-- 모바일 전용: 글을 다 읽은 지점(댓글 위)에 프로필/카테고리 노출. 데스크톱은 좌측 사이드바 사용 -->{% endcomment %}
+    {% if page.author_profile or layout.author_profile or page.sidebar_main %}
+      <div class="sidebar sidebar--inline">
+        {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
+        {% if page.sidebar_main %}{% include nav_list_main toggle_id="ac-toc-inline" %}{% endif %}
+      </div>
+    {% endif %}
+
     {% comment %}<!-- local 환경에서도 테스트를 위해 jekyll.environment == 'production' and  뺌 -->{% endcomment %}
     {% if site.comments.provider and page.comments %}
       {% include comments.html %}

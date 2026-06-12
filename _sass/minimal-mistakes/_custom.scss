@@ -353,28 +353,24 @@ h1.archive__subtitle {
 
 /*
    7. 모바일 포스트 진입 — 콘텐츠 우선
-   - 본문(article)을 먼저, 프로필/카테고리 사이드바는 글 아래로
+   - 데스크톱용 좌측 사이드바는 숨기고, 글 끝(댓글 위) 인라인 프로필/카테고리를 표시
    ========================================================================== */
 
+.sidebar--inline {
+  display: none; /* 데스크톱: 좌측 사이드바가 있으므로 숨김 */
+}
+
 @media (max-width: #{$large - 1px}) {
-  .layout--single #main {
-    display: flex;
-    flex-direction: column;
-
-    > article {
-      order: 1;
-    }
-
-    > .page__related {
-      order: 2;
-    }
-
-    > .sidebar {
-      order: 3;
-      margin-top: 2em;
-    }
+  .layout--single #main > .sidebar:not(.sidebar--inline) {
+    display: none;
   }
 
+  .layout--single .sidebar--inline {
+    display: block;
+    margin-top: 2.5em;
+    padding-top: 1.8em;
+    border-top: 1px solid mix(#fff, $border-color, 50%);
+  }
 }
 
 /* 브레드크럼: 긴 현재 글 제목은 한 줄 말줄임(데스크톱), 모바일에선 h1과 중복이라 숨김 */

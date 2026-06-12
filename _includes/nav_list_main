@@ -1,9 +1,11 @@
 {% assign total = site.posts | size %}
+{% comment %} 한 페이지에 두 번 렌더될 수 있으므로(사이드바 + 댓글 위 인라인) 토글 id를 파라미터화 {% endcomment %}
+{% assign toggle_id = include.toggle_id | default: 'ac-toc' %}
 
 <nav class="nav__list">
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc"><i class="fas fa-folder-open" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].menu_label | default: "Toggle Menu" }}</label>
-  <ul class="nav__items" id="category_tag_menu">
+  <input id="{{ toggle_id }}" name="accordion-toc" type="checkbox" />
+  <label for="{{ toggle_id }}"><i class="fas fa-folder-open" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].menu_label | default: "Toggle Menu" }}</label>
+  <ul class="nav__items">
     <li>
       <i class="fas fa-fw fa-folder-open"></i> 전체 글 <strong>{{ total }}</strong>개
     </li>
