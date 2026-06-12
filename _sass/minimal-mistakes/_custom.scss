@@ -1,14 +1,17 @@
 /* ==========================================================================
-   CUSTOM AESTHETIC OVERRIDES (ansohxxn.github.io 참고)
+   CUSTOM AESTHETIC OVERRIDES
    - 마지막에 import 되어 테마 기본 스타일을 덮어쓴다
+   - 배경은 흰색(스킨), 포인트는 민트 — 카드 박스 대신 타이포 중심의 플랫 그리드
    ========================================================================== */
 
 /*
-   1. 타이포 스케일 — 데스크톱에서 20px까지 커지는 기본 스케일을 17px로 캡
+   1. 타이포 스케일
+   - 테마가 .page__content p/li/dl 에 0.9em 을 곱하므로, 실효 크기 기준으로 설계
+   - 본문 실효: 모바일 16px / 데스크톱 17px
    ========================================================================== */
 
 html {
-  font-size: 14px;
+  font-size: 16px;
 
   @include breakpoint($medium) {
     font-size: 16px;
@@ -23,104 +26,146 @@ html {
   }
 }
 
+.page__content {
+  p,
+  li,
+  dl {
+    font-size: 1em; /* 테마의 0.9em 축소 해제 — 모바일 12.6px 문제 수정 */
+  }
+}
+
 /*
-   2. 그리드 카드 — 민트 배경 위에 떠 있는 흰색 카드 + 썸네일 비율 통일
+   2. 포스트 그리드 — 박스 카드 대신 썸네일 + 타이포 중심의 플랫 그리드
    ========================================================================== */
 
-.entries-grid .grid__item {
-  margin-bottom: 1.5em;
-  background-color: #fff;
-  border: 1px solid mix(#fff, $border-color, 40%);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.entries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2.4em 1.8em;
+  margin-bottom: 2em;
 
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba($text-color, 0.12);
-  }
+  .grid__item {
+    /* 테마의 float/span 레이아웃 무력화 */
+    float: none;
+    width: auto;
+    margin: 0;
 
-  .archive__item {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .archive__item-teaser {
-    aspect-ratio: 16 / 10;
-    max-height: none;
-    border-radius: 0;
-    background-color: mix(#fff, $background-color, 50%);
-
-    img {
-      width: 100%;
+    .archive__item {
+      display: flex;
+      flex-direction: column;
       height: 100%;
-      object-fit: cover;
     }
-  }
 
-  .archive__item-title,
-  .archive__item-excerpt,
-  .page__meta {
-    padding: 0 1em;
-  }
+    .archive__item-teaser {
+      order: -1;
+      aspect-ratio: 16 / 10;
+      max-height: none;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid mix(#fff, $border-color, 55%);
+      background-color: #eef2f1;
 
-  .archive__item-title {
-    margin-top: 0.8em;
-    line-height: 1.45;
-
-    a:hover {
-      color: $link-color;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
-  }
 
-  .archive__item-excerpt {
-    margin-bottom: 1.2em;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
+    .archive__item-title {
+      margin-top: 0.8em;
+      margin-bottom: 0.15em;
+      font-size: 1.02em;
+      line-height: 1.5;
+
+      a {
+        color: $text-color;
+
+        &:hover {
+          color: $link-color;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .page__meta {
+      margin: 0 0 0.35em;
+      font-size: 0.72em;
+      color: mix(#fff, $text-color, 20%);
+    }
+
+    .archive__item-excerpt {
+      margin: 0;
+      font-size: 0.8em;
+      line-height: 1.65;
+      color: mix(#fff, $text-color, 15%);
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
   }
 }
 
-/* 관련 글 카드도 동일하게 */
-.page__related .grid__item {
-  background-color: #fff;
-  border: 1px solid mix(#fff, $border-color, 40%);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* 관련 글도 동일한 플랫 그리드 */
+.page__related .grid__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2em 1.5em;
 
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba($text-color, 0.12);
-  }
+  .grid__item {
+    float: none;
+    width: auto;
+    margin: 0;
 
-  .archive__item-teaser {
-    aspect-ratio: 16 / 10;
-    max-height: none;
-    border-radius: 0;
+    .archive__item-teaser {
+      aspect-ratio: 16 / 10;
+      max-height: none;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid mix(#fff, $border-color, 55%);
+      background-color: #eef2f1;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
-  }
 
-  .archive__item-title,
-  .archive__item-excerpt,
-  .page__meta {
-    padding: 0 1em;
-  }
+    .archive__item-title {
+      margin-top: 0.7em;
+      font-size: 0.95em;
+      line-height: 1.5;
 
-  .archive__item-excerpt {
-    margin-bottom: 1.2em;
+      a {
+        color: $text-color;
+
+        &:hover {
+          color: $link-color;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .page__meta {
+      margin: 0;
+      font-size: 0.7em;
+    }
+
+    .archive__item-excerpt {
+      margin: 0;
+      font-size: 0.78em;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
   }
 }
 
 /*
-   3. Masthead — 민트 배경과 구분되는 흰색 헤더 + 옅은 경계
+   3. Masthead — 본문과 같은 흰 배경, 헤어라인 경계로만 구분
    ========================================================================== */
 
 .masthead {
@@ -132,12 +177,23 @@ html {
   }
 
   .site-subtitle {
-    color: mix(#fff, $text-color, 35%);
+    color: mix(#fff, $text-color, 20%); /* 4.9:1 — WCAG AA */
+  }
+
+  /* 모바일 터치 타깃 확보 */
+  .greedy-nav a {
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+  }
+
+  .search__toggle {
+    min-width: 2.6rem;
+    min-height: 2.6rem;
   }
 }
 
 /*
-   4. 사이드바 — 프로필/카테고리 트리 간격과 크기 정돈
+   4. 사이드바 — 프로필/카테고리 트리 간격과 터치 타깃
    ========================================================================== */
 
 .sidebar {
@@ -154,11 +210,16 @@ html {
     margin-top: 1.5em;
 
     .nav__items {
-      font-size: 0.85em;
+      /* rem 고정: 테마의 .sidebar li 0.75em 이 트리 중첩마다 누적 축소되는 것을 차단 */
+      font-size: 0.85rem;
+
+      li {
+        font-size: 1em;
+      }
 
       a {
         display: block;
-        padding: 0.2em 0.4em;
+        padding: 0.45em 0.5em;
         border-radius: 6px;
 
         &:hover {
@@ -184,6 +245,36 @@ html {
    5. 본문 페이지 — 제목/소제목 호흡 정돈
    ========================================================================== */
 
+/* 포스트 상단 메타 — post/update/read를 아이콘·라벨·값 3열로 정렬 */
+.page__meta-post {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  justify-content: end; /* 기존처럼 오른쪽 배치 */
+  column-gap: 0.45em;
+  row-gap: 0.3em;
+  margin-top: 2.5em;
+  margin-bottom: 2em;
+  text-align: left;
+
+  .page__meta-date,
+  .page__meta-readtime {
+    display: contents; /* 자식(아이콘/라벨/값)이 그리드 셀이 되어 열이 맞는다 */
+  }
+
+  /* 날짜 그룹(post/update)과 read 행 사이는 살짝 띄운다 */
+  .page__meta-readtime > * {
+    margin-top: 0.5em;
+  }
+
+  .page__meta-label {
+    font-weight: 700;
+  }
+
+  i {
+    align-self: baseline;
+  }
+}
+
 .page__title {
   line-height: 1.4;
 }
@@ -208,4 +299,24 @@ html {
   padding-bottom: 0.4em;
   font-weight: 700;
   color: $text-color;
+}
+
+/* 홈의 "최근 포스트"는 h1이지만 섹션 타이틀 크기로 (테마 h3와 동일 비주얼) */
+h1.archive__subtitle {
+  margin-top: 0;
+}
+
+/*
+   7. 모션 줄이기 환경 대응
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
 }

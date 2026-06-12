@@ -27,21 +27,25 @@
   {% endfor %}
 {% endif %}
 
-<script type="text/javascript" async
-	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
-</script>
-
-<script type="text/x-mathjax-config">
-	MathJax.Hub.Config({
-	extensions: ["tex2jax.js"],
-	jax: ["input/TeX", "output/HTML-CSS"],
-	tex2jax: {
-		inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-		displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-		processEscapes: true
-	},
-	"HTML-CSS": { availableFonts: ["TeX"] },
-  messageStyle: "none",
-  showProcessingMessages: false
-});
+<script>
+  /* MathJax는 수식 구분자($$ 또는 \( \[)가 있는 페이지에서만 로드한다 */
+  (function () {
+    var content = document.querySelector('.page__content');
+    if (!content) return;
+    if (!/\$\$|\\\(|\\\[/.test(content.textContent || '')) return;
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js';
+    s.async = true;
+    document.head.appendChild(s);
+  })();
 </script>

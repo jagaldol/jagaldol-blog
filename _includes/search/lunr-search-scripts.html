@@ -5,6 +5,34 @@
 {% else %}
   {% assign lang = "en" %}
 {% endcase %}
-<script src="{{ '/assets/js/lunr/lunr.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/lunr/lunr-store.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/lunr/lunr-' | append: lang | append: '.js' | relative_url }}"></script>
+<script>
+  /* 검색 인덱스(lunr-store.js, 수백 KB)는 검색을 실제로 열 때만 로드한다 */
+  (function () {
+    var loaded = false;
+    var srcs = [
+      {{ '/assets/js/lunr/lunr.min.js' | relative_url | jsonify }},
+      {{ '/assets/js/lunr/lunr-store.js' | relative_url | jsonify }},
+      {{ '/assets/js/lunr/lunr-' | append: lang | append: '.js' | relative_url | jsonify }}
+    ];
+    function loadScript(src) {
+      return new Promise(function (resolve, reject) {
+        var s = document.createElement('script');
+        s.src = src;
+        s.onload = resolve;
+        s.onerror = reject;
+        document.body.appendChild(s);
+      });
+    }
+    function loadSearch() {
+      if (loaded) return;
+      loaded = true;
+      srcs.reduce(function (p, src) {
+        return p.then(function () { return loadScript(src); });
+      }, Promise.resolve());
+    }
+    document.addEventListener('click', function (e) {
+      if (e.target.closest && e.target.closest('.search__toggle')) loadSearch();
+    });
+    {% if page.layout == "search" %}loadSearch();{% endif %}
+  })();
+</script>
