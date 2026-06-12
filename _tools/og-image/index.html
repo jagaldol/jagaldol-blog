@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px;
+    height: 630px;
+    font-family: "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    background: linear-gradient(135deg, #fafafa 0%, #ededed 100%);
+    overflow: hidden;
+    position: relative;
+  }
+  .pebbles-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background-image: radial-gradient(ellipse 28px 22px at 80px 90px, #555 99%, transparent),
+      radial-gradient(ellipse 20px 16px at 240px 540px, #555 99%, transparent),
+      radial-gradient(ellipse 34px 26px at 1100px 120px, #555 99%, transparent),
+      radial-gradient(ellipse 22px 18px at 1020px 520px, #555 99%, transparent),
+      radial-gradient(ellipse 16px 13px at 580px 70px, #555 99%, transparent),
+      radial-gradient(ellipse 18px 14px at 150px 320px, #555 99%, transparent);
+  }
+  .wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    padding: 0 90px;
+  }
+  .char img { width: 360px; height: 360px; display: block; }
+  .text { display: flex; flex-direction: column; gap: 22px; }
+  .title {
+    font-size: 84px;
+    font-weight: 800;
+    color: #2f2f2f;
+    letter-spacing: -2px;
+  }
+  .title .accent { color: #6f777d; }
+  .subtitle {
+    font-size: 30px;
+    font-weight: 400;
+    color: #8a8a8a;
+    letter-spacing: 0.5px;
+  }
+  .url {
+    margin-top: 26px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 26px;
+    color: #5a6268;
+    font-weight: 600;
+  }
+  .url .dot { width: 12px; height: 12px; border-radius: 50%; background: #b9c0c5; }
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 14px;
+    background: #3b4045;
+  }
+</style>
+</head>
+<body>
+  <div class="pebbles-bg"></div>
+  <div class="wrap">
+    <div class="char"><img src="../../assets/images/profile.png" alt=""></div>
+    <div class="text">
+      <div class="title">자갈돌의 <span class="accent">devLog</span></div>
+      <div class="subtitle">AI · LLM Agent · 개발 블로그</div>
+      <div class="url"><span class="dot"></span>blog.jagaldol.com</div>
+    </div>
+  </div>
+  <div class="bottom-bar"></div>
+</body>
+</html>
