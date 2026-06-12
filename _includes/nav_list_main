@@ -1,0 +1,28 @@
+{% assign total = site.posts | size %}
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle Menu" }}</label>
+  <ul class="nav__items" id="category_tag_menu">
+    <li>
+      <i class="fas fa-fw fa-folder-open"></i> 전체 글 <strong>{{ total }}</strong>개
+    </li>
+    {% for group in site.data.category_groups %}
+      <li>
+        <span class="nav__sub-title">{{ group.title }}</span>
+        <ul>
+          {% for item in group.children %}
+            {% assign posts_in_category = site.categories[item.category] %}
+            {% if posts_in_category and posts_in_category.size > 0 %}
+              <li>
+                <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>
+                  {{ item.title }} ({{ posts_in_category.size }})
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

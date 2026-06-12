@@ -1,0 +1,50 @@
+# 사이드바 카테고리 트리 구성 (_includes/nav_list_main에서 사용)
+# category: 포스트 front matter의 categories 값과 정확히 일치해야 함
+# 글이 0개인 카테고리는 사이드바에서 자동으로 숨겨짐
+- title: "AI & Research"
+  children:
+    - title: "AI"
+      category: "ai"
+      url: /categories/ai/
+    - title: "Paper Review"
+      category: "papers"
+      url: /categories/papers/
+    - title: "Obsidian"
+      category: "obsidian"
+      url: /categories/obsidian/
+
+- title: "Development"
+  children:
+    - title: "Development"
+      category: "development"
+      url: /categories/development/
+    - title: "Computer Science"
+      category: "computer science"
+      url: "/categories/computer science/"
+    - title: "알고리즘 문제 풀이"
+      category: "algorithm"
+      url: /categories/algorithm/
+
+- title: "Bootcamp"
+  children:
+    - title: "Naver Boostcamp"
+      category: "naver-boostcamp"
+      url: /categories/naver-boostcamp/
+    - title: "Kakao Tech Campus"
+      category: "kakao tech campus"
+      url: "/categories/kakao tech campus/"
+    - title: "Google ML Bootcamp"
+      category: "google-ml-bootcamp"
+      url: /categories/google-ml-bootcamp/
+
+- title: "Life"
+  children:
+    - title: "Daily"
+      category: "daily"
+      url: /categories/daily/
+    - title: "Experience"
+      category: "experience"
+      url: /categories/experience/
+    - title: "취미생활"
+      category: "hobby"
+      url: /categories/hobby/

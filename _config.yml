@@ -293,6 +293,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      sidebar_main: true
       read_time: true
       toc: true
       toc_sticky: true
@@ -300,3 +301,9 @@ defaults:
       comments: true
       share: true
       related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      sidebar_main: true

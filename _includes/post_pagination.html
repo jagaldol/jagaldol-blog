@@ -1,14 +1,43 @@
-{% if page.previous or page.next %}
-  <nav class="pagination">
-    {% if page.previous %}
-      <a href="{{ page.previous.url | relative_url }}" class="pagination--pager" title="{{ page.previous.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
-    {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
+{% assign cat = page.categories[0] %}
+{% assign cat_posts = site.categories[cat] %}
+
+{% if cat_posts %}
+  {% for post in cat_posts %}
+    {% if post.url == page.url %}
+      {% assign newer_index = forloop.index0 | minus: 1 %}
+      {% assign older_index = forloop.index0 | plus: 1 %}
+      {% unless forloop.first %}
+        {% assign next_post = cat_posts[newer_index] %}
+      {% endunless %}
+      {% unless forloop.last %}
+        {% assign prev_post = cat_posts[older_index] %}
+      {% endunless %}
+      {% break %}
     {% endif %}
-    {% if page.next %}
-      <a href="{{ page.next.url | relative_url }}" class="pagination--pager" title="{{ page.next.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+  {% endfor %}
+
+  {% assign cat_display = cat %}
+  {% for cat_page in site.pages %}
+    {% assign cat_slug = cat_page.category | downcase %}
+    {% if cat_slug == cat and cat_page.title %}
+      {% assign cat_display = cat_page.title %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  <h4 class="page__meta-title pagination_prev_next__title">
+    <i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> '{{ cat_display }}' 카테고리의 다른 글
+  </h4>
+  <nav class="pagination_prev_next">
+    {% if prev_post %}
+      <a href="{{ prev_post.url | relative_url }}" class="pagination_prev_next--pager"><span class="prev_next">이전 글</span>{{ prev_post.title }}</a>
     {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+      <span class="pagination_prev_next--pager disabled"><span class="prev_next">이전 글</span>카테고리의 첫 번째 글입니다</span>
+    {% endif %}
+    {% if next_post %}
+      <a href="{{ next_post.url | relative_url }}" class="pagination_prev_next--pager"><span class="prev_next">다음 글</span>{{ next_post.title }}</a>
+    {% else %}
+      <span class="pagination_prev_next--pager disabled"><span class="prev_next">다음 글</span>카테고리의 가장 최근 글입니다</span>
     {% endif %}
   </nav>
 {% endif %}
