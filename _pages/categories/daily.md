@@ -1,5 +1,5 @@
 ---
-title: "daily"
+title: "Daily"
 category: daily
 layout: category
 permalink: /categories/daily/

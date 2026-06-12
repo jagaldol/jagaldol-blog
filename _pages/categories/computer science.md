@@ -1,5 +1,5 @@
 ---
-title: "computer science"
+title: "Computer Science"
 category: "computer science"
 layout: category
 permalink: /categories/computer%20science/

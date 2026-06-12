@@ -1,10 +1,10 @@
 # main links
 main:
-  - title: "Categories"
+  - title: "카테고리"
     url: /categories/
-  - title: "Home"
+  - title: "홈"
     url: /
-  - title: "About"
+  - title: "소개"
     url: https://jagaldol.com
   # - title: "Sample Posts"
   #   url: /year-archive/

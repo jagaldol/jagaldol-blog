@@ -1,5 +1,5 @@
 ---
-title: "Google Machine Learning Bootcamp"
+title: "Google ML Bootcamp"
 category: "google-ml-bootcamp"
 layout: category
 permalink: /categories/google-ml-bootcamp/

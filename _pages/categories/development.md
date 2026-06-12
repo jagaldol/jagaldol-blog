@@ -1,5 +1,5 @@
 ---
-title: "development"
+title: "Development"
 category: development
 layout: category
 permalink: /categories/development/

@@ -40,8 +40,10 @@ layout: default
       <section class="page__content e-content" itemprop="text">
         {% if page.toc %}
           <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
+            <nav class="toc" aria-label="{{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: 'On this page' }}">
+              {% comment %} 모바일에서는 접힌 상태로 시작 — _custom.scss 8번 섹션 {% endcomment %}
+              <input id="toc-menu-toggle" class="toc__checkbox" type="checkbox" />
+              <header><label for="toc-menu-toggle" class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</label></header>
               {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
             </nav>
           </aside>

@@ -6,7 +6,7 @@
 $background-color: #fff !default;
 $text-color: #40514e !default;
 $muted-text-color: #40514e !default;
-$primary-color: #11999e !default;
+$primary-color: #0d7377 !default; /* 흰 텍스트와 5.6:1 — TOC 헤더·페이지네이션 active가 WCAG AA 충족 */
 $border-color: mix(#fff, #40514e, 75%) !default;
 $footer-background-color: #30e3ca !default;
 $link-color: #0e7a7e !default; /* 5.1:1 on white — WCAG AA */
@@ -15,7 +15,7 @@ $masthead-link-color-hover: $text-color !default;
 $navicon-link-color-hover: mix(#fff, $text-color, 50%) !default;
 
 .page__footer {
-  color: $text-color !important; /* 5.2:1 on mint footer — WCAG AA */
+  color: #0a5249 !important; /* 푸터 민트(#30e3ca)의 어두운 동일 계열 — 6.2:1 WCAG AA, 회색 washout 제거 */
 
   a {
     color: inherit;

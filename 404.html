@@ -1,25 +1,32 @@
 ---
 permalink: /404.html
-layout: default
+layout: archive
+title: ""
+sitemap: false
+breadcrumbs: false
+author_profile: false
+sidebar_main: false
+entries_layout: grid
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+<div class="error-404">
+  <p class="error-404__code" aria-hidden="true">404</p>
+  <h1>페이지를 찾을 수 없습니다</h1>
+  <p>
+    주소가 바뀌었거나 삭제된 글일 수 있어요.
+    오른쪽 위 <i class="fas fa-search" aria-hidden="true"></i> 검색으로 찾아보거나, 아래에서 다시 시작해 보세요.
+  </p>
 
-<div class="container">
-  <h1>404</h1>
+  <div class="error-404__actions">
+    <a href="{{ '/' | relative_url }}" class="btn btn--primary">홈으로 가기</a>
+    <a href="{{ '/categories/' | relative_url }}" class="btn btn--inverse">카테고리 둘러보기</a>
+  </div>
+</div>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+<h2 class="archive__subtitle">최근 포스트</h2>
+
+<div class="entries-grid">
+  {% for post in site.posts limit: 3 %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
 </div>

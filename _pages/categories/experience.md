@@ -1,5 +1,5 @@
 ---
-title: "experience"
+title: "Experience"
 category: experience
 layout: category
 permalink: /categories/experience/

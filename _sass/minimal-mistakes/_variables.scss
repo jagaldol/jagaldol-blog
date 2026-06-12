@@ -5,7 +5,7 @@
 /*
    Typography
    ========================================================================== */
-/* Nanum Gothic은 head.html에서 preconnect + <link>로 로드 (CSS @import 직렬 체인 제거) */
+/* Pretendard Variable은 head.html에서 preconnect + <link>로 로드 (CSS @import 직렬 체인 제거) */
 $doc-font-size: 16 !default;
 
 /* paragraph indention */
@@ -14,9 +14,9 @@ $indent-var: 1.3em !default;
 
 /* system typefaces */
 $serif: Georgia, Times, serif !default;
-$sans-serif: "Nanum Gothic", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-  "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
-$monospace: Monaco, Consolas, "Lucida Console", monospace !default;
+$sans-serif: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+  "Apple SD Gothic Neo", "Segoe UI", "Malgun Gothic", "Helvetica Neue", Arial, sans-serif !default;
+$monospace: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Monaco, Consolas, monospace !default;
 
 /* sans serif typefaces */
 $sans-serif-narrow: $sans-serif !default;

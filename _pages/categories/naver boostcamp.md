@@ -1,5 +1,5 @@
 ---
-title: "Naver Boost Camp AI Tech NLP Track"
+title: "Naver Boostcamp"
 category: "naver-boostcamp"
 layout: category
 permalink: /categories/naver-boostcamp/

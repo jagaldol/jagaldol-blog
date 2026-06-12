@@ -1,5 +1,5 @@
 ---
-title: "paper review"
+title: "Paper Review"
 layout: category
 category: papers
 permalink: /categories/papers/

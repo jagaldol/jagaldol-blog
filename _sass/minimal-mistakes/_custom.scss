@@ -31,6 +31,39 @@ html {
   li,
   dl {
     font-size: 1em; /* 테마의 0.9em 축소 해제 — 모바일 12.6px 문제 수정 */
+    line-height: 1.75; /* 한국어 장문 기준 — 1.5는 빽빽함 */
+  }
+
+  /* 본문 측정폭: 한국어 약 42자/줄. TOC aside는 $large 이상에서 absolute라 영향 없음 */
+  > * {
+    max-width: 42em;
+  }
+
+  h2 {
+    margin-top: 2.4em;
+    font-size: 1.45em;
+  }
+
+  h3 {
+    margin-top: 2em;
+    font-size: 1.2em;
+  }
+
+  /* 코드 블록 — 개발 블로그 핵심 콘텐츠. 테마 기본 0.75em(12.75px)은 과소 */
+  div.highlighter-rouge,
+  figure.highlight {
+    font-size: 0.85em;
+    padding: 1em 1.25em; /* 배경 컨테이너에 인셋 — 긴 줄 스크롤 시에도 우측 여백 유지 */
+
+    > pre,
+    pre.highlight {
+      padding: 0;
+      line-height: 1.65;
+    }
+  }
+
+  :not(pre) > code {
+    font-size: 0.875em;
   }
 }
 
@@ -202,8 +235,12 @@ html {
   }
 
   .author__bio {
-    font-size: 0.8em;
+    font-size: 0.8rem; /* rem 고정 — em 누적 축소로 10.2px까지 내려가던 문제 차단 */
     line-height: 1.6;
+
+    p {
+      font-size: 1em; /* 테마 .sidebar p 0.75em 재축소 해제 */
+    }
   }
 
   .nav__list {
@@ -276,7 +313,11 @@ html {
 }
 
 .page__title {
-  line-height: 1.4;
+  font-size: unquote("clamp(1.6em, calc(1.25em + 1.2vw), 2em)"); /* unquote: 구버전 ruby-sass가 clamp 인자를 연산하지 않도록 */
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
 }
 
 .page__content {
@@ -307,7 +348,158 @@ h1.archive__subtitle {
 }
 
 /*
-   7. 모션 줄이기 환경 대응
+   7. 모바일 포스트 진입 — 콘텐츠 우선
+   - 본문(article)을 먼저, 프로필/카테고리 사이드바는 글 아래로
+   ========================================================================== */
+
+@media (max-width: #{$large - 1px}) {
+  .layout--single #main {
+    display: flex;
+    flex-direction: column;
+
+    > article {
+      order: 1;
+    }
+
+    > .page__related {
+      order: 2;
+    }
+
+    > .sidebar {
+      order: 3;
+      margin-top: 2em;
+    }
+  }
+
+}
+
+/* 브레드크럼: 긴 현재 글 제목은 한 줄 말줄임(데스크톱), 모바일에선 h1과 중복이라 숨김 */
+.breadcrumbs .current {
+  display: inline-block;
+  max-width: 30em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+@media (max-width: #{$large - 1px}) {
+  .breadcrumbs {
+    .current,
+    .sep:last-of-type {
+      display: none;
+    }
+  }
+}
+
+/*
+   8. TOC — 모바일에서는 접힌 상태로 시작 (테마 카테고리 아코디언과 동일 패턴)
+   ========================================================================== */
+
+.toc {
+  .toc__checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0); /* 키보드 포커스 유지를 위해 display:none 대신 시각적 숨김 */
+  }
+
+  .nav__title {
+    margin: 0;
+    padding: 0.5rem 0.75rem;
+    font-size: $type-size-6;
+    font-weight: bold;
+  }
+
+  label.nav__title {
+    display: block;
+  }
+
+  .toc__checkbox:focus-visible ~ header .nav__title {
+    outline: 2px solid #fff;
+    outline-offset: -4px;
+  }
+}
+
+@media (max-width: #{$large - 1px}) {
+  .toc {
+    label.nav__title {
+      cursor: pointer;
+
+      &::after {
+        content: "+";
+        float: right;
+        font-weight: 700;
+      }
+    }
+
+    .toc__menu {
+      display: none;
+    }
+
+    .toc__checkbox:checked ~ .toc__menu {
+      display: block;
+    }
+
+    .toc__checkbox:checked ~ header .nav__title::after {
+      content: "−";
+    }
+  }
+}
+
+/*
+   9. 공유하기 — X/LinkedIn/URL 복사
+   ========================================================================== */
+
+.page__share {
+  .page__share-title {
+    margin-bottom: 0.6em;
+    font-size: $type-size-6;
+    text-transform: none;
+  }
+
+  .btn--copy-url {
+    background-color: mix(#fff, $link-color, 88%);
+    color: $link-color;
+
+    &:hover {
+      background-color: mix(#fff, $link-color, 78%);
+      color: $link-color;
+    }
+
+    &.copied {
+      background-color: $link-color;
+      color: #fff;
+    }
+  }
+}
+
+/*
+   10. 404 — 복구 경로 안내
+   ========================================================================== */
+
+.error-404 {
+  .error-404__code {
+    margin: 0.4em 0 0.2em;
+    font-size: clamp(3.4em, 8vw, 5em);
+    font-weight: 800;
+    line-height: 1;
+    color: $primary-color;
+  }
+
+  .error-404__actions {
+    margin: 1.6em 0 2.4em;
+
+    .btn {
+      margin-right: 0.5em;
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+/*
+   11. 모션 줄이기 환경 대응
    ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
