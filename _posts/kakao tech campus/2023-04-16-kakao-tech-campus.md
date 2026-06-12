@@ -5,6 +5,8 @@ date: 2023-04-16 2:47:00 +0900
 toc: false
 categories:
   - kakao tech campus
+header:
+  teaser: /assets/images/2023/04/16/course.png
 ---
 
 [카카오 테크 캠퍼스](https://www.kakaotechcampus.com/) 프로그램에 합격했어요!!

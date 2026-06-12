@@ -3,6 +3,8 @@ layout: single
 title: "[Review] Reflexion: Language Agents with Verbal Reinforcement Learning"
 date: 2025-08-23 19:47:00 +0900
 categories: papers
+header:
+  teaser: /assets/images/2025/08/23/reflexion.png
 ---
 
 **Reflexion**은 2023년 10월에 나온 논문으로, LLM이 시행착오로부터 스스로 피드백을 생성하고 개선할 수 있는 프레임워크이다.

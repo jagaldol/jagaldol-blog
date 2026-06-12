@@ -3,6 +3,8 @@ layout: single
 title: "Playwright 사용해보기 - MCP와 Skill의 차이 (feat. Codex)"
 date: 2026-03-14 14:00:00 +0900
 categories: ai
+header:
+  teaser: /assets/images/2026/03/14/playwright-interactive-games.png
 ---
 
 AI가 손쉽게 브라우저를 조작할 수 있도록 만들어주는 Playwright를 사용해보자.

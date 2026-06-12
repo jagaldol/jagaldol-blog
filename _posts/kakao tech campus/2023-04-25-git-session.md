@@ -5,6 +5,8 @@ date: 2023-04-25 00:43:00 +0900
 last_modified_at: 2023-05-02 12:38:00 +0900
 categories:
   - kakao tech campus
+header:
+  teaser: /assets/images/2023/04/25/data-model-3.png
 ---
 
 4월 24일에 진행한 실시간 세션 - Git/Github 소개 및 활용법입니다. 첫 시간이라 git 개념과 git 명령어들을 배웠습니다.

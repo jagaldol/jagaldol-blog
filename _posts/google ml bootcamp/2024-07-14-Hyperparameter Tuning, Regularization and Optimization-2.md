@@ -4,6 +4,8 @@ title: "[DLS]Hyperparameter Tuning, Regularization and Optimization(2)"
 date: 2024-07-14 06:53:00 +0900
 last_modified_at: 2024-07-16 14:38:00 +0900
 categories: google-ml-bootcamp
+header:
+  teaser: /assets/images/2024/07/14/optimizers.png
 ---
 
 Andrew Ng 교수님의 Coursera - Deep Learning Specialization 두번째 강의입니다. 이번 게시글은 **학습을 가속화할 수 있는 Optimization Algorithm**을 다룹니다.

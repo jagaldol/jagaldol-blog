@@ -4,6 +4,8 @@ title: "[Python] VScode 개발 환경 설정(1)"
 date: 2025-06-22 18:39:00 +0900
 last_modified_at: 2025-07-07 00:01:00 +0900
 categories: development
+header:
+  teaser: /assets/images/2025/06/22/inlay-hint-search.png
 ---
 
 JetBrains 계열의 IntelliJ나 WebStorm을 사용하던 사람이 VSCode로 `Python` 개발을 시작하면 불편함을 느끼는 경우가 많다.

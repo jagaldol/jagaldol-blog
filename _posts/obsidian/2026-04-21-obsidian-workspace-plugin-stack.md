@@ -3,6 +3,8 @@ layout: single
 title: "Obsidian을 메모 앱이 아니라 작업 공간으로 만드는 핵심 플러그인 구성"
 date: 2026-04-21 16:00:00 +0900
 categories: obsidian
+header:
+  teaser: /assets/images/2026/04/21/obsidian-plugin-stack-hero.png
 ---
 
 VS Code 위에서도 개인 비서용 환경을 만들 수는 있다. 문제는 일정 화면, 칸반 보드, 템플릿, 첨부 정리까지 붙이기 시작하면 다시 도구를 만드는 일로 돌아가기 쉽다는 점이다. 내가 Obsidian을 계속 쓰는 이유는 markdown 파일 기반이라서만이 아니라, 이미 잘 만들어진 UI/UX와 플러그인 생태계 위에 에이전트를 얹으면 바닥부터 다시 짓지 않고도 통일성 있는 작업 공간을 만들 수 있기 때문이다.

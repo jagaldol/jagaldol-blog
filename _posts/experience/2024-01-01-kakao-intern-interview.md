@@ -4,6 +4,8 @@ title: "[23.12.11] 카카오 2024 겨울 인턴십 인터뷰 후기"
 date: 2024-01-01 18:19:00 +0900
 last_modified_at: 2024-03-11 19:36:00:00 +0900
 categories: experience
+header:
+  teaser: /assets/images/2024/01/01/pass-papers.jpg
 ---
 
 이번에 카카오 겨울 인턴십 서류 전형에 합격하여 인터뷰를 다녀왔습니다.

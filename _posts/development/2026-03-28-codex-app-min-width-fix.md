@@ -3,6 +3,8 @@ layout: single
 title: "macOS Codex 앱 창 최소 너비가 안 줄어들 때 해결방법"
 date: 2026-03-28 15:08:25 +0900
 categories: development
+header:
+  teaser: /assets/images/2026/03/28/codex-app-min-width-before-sidebar.png
 ---
 
 macOS용 `Codex` 데스크톱 앱을 쓰다 보면 창 가로폭이 어느 지점 아래로 더 줄어들지 않는 경우가 있다.

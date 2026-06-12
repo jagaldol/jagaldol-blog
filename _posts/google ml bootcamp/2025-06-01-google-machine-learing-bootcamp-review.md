@@ -5,6 +5,8 @@ date: 2025-06-01 18:42:00 +0900
 last_modified_at: 2025-06-02 00:31:00 +0900
 categories:
   - google-ml-bootcamp
+header:
+  teaser: /assets/images/2025/06/01/picture1.jpeg
 ---
 
 정말 많이 늦게 적는 수료 후기\... 늦더라도 없는 것보단 낫다는 마음으로 적어본다.  

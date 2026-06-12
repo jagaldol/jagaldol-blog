@@ -3,6 +3,8 @@ layout: single
 title: "Obsidian AI 비서에게 어떤 스킬을 주면 좋을까 - 기본 스킬과 직접 만든 비서 운영 스킬까지"
 date: 2026-04-22 20:00:26 +0900
 categories: obsidian
+header:
+  teaser: /assets/images/2026/04/22/obsidian-skill-stack-hero.png
 ---
 
 처음에는 나도 Obsidian용 기본 스킬 몇 개만 있으면 AI 비서가 금방 돌아갈 줄 알았다. markdown을 읽고, `.base`를 만지고, CLI로 앱까지 건드릴 수 있으니 얼핏 보면 충분해 보이기 때문이다. 그런데 며칠만 써 보면 금방 차이가 드러난다. 파일을 다룰 수 있는 것과, 내 vault에서 무엇을 먼저 읽고 어떻게 판단해야 하는지를 아는 것은 전혀 다른 문제였다. 이번 글은 그 차이를 정리한 글이다. 공식 기본 스킬 5개는 어디까지 해 주는지 짧게 보고, 그다음부터는 내가 이 Obsidian 위에서 비서를 운영하려고 직접 만든 스킬이 왜 필요해졌는지를 실제 사례로 풀어보려 한다.

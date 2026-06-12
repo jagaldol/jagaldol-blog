@@ -5,6 +5,8 @@ date: 2023-05-08 16:48:00 +0900
 last_modified_at: 2023-05-29 14:36:00 +0900
 categories:
   - development
+header:
+  teaser: /assets/images/2023/05/08/tomcat-struct.png
 ---
 
 스프링을 시작하기에 앞서 개발에 필요한 환경 세팅을 해보도록 하겠습니다~ 스프링 부트가 아닌 스프링인 점을 유의해주세요.

@@ -3,6 +3,8 @@ layout: single
 title: "[DLS]Hyperparameter Tuning, Regularization and Optimization(1)"
 date: 2024-07-14 01:27:00 +0900
 categories: google-ml-bootcamp
+header:
+  teaser: /assets/images/2024/07/14/sparsity.png
 ---
 
 Andrew Ng 교수님의 Coursera - Deep Learning Specialization 두번째 강의입니다. 이번 게시글은 Regularization을 다룹니다.

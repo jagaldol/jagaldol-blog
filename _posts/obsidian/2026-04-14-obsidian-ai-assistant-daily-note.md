@@ -3,6 +3,8 @@ layout: single
 title: "AI Agent로 Obsidian 개인 비서 만들기 - 일일기록부터 Day Planner까지"
 date: 2026-04-14 18:08:02 +0900
 categories: obsidian
+header:
+  teaser: /assets/images/2026/04/14/obsidian-graph-view.png
 ---
 
 Obsidian을 오래 못 쓰는 이유는 기능이 부족해서가 아니다. 구조를 제대로 잡는 순간, 메모보다 유지 보수가 더 커지기 때문이다.

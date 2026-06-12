@@ -3,6 +3,8 @@ layout: single
 title: "[DLS]Neural Networks and Deep Learning(2)"
 date: 2024-07-11 20:10:00 +0900
 categories: google-ml-bootcamp
+header:
+  teaser: /assets/images/2024/07/11/activation-function.png
 ---
 
 Andrew Ng 교수님의 Coursera - Deep Learning Specialization 첫번째 강의입니다. Neural Networks and Deep Learning는 이걸로 끝입니다.

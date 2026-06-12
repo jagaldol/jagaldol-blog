@@ -6,6 +6,8 @@ last_modified_at: 2024-08-30 21:10:00 +0900
 toc: false
 categories:
   - daily
+header:
+  teaser: /assets/images/2023/07/18/rank.png
 ---
 
 1학기가 끝나고 성적이 나왔습니다. 드디어 저도 4.5라는 학점을 받아보게 되었네요. 감개무량🥹이에요..!!

@@ -3,6 +3,8 @@ layout: single
 title: "[DLS]Sequence Models(1)"
 date: 2024-08-08 16:00:00 +0900
 categories: google-ml-bootcamp
+header:
+  teaser: /assets/images/2024/08/08/rnn.png
 ---
 
 Andrew Ng 교수님의 Coursera - Deep Learning Specialization 마지막 강의입니다. 이번에는 RNN을 베이스로 Language Model, LSTM, GRU 등을 다룹니다.

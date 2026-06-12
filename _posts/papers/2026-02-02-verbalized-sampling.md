@@ -3,6 +3,8 @@ layout: single
 title: "[Review] Verbalized Sampling: How to Mitigate Mode Collapse and Unlock LLM Diversity"
 date: 2026-02-02 16:51:00 +0900
 categories: papers
+header:
+  teaser: /assets/images/2026/02/02/verbalized-sampling.png
 ---
 
 똑같은 말만 하던 LLM에게 **다양한 대답**을 얻는 방법이 있다고한다. 훈련 없이, **오직 프롬프트만으로** 다양성을 끌어올리는 접근이다.

@@ -3,6 +3,8 @@ layout: single
 title: "[Python] VScode 개발 환경 설정(2)"
 date: 2025-07-06 23:55:00 +0900
 categories: development
+header:
+  teaser: /assets/images/2025/07/06/git1.png
 ---
 
 [저번 편(python 개발 환경, 코드 포매팅)](/development/python-dev-env-setting-1/)에 이어 vscode의 git 관련 도구 및 기타 유용한 도구들을 소개하고자 한다.

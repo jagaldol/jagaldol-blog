@@ -5,6 +5,8 @@ date: 2023-05-29 17:52:00 +0900
 last_modified_at: 2024-01-18 12:14:00 +0900
 categories:
   - development
+header:
+  teaser: /assets/images/2023/05/29/intellij-version.png
 ---
 
 [이전 게시물](/development/spring-settings/)에서 스프링을 다뤘는데 이제 스프링 부트를 세팅해볼게요.

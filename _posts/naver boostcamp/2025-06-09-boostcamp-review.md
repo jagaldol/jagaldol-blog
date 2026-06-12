@@ -3,6 +3,8 @@ layout: single
 title: "네이버 부스트캠프 AI Tech 7기 NLP 트랙 수료 후기"
 date: 2025-06-09 00:53:00 +0900
 categories: naver-boostcamp
+header:
+  teaser: /assets/images/2025/06/09/view.jpeg
 ---
 
 네이버 부스트캠프 AI Tech 7기 NLP 트랙을 수료했다. 조금 늦었지만, 간단하게 후기를 정리해본다.

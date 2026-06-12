@@ -3,6 +3,8 @@ layout: single
 title: "AI Agent로 Obsidian 개인 비서를 오래 쓰는 법 - 지침과 장기 메모리 운영 실전편"
 date: 2026-04-20 17:02:55 +0900
 categories: obsidian
+header:
+  teaser: /assets/images/2026/04/20/obsidian-agent-maintenance-hero.png
 ---
 
 Obsidian 구조를 잘 만들어도 오래 가는 건 별개다. 시간이 지나면 `AGENTS.md`는 두꺼워지고, 장기 메모리와 임시 판단이 섞이고, 새 규칙이 생길 때마다 어디를 고쳐야 할지 헷갈리기 시작한다. [1편](/obsidian/obsidian-ai-assistant-daily-note/)과 [2편](/obsidian/obsidian-ai-agent-vault-structure/)이 왜 이 시스템을 다시 시도하게 됐는지와 구조를 어떻게 나눴는지를 다뤘다면, 이번 글은 새 정보가 생겼을 때 실제로 무엇을 읽고 어디를 고치는지를 다룬다.

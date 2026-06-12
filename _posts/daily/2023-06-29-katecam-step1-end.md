@@ -5,6 +5,8 @@ date: 2023-06-29 00:05:00 +0900
 toc: false
 categories:
   - daily
+header:
+  teaser: /assets/images/2023/06/29/entrance.jpg
 ---
 
 한동안 포스팅을 못했는데요. 그동안 카테캠 1단계(강의 수강)도 끝나고 2단계(클론 코딩 - 카카오 쇼핑)에 돌입했어요! 벌써 2단계도 1주일이나 지났네요.

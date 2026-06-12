@@ -3,6 +3,8 @@ layout: single
 title: "ChatGPT Images 2.0 출시 - 이미지 생성조차 1위를 차지한 OpenAI"
 date: 2026-04-30 17:36:44 +0900
 categories: ai
+header:
+  teaser: /assets/images/2026/04/30/gpt-image-2-duct-tape-arena.png
 ---
 
 OpenAI가 [ChatGPT Images 2.0](https://openai.com/index/introducing-chatgpt-images-2-0/)(모델 ID `gpt-image-2`)을 공개했다.

@@ -3,6 +3,8 @@ layout: single
 title: "[프로젝트 회고] UnDoc - RAFT와 RAG 기반 의료상담 챗봇 연구"
 date: 2025-06-15 01:00:00 +0900
 categories: google-ml-bootcamp
+header:
+  teaser: /assets/images/2025/06/15/undoc.png
 ---
 
 지난 구글 ML 부트캠프 수료 후기에 이어, 우수 프로젝트로 선정되었던 UnDoc 챗봇에 대해 회고를 남겨본다.

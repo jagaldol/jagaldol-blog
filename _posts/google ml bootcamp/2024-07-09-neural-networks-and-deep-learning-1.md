@@ -4,6 +4,8 @@ title: "[DLS]Neural Networks and Deep Learning(1)"
 date: 2024-07-09 14:18:00 +0900
 last_modified_at: 2024-08-13 11:30:00 +0900
 categories: google-ml-bootcamp
+header:
+  teaser: /assets/images/2024/07/09/NN.png
 ---
 
 Andrew Ng 교수님의 Coursera - Deep Learning Specialization 첫번째 강의입니다.

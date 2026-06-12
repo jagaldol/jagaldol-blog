@@ -4,6 +4,8 @@ title: "[Review] Don't Do RAG: When Cache-Augmented Generation is All You Need f
 date: 2026-01-29 20:15:00 +0900
 last_modified_at: 2026-01-31 17:27:00 +0900
 categories: papers
+header:
+  teaser: /assets/images/2026/01/29/rag-vs-cag.png
 ---
 
 이 논문은 “RAG 대신 CAG를 쓰자”는 주장이다. (Retrieval → Cache)  

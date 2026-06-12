@@ -4,6 +4,8 @@ title: "[Week 2]머신러닝 기초 이론 및 Transformer 기초"
 date: 2024-08-16 19:00:00 +0900
 last_modified_at: 2024-09-02 11:08:00 +0900
 categories: naver-boostcamp
+header:
+  teaser: /assets/images/2024/08/16/seq2seq.png
 ---
 
 어떠한 작업 T에 대하여 경험 E 와 함께 성능 P 를 향상시키는 것을 머신러닝이라고 한다. `<P, T, E>`

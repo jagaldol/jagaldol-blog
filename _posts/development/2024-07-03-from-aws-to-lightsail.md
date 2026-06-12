@@ -3,6 +3,8 @@ layout: single
 title: "AWS EC2 프리티어 기간이 만료 됐다면 Lightsail은 어떨까요"
 date: 2024-07-03 03:10:00 +0900
 categories: development
+header:
+  teaser: /assets/images/2024/07/03/aws-mail.png
 ---
 
 갑자기 AWS로 부터 잔액부족 메일이 왔다. 무려 25,000원이나 결제를 하라고 한다.

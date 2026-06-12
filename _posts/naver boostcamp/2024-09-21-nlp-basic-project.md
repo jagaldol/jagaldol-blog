@@ -3,6 +3,8 @@ layout: single
 title: "[Week 7]NLP 기초 프로젝트"
 date: 2024-09-21 20:17:00 +0900
 categories: naver-boostcamp
+header:
+  teaser: /assets/images/2024/09/21/glue.png
 ---
 
 **문장 유사도 측정 프로젝트**를 위한 기초 지식들을 다룹니다.

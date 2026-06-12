@@ -5,6 +5,8 @@ date: 2024-07-02 16:00:00 +0900
 toc: false
 categories:
   - google-ml-bootcamp
+header:
+  teaser: /assets/images/2024/07/02/mlb_banner.png
 ---
 
 구글 머신러닝 부트캠프 2024에 합격하여 후기를 남깁니다.

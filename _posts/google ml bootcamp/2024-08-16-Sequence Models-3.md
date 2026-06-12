@@ -3,6 +3,8 @@ layout: single
 title: "[DLS]Sequence Models(3)"
 date: 2024-08-16 12:30:00 +0900
 categories: google-ml-bootcamp
+header:
+  teaser: /assets/images/2024/08/16/encoder-decoder.png
 ---
 
 Andrew Ng 교수님의 Coursera - Deep Learning Specialization 마지막 강의입니다. `Encoder-Decoder`, `Attention`, `Transformer` 등을 다룹니다.

@@ -3,6 +3,8 @@ layout: single
 title: "Codex에 Multi Agent 기능 추가"
 date: 2026-03-05 21:00:00 +0900
 categories: development
+header:
+  teaser: /assets/images/2026/03/05/codex-multi-agent-lunch-example-real.png
 ---
 
 Claude Code에만 있던 **Sub Agent(서브 에이전트)** 기능이

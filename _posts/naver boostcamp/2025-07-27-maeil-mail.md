@@ -3,6 +3,8 @@ layout: single
 title: "[프로젝트 회고] MaeilMail - 일간 메일 보고서 비서 (Naver boostcamp)"
 date: 2025-07-29 08:56:00 +0900
 categories: naver-boostcamp
+header:
+  teaser: /assets/images/2025/07/29/demo.png
 ---
 
 더 이상 미룰 수 없었던 매일메일 프로젝트에 대한 회고를 남긴다.

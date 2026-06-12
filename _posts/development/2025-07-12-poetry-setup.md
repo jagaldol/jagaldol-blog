@@ -3,6 +3,8 @@ layout: single
 title: "[Python] Poetry로 각 project 내에 venv 가상환경 만들기"
 date: 2025-07-12 15:27:00 +0900
 categories: development
+header:
+  teaser: /assets/images/2025/07/12/poetry-venv-result.png
 ---
 
 Python에서도 프로젝트마다 독립적으로 패키지를 관리할 수 있도록 가상환경을 구성한다.  

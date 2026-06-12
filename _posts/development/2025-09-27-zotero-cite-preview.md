@@ -3,6 +3,8 @@ layout: single
 title: "[Zotero] Cite Preview Resizer 플러그인을 만들며"
 date: 2025-09-27 01:23:00 +0900
 categories: development
+header:
+  teaser: /assets/images/2025/09/27/zotero-cite-preview-resizer.png
 ---
 
 Zotero 7 PDF 리더에서 인용이나 주석 위에 마우스를 올리면 작게 뜨는 미리보기 팝업 때문에 늘 고생했다.  

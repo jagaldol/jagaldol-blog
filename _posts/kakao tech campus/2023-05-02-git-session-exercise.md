@@ -4,6 +4,8 @@ title: "[카테캠 BE] Git/Github 소개 및 활용법(2) - github을 사용한 
 date: 2023-05-02 13:30:00 +0900
 categories:
   - kakao tech campus
+header:
+  teaser: /assets/images/2023/05/02/issue-templates.png
 ---
 
 이번 시간에는 github을 사용하여 협업을 하는 법을 실습했습니다!

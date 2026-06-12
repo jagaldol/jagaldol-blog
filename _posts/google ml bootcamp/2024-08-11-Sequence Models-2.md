@@ -3,6 +3,8 @@ layout: single
 title: "[DLS]Sequence Models(2)"
 date: 2024-08-11 23:18:00 +0900
 categories: google-ml-bootcamp
+header:
+  teaser: /assets/images/2024/08/11/word-embedding.png
 ---
 
 Andrew Ng 교수님의 Coursera - Deep Learning Specialization 마지막 강의입니다. Natural Language Processing과 관련된 `Word Embedding`, `Word2vec`, `GloVe` 등을 배웁니다.

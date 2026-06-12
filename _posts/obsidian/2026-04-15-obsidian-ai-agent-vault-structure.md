@@ -3,6 +3,8 @@ layout: single
 title: "AI Agent가 관리하는 Obsidian 구조 만들기 - AGENTS.md, 허브 노트, 00_agent_docs 설계"
 date: 2026-04-15 00:10:00 +0900
 categories: obsidian
+header:
+  teaser: /assets/images/2026/04/15/obsidian-vault-graph-overview.png
 ---
 
 이 시리즈의 [1편](/obsidian/obsidian-ai-assistant-daily-note/)에서는 `일일기록 -> AI 후처리 -> Day Planner` 흐름을 보여줬다. 그런데 그 자동화가 한두 번 반짝하고 끝나지 않으려면, 그 뒤에서 에이전트가 길을 잃지 않는 구조가 먼저 있어야 한다.

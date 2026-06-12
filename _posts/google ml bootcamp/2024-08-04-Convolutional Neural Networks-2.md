@@ -3,6 +3,8 @@ layout: single
 title: "[DLS]Convolutional Neural Networks(2)"
 date: 2024-08-04 17:41:00 +0900
 categories: google-ml-bootcamp
+header:
+  teaser: /assets/images/2024/08/04/box.png
 ---
 
 Andrew Ng 교수님의 Coursera - Deep Learning Specialization 네번째 강의입니다. 객체 감지, 얼굴인식, YOLO, U-Net, Neural style transfer 등을 다룹니다.

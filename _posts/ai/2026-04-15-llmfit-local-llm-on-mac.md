@@ -3,6 +3,8 @@ layout: single
 title: "내 맥에 맞는 로컬 LLM 찾기 - llmfit로 추천 모델 고르는 법"
 date: 2026-04-15 18:00:00 +0900
 categories: ai
+header:
+  teaser: /assets/images/2026/04/15/llmfit-dashboard.png
 ---
 
 로컬 LLM을 써보려 하면 가장 먼저 부딪히는 문제는 "어떤 모델이 제일 좋나?"보다 "내 맥에서 어떤 모델이 현실적으로 돌아가나?"다. `llmfit`는 이 질문에 먼저 답해주는 도구다. 모델을 직접 실행하는 프로그램은 아니지만, 내 하드웨어에 맞는 후보를 먼저 좁혀준다는 점에서 로컬 LLM 입문 단계에서 꽤 유용하다.

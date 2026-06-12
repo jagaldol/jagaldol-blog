@@ -3,6 +3,8 @@ layout: single
 title: "[DLS]Convolutional Neural Networks(1)"
 date: 2024-07-27 03:33:00 +0900
 categories: google-ml-bootcamp
+header:
+  teaser: /assets/images/2024/07/27/notation.png
 ---
 
 Andrew Ng 교수님의 Coursera - Deep Learning Specialization 네번째 강의입니다.

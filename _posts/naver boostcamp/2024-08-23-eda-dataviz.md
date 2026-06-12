@@ -3,6 +3,8 @@ layout: single
 title: "[Week 3]EDA & DataViz"
 date: 2024-08-23 19:36:00 +0900
 categories: naver-boostcamp
+header:
+  teaser: /assets/images/2024/08/23/distributions.png
 ---
 
 이번 주는 데이터 분석과 함께 데이터 시각화를 배웠습니다.

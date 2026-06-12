@@ -5,6 +5,8 @@ date: 2023-05-30 10:41:00 +0900
 last_modified_at: 2023-06-04 04:17:00 +0900
 categories:
   - development
+header:
+  teaser: /assets/images/2023/05/30/mysql-workbench-setup.png
 ---
 
 이번에는 서버에 MySQL을 설치 및 사용자를 추가하여 다른 컴퓨터에서도 서버의 MySQL에 접근 가능하도록 해봤어요. 제가 AWS 프리티어로 우분투 서버 인스턴스를 대여 중인데 아직 아무 프로그램도 안 올려놔서 데이터베이스라도 서버에서 돌릴려고요.🐎

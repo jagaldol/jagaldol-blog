@@ -3,6 +3,8 @@ layout: single
 title: "[Review] Attention Is All You Need"
 date: 2024-12-14 15:51:00 +0900
 categories: papers
+header:
+  teaser: /assets/images/2024/12/14/figure1.png
 ---
 
 기존 sequence 변환 모델은 RNN 또는 CNN 기반의 인코더-디코더 구조를 바탕으로 한다. 최고 성능의 모델들은 여기에 `attention mechanism` 을 사용하고 있는데, 우리는 RNN과 CNN을 배제한 채 **`attention mechanism` 만을 사용하는 새로운 구조 Transformer**를 제시한다!

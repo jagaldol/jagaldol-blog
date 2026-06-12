@@ -4,6 +4,8 @@ title: "[카테캠 BE] week1 - 자바 객체지향 프로그래밍"
 date: 2023-04-17 02:47:00 +0900
 categories:
   - kakao tech campus
+header:
+  teaser: /assets/images/2023/04/17/this1.png
 ---
 
 4월 10일부터 첫주차 교육이 시작됐어요. 지금은 1단계 웹 개발 기초 교육 과정으로 총 10주간 자바와 `Spring`, `MySQL`을 학습한다고 하더라고요.

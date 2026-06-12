@@ -4,6 +4,8 @@ title: "[카테캠 BE] week2 - 자바 기초 복습"
 date: 2023-04-25 00:11:00 +0900
 categories:
   - kakao tech campus
+header:
+  teaser: /assets/images/2023/04/25/vm.png
 ---
 
 2주차는 시험 기간과 겹쳐 필수 강의가 없었어요. 대신 선택강의를 자유롭게 수강하면 된다고 해서, 저는 기초부터 한번 훑고 넘어 갈려고 기초 강의를 들었어요.

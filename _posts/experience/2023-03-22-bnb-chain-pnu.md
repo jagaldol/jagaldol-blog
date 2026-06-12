@@ -4,6 +4,8 @@ title: "[23.03.21] 2023 BNB CHAIN Innovation University Tour Korea in 부산대 
 date: 2023-03-22 18:00:00 +0900
 last_modified_at: 2023-03-23 00:32:00 +0900
 categories: experience
+header:
+  teaser: /assets/images/2023/03/22/semina-view.jpg
 ---
 
 ![semina view](/assets/images/2023/03/22/semina-view.jpg){:.width-500px}

@@ -3,6 +3,8 @@ layout: single
 title: "Claude Opus 4.7 출시 - 업무형 에이전트로 무게가 실린 업데이트"
 date: 2026-04-23 16:21:36 +0900
 categories: ai
+header:
+  teaser: /assets/images/2026/04/23/claude-opus-47-official-benchmark-table.png
 ---
 
 Anthropic이 [Claude Opus 4.7](https://www.anthropic.com/news/claude-opus-4-7)을 공개했다.
