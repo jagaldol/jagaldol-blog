@@ -234,6 +234,10 @@ html {
     font-size: 1.1em;
   }
 
+  .author__urls-wrapper button {
+    white-space: nowrap; /* "프로필 링크" 2줄 줄바꿈 방지 */
+  }
+
   .author__bio {
     font-size: 0.8rem; /* rem 고정 — em 누적 축소로 10.2px까지 내려가던 문제 차단 */
     line-height: 1.6;
@@ -444,6 +448,52 @@ h1.archive__subtitle {
 
     .toc__checkbox:checked ~ header .nav__title::after {
       content: "−";
+    }
+  }
+
+  /* 카테고리 메뉴 — 작은 카드형 버튼 대신 풀폭 토글 바 (펼치면 평범한 리스트) */
+  .sidebar .nav__list {
+    label {
+      display: block;
+      padding: 0.55em 2.5em 0.55em 0.75em;
+      color: $text-color;
+      font-size: $type-size-6;
+      background-color: mix(#fff, $link-color, 92%); /* 사이드바 hover와 같은 옅은 민트 틴트 */
+      border: 0;
+      border-radius: 6px; /* 사이드바 링크와 동일 라운드 */
+
+      &::before,
+      &::after {
+        top: 50%;
+        margin-top: -0.0625em;
+        background-color: $link-color;
+      }
+
+      &:hover {
+        color: $text-color;
+        background-color: mix(#fff, $link-color, 85%);
+
+        &::before,
+        &::after {
+          background-color: $link-color;
+        }
+      }
+    }
+
+    input:checked + label {
+      color: $text-color;
+      background-color: mix(#fff, $link-color, 85%);
+
+      &::before,
+      &::after {
+        background-color: $link-color;
+      }
+
+      /* 펼침 상태에서는 −로 (테마 기본은 hover 시에만 회전) */
+      &::after,
+      &:hover::after {
+        transform: rotate(0);
+      }
     }
   }
 }
