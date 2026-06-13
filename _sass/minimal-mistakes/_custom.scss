@@ -457,7 +457,7 @@ h1.archive__subtitle {
 
 @media (min-width: #{$large}) and (max-width: #{$x-large - 1px}) {
   .layout--single:not(.wide) .sidebar__right {
-    margin-right: calc(-#{$right-sidebar-width-narrow} - 1em);
+    margin-right: calc(-#{$right-sidebar-width-narrow} - 0.5em);
   }
 }
 

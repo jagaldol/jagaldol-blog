@@ -359,7 +359,7 @@
   /* --- TOC --- */
   .toc {
     background-color: var(--bg-elevated);
-    border-color: var(--border);
+    border-color: rgba(255, 255, 255, 0.34);
 
     .nav__title {
       background-color: var(--mint);
@@ -367,6 +367,7 @@
     }
 
     .toc__menu a {
+      border-bottom-color: rgba(255, 255, 255, 0.16);
       color: var(--ink-muted);
 
       &:hover {
