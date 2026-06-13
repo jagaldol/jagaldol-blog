@@ -225,17 +225,67 @@ html {
   }
 }
 
+/* 테마 토글 버튼 — 검색 토글과 같은 affordance, 라이트에서는 잉크색 아이콘 */
+.theme-toggle {
+  align-self: center;
+  min-width: 2.6rem;
+  min-height: 2.6rem;
+  margin-left: 0.25rem;
+  padding: 0;
+  border: 0;
+  outline: none;
+  color: $text-color;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $link-color;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $link-color;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  .theme-toggle__icon {
+    pointer-events: none;
+  }
+}
+
 /*
    4. 사이드바 — 프로필/카테고리 트리 간격과 터치 타깃
    ========================================================================== */
 
 .sidebar {
+  /* 자갈돌 캐릭터 — 흰 동그라미 배경으로 팔다리(검정 선)가 어떤 배경에서도 보이게.
+     box-sizing은 두지 않아 패딩이 캐릭터를 줄이지 않고 바깥 흰 링만 만든다(렌더 크기 유지).
+     캐릭터의 손발은 프레임 중앙변에 닿아 원 안에 들어오고, 잘리는 건 빈 모서리뿐.
+     흰 배경은 라이트/다크 공통. */
+  .author__avatar img {
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
+    padding: 2px;
+
+    @include breakpoint($large) {
+      /* 링은 손발이 원에 닿지 않을 최소한만 — 캐릭터가 원을 꽉 채우게 */
+      padding: 4px;
+    }
+  }
+
   .author__name {
     font-size: 1.1em;
   }
 
-  .author__urls-wrapper button {
-    white-space: nowrap; /* "프로필 링크" 2줄 줄바꿈 방지 */
+  .author__urls-wrapper {
+    z-index: 30; /* 모바일 팝오버가 카테고리 토글 바(z-index:20) 위로 뜨게 */
+
+    button {
+      white-space: nowrap; /* "프로필 링크" 2줄 줄바꿈 방지 */
+    }
   }
 
   .author__bio {

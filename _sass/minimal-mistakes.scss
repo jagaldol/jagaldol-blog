@@ -41,3 +41,6 @@
 
 /* Custom aesthetic overrides (마지막에 로드되어 위 스타일을 덮어씀) */
 @import "minimal-mistakes/custom";
+
+/* Dark skin — 시스템 설정 + 수동 토글. 라이트 스타일을 건드리지 않고 덮어씀 */
+@import "minimal-mistakes/dark";

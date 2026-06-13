@@ -49,3 +49,95 @@
     document.head.appendChild(s);
   })();
 </script>
+
+<!-- 테마 토글 컨트롤러: light → dark → system 순환, localStorage 기억, utterances 동기화 -->
+<script>
+  (function () {
+    var STORAGE_KEY = 'theme';
+    var ORDER = ['system', 'light', 'dark'];
+    var ICON = { system: 'fa-adjust', light: 'fa-sun', dark: 'fa-moon' };
+    var LABEL = { system: '시스템', light: '라이트', dark: '다크' };
+    var root = document.documentElement;
+    var mql = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function stored() {
+      try {
+        var v = localStorage.getItem(STORAGE_KEY);
+        return (v === 'light' || v === 'dark') ? v : 'system';
+      } catch (e) { return 'system'; }
+    }
+
+    function effective(mode) {
+      if (mode === 'light' || mode === 'dark') return mode;
+      return mql.matches ? 'dark' : 'light';
+    }
+
+    function apply(mode) {
+      if (mode === 'system') {
+        root.removeAttribute('data-theme');
+        try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+      } else {
+        root.setAttribute('data-theme', mode);
+        try { localStorage.setItem(STORAGE_KEY, mode); } catch (e) {}
+      }
+      var eff = effective(mode);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) { meta.setAttribute('content', eff === 'dark' ? '#14191b' : '#ffffff'); }
+      syncUtterances(eff);
+      paintButton(mode);
+    }
+
+    function paintButton(mode) {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var icon = btn.querySelector('.theme-toggle__icon');
+      if (icon) { icon.className = 'fas ' + ICON[mode] + ' theme-toggle__icon'; }
+      var label = '테마: ' + LABEL[mode] + ' (클릭하여 전환)';
+      btn.setAttribute('aria-label', label);
+      btn.setAttribute('title', label);
+    }
+
+    function syncUtterances(eff) {
+      var frame = document.querySelector('.utterances-frame');
+      if (!frame || !frame.contentWindow) return;
+      var msg = { type: 'set-theme', theme: eff === 'dark' ? 'github-dark' : 'github-light' };
+      frame.contentWindow.postMessage(msg, 'https://utteranc.es');
+    }
+
+    // utterances iframe가 준비되면 현재 테마를 다시 전송
+    window.addEventListener('message', function (e) {
+      if (e.origin === 'https://utteranc.es' && e.data && e.data.type === 'resize') {
+        syncUtterances(effective(stored()));
+      }
+    });
+
+    // 시스템 모드일 때 OS 설정 변경 반영 (CSS는 @media로 자동, JS측 동기화)
+    var onSystemChange = function () {
+      if (stored() === 'system') {
+        var eff = mql.matches ? 'dark' : 'light';
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) { meta.setAttribute('content', eff === 'dark' ? '#14191b' : '#ffffff'); }
+        syncUtterances(eff);
+      }
+    };
+    if (mql.addEventListener) { mql.addEventListener('change', onSystemChange); }
+    else if (mql.addListener) { mql.addListener(onSystemChange); }
+
+    function init() {
+      paintButton(stored());
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          var next = ORDER[(ORDER.indexOf(stored()) + 1) % ORDER.length];
+          apply(next);
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

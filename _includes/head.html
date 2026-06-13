@@ -22,6 +22,22 @@
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
 </script>
 
+<!-- 테마 초기화: CSS보다 먼저 실행되어 라이트/다크 깜빡임(FOUC) 방지 -->
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('theme'); // "light" | "dark" | null(=system)
+      if (stored === 'light' || stored === 'dark') {
+        document.documentElement.setAttribute('data-theme', stored);
+      }
+      var isDark = stored === 'dark' ||
+        (stored !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) { meta.setAttribute('content', isDark ? '#14191b' : '#ffffff'); }
+    } catch (e) {}
+  })();
+</script>
+
 <!-- Fonts: Pretendard Variable(dynamic subset) — 가변 폰트 1파일로 400~800 전 굵기, font-display: swap 내장 -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
