@@ -411,6 +411,15 @@ h1.archive__subtitle {
 }
 
 @media (max-width: #{$large - 1px}) {
+  .layout--single .page__inner-wrap,
+  .layout--single .page__related,
+  .layout--single .sidebar--inline {
+    float: none;
+    max-width: 42em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .layout--single #main > .sidebar:not(.sidebar--inline) {
     display: none;
   }
@@ -445,6 +454,12 @@ h1.archive__subtitle {
 /*
    8. TOC — 모바일에서는 접힌 상태로 시작 (테마 카테고리 아코디언과 동일 패턴)
    ========================================================================== */
+
+@media (min-width: #{$large}) and (max-width: #{$x-large - 1px}) {
+  .layout--single:not(.wide) .sidebar__right {
+    margin-right: calc(-#{$right-sidebar-width-narrow} - 1em);
+  }
+}
 
 .toc {
   .toc__checkbox {
@@ -544,7 +559,11 @@ h1.archive__subtitle {
   }
 }
 
-/* 맨 위로 버튼 화살표 — 테마의 .page__footer .fas 색(잉크)이 덮지 않도록 흰색 고정 */
+/* 맨 위로 버튼 — 흰 링은 얇게, 화살표는 테마의 footer 아이콘색에 묻히지 않게 고정 */
+.back-to-top--floating {
+  box-shadow: 0 0 0 1px rgba(#fff, 0.85), 0 2px 8px rgba(#000, 0.22);
+}
+
 .page__footer .back-to-top--floating .fas {
   color: #fff;
 }

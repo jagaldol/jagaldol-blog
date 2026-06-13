@@ -514,7 +514,16 @@
     }
   }
 
-  /* 맨 위로 버튼 화살표 — 라이트의 흰색 고정을 유지(민트 캡슐 위) */
+  /* 맨 위로 버튼 — 다크 배경 위에서 버튼 면을 밝히고 얇은 링만 남긴다 */
+  .back-to-top--floating {
+    background-color: var(--mint);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.72), 0 2px 8px rgba(0, 0, 0, 0.28);
+
+    &:hover {
+      background-color: var(--mint-strong);
+    }
+  }
+
   .page__footer .back-to-top--floating .fas {
     color: #0e1413;
   }
