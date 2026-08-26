@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Multi-token Prediction 논문 리뷰 - 한 위치에서 여러 미래 토큰을 학습하기"
-date: 2026-08-26 20:00:00 +0900
+date: 2026-08-26 16:00:00 +0900
 categories: papers
 header:
   teaser: /assets/images/2026/08/26/multi-token-prediction-hero.png
