@@ -37,3 +37,9 @@ Purpose: Track user feedback that should change how work is done in this reposit
 - For plugin-focused Obsidian posts, lead with the basic plugin introduction and concrete usage first, then expand into higher-level workflow implications.
 - Avoid unnecessary caveat paragraphs about excluded convenience plugins when they do not add real explanatory value.
 - When planning the skill-focused follow-up post, make the global-vs-local split explicit: global Obsidian skills are reusable across projects, while vault-local skills exist for the personal-assistant behavior in this vault.
+
+## 2026-08-26
+- Backfill the selected knowledge posts between the latest existing post date and today, while preserving a sensible reading order.
+- Rewrite vault and study notes as standalone blog prose; do not expose private names, local absolute paths, account state, or unrelated personal context.
+- Apply an explicit anti-slop pass: remove repetitive summaries, generic transitions, exaggerated conclusions, and presentation-note scaffolding.
+- Keep publication under user control. Build and expose a temporary remote preview first, then commit and push only after explicit approval.
