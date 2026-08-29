@@ -4,6 +4,8 @@
 
 Turn the selected Lifebase and T3 notes into 23 standalone blog posts, dated between the previous latest post (`2026-04-30`) and `2026-08-28`.
 
+The first batch is complete. A second batch schedules 10 study-based posts every two days from `2026-08-31` through `2026-09-18`.
+
 ## Writing contract
 
 - Follow the current Minimal Mistakes frontmatter, heading, image, and category conventions.
@@ -42,6 +44,23 @@ Turn the selected Lifebase and T3 notes into 23 standalone blog posts, dated bet
 | 2026-08-26 | Multi-token Prediction and DeepSeek |
 | 2026-08-28 | DeepSeek-V4 technical report review |
 
+## Scheduled follow-up batch
+
+| Date | Topic |
+| --- | --- |
+| 2026-08-31 | GPT-1: generative pre-training and downstream fine-tuning |
+| 2026-09-02 | GPT-2: unsupervised multitask learning |
+| 2026-09-04 | T5: unified text-to-text transfer learning |
+| 2026-09-06 | GPT-3: in-context learning without fine-tuning |
+| 2026-09-08 | LLaMA: smaller models trained longer |
+| 2026-09-10 | Dragon Hatchling and neuron-graph computation |
+| 2026-09-12 | Weight-sparse Transformers and interpretable circuits |
+| 2026-09-14 | Why Language Models Hallucinate |
+| 2026-09-16 | Google agent whitepapers: architecture, operations, sessions, and memory |
+| 2026-09-18 | DeepConf: confidence-based reasoning trace selection |
+
+All posts use `20:00:00 +0900`. The Pages workflow rebuilds daily at `20:17 KST` so a future-dated post becomes public on its scheduled date without another content push. Production builds keep Jekyll's default future-post exclusion; `--future` is used only for full-batch validation.
+
 ## Verification
 
 - [x] 23 posts exist with aligned filename and KST frontmatter dates.
@@ -51,3 +70,13 @@ Turn the selected Lifebase and T3 notes into 23 standalone blog posts, dated bet
 - [x] Jekyll production build passes with future posts enabled.
 - [x] Temporary remote preview is reachable from outside localhost.
 - [x] Explicit user approval to commit and push was received after preview review.
+
+### Scheduled follow-up verification
+
+- [x] 10 posts exist with aligned filename and KST frontmatter dates.
+- [x] All 33 referenced assets exist under their post-date directories.
+- [x] No Obsidian embeds, wikilinks, local absolute paths, or private names remain.
+- [x] Internal links resolve to the intended category permalink.
+- [x] Normal production build excludes all 10 future posts before their publish times.
+- [x] Jekyll production build with `--future` renders all 10 posts.
+- [x] Daily scheduled Pages rebuild is valid and deploys from `main`.

@@ -43,3 +43,7 @@ Purpose: Track user feedback that should change how work is done in this reposit
 - Rewrite vault and study notes as standalone blog prose; do not expose private names, local absolute paths, account state, or unrelated personal context.
 - Apply an explicit anti-slop pass: remove repetitive summaries, generic transitions, exaggerated conclusions, and presentation-note scaffolding.
 - Keep publication under user control. Build and expose a temporary remote preview first, then commit and push only after explicit approval.
+
+## 2026-08-29
+- Publish the selected paper-study and WT3 series every two days at `20:00 KST` rather than stretching the sequence to three-day intervals.
+- Future-date and commit the whole approved series in advance, with a scheduled Pages rebuild revealing each post on its intended date.
