@@ -2,7 +2,7 @@
 
 ## Goal
 
-Turn the selected Lifebase and T3 notes into 22 standalone blog posts, dated between the previous latest post (`2026-04-30`) and `2026-08-26`.
+Turn the selected Lifebase and T3 notes into 23 standalone blog posts, dated between the previous latest post (`2026-04-30`) and `2026-08-28`.
 
 ## Writing contract
 
@@ -37,13 +37,14 @@ Turn the selected Lifebase and T3 notes into 22 standalone blog posts, dated bet
 | 2026-07-29 | Docker command cheat sheet |
 | 2026-08-03 | JSON-RPC 2.0 |
 | 2026-08-08 | MCP communication and transports |
-| 2026-08-14 | DeepSeek-V4 paper review |
+| 2026-08-14 | Muon optimizer review |
 | 2026-08-25 | SkillOpt-Sleep experiment |
 | 2026-08-26 | Multi-token Prediction and DeepSeek |
+| 2026-08-28 | DeepSeek-V4 technical report review |
 
 ## Verification
 
-- [x] 22 posts exist with aligned filename and KST frontmatter dates.
+- [x] 23 posts exist with aligned filename and KST frontmatter dates.
 - [x] Every referenced asset exists under its post-date directory.
 - [x] No Obsidian embeds, wikilinks, local absolute paths, or private names remain.
 - [x] Internal links resolve to the intended category permalink.
