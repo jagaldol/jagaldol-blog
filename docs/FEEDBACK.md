@@ -47,3 +47,9 @@ Purpose: Track user feedback that should change how work is done in this reposit
 ## 2026-08-29
 - Publish the selected paper-study and WT3 series every two days at `20:00 KST` rather than stretching the sequence to three-day intervals.
 - Future-date and commit the whole approved series in advance, with a scheduled Pages rebuild revealing each post on its intended date.
+
+## 2026-10-07
+- For personal retrospective posts, stay close to the user's own draft wording and tone (`~했었다`, `~것 같다`); remove AI-style meta intros, slogan headings, heavy bolding, and polished closing lines.
+- When a post mentions the user's own product in passing (e.g. Lifebase in a career post), keep it to a short mention and a compact image row; avoid detailed product explanations.
+- Do not publish internal client-project diagrams or architecture images from internship/work materials, even when client names are removed.
+- Flatten transparent logos/diagrams onto a white background so they stay visible in dark mode; rename the file when replacing an image to avoid stale browser cache.
