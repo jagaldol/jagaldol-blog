@@ -26,12 +26,14 @@
 <script>
   (function () {
     try {
-      var stored = localStorage.getItem('theme'); // "light" | "dark" | null(=system)
-      if (stored === 'light' || stored === 'dark') {
-        document.documentElement.setAttribute('data-theme', stored);
+      var stored = localStorage.getItem('theme'); // "dark" | "system" | null(=light, 기본값)
+      if (stored === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else if (stored === 'system') {
+        document.documentElement.removeAttribute('data-theme');
       }
       var isDark = stored === 'dark' ||
-        (stored !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        (stored === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
       var meta = document.querySelector('meta[name="theme-color"]');
       if (meta) { meta.setAttribute('content', isDark ? '#14191b' : '#ffffff'); }
     } catch (e) {}

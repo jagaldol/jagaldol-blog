@@ -12,7 +12,7 @@
     var storedTheme;
     try { storedTheme = localStorage.getItem('theme'); } catch (e) { storedTheme = null; }
     var isDark = storedTheme === 'dark' ||
-      (storedTheme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      (storedTheme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
     var script = document.createElement('script');
     script.setAttribute('src', 'https://utteranc.es/client.js');

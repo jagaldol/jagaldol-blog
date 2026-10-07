@@ -50,11 +50,11 @@
   })();
 </script>
 
-<!-- 테마 토글 컨트롤러: light → dark → system 순환, localStorage 기억, utterances 동기화 -->
+<!-- 테마 토글 컨트롤러: light(기본) → dark → system 순환, localStorage 기억, utterances 동기화 -->
 <script>
   (function () {
     var STORAGE_KEY = 'theme';
-    var ORDER = ['system', 'light', 'dark'];
+    var ORDER = ['light', 'dark', 'system'];
     var ICON = { system: 'fa-adjust', light: 'fa-sun', dark: 'fa-moon' };
     var LABEL = { system: '시스템', light: '라이트', dark: '다크' };
     var root = document.documentElement;
@@ -63,8 +63,8 @@
     function stored() {
       try {
         var v = localStorage.getItem(STORAGE_KEY);
-        return (v === 'light' || v === 'dark') ? v : 'system';
-      } catch (e) { return 'system'; }
+        return (v === 'dark' || v === 'system') ? v : 'light';
+      } catch (e) { return 'light'; }
     }
 
     function effective(mode) {
@@ -75,11 +75,13 @@
     function apply(mode) {
       if (mode === 'system') {
         root.removeAttribute('data-theme');
-        try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
       } else {
         root.setAttribute('data-theme', mode);
-        try { localStorage.setItem(STORAGE_KEY, mode); } catch (e) {}
       }
+      try {
+        if (mode === 'light') { localStorage.removeItem(STORAGE_KEY); }
+        else { localStorage.setItem(STORAGE_KEY, mode); }
+      } catch (e) {}
       var eff = effective(mode);
       var meta = document.querySelector('meta[name="theme-color"]');
       if (meta) { meta.setAttribute('content', eff === 'dark' ? '#14191b' : '#ffffff'); }
