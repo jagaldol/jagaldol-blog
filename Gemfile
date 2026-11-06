@@ -2,8 +2,8 @@ source "https://rubygems.org"
 
 ruby "~> 3.2.0"
 
-# Keep the Actions build on Jekyll 3 without unused GitHub Pages themes.
-gem "jekyll", "~> 3.10.0"
+# Build directly with Jekyll without unused GitHub Pages themes.
+gem "jekyll", "~> 4.4.1"
 gem "kramdown-parser-gfm", "~> 1.1"
 gem "jekyll-paginate", "~> 1.1", group: :jekyll_plugins
 gem "jekyll-sitemap", "~> 1.4", group: :jekyll_plugins
